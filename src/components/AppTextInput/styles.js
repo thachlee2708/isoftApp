@@ -1,0 +1,51 @@
+import {StyleSheet} from 'react-native';
+import {fontFamily} from '../../constants';
+import {pxScale} from '../../Helpers';
+import {colors} from '../../constants';
+export default StyleSheet.create({
+  container: {
+    marginHorizontal: pxScale.wp(16),
+  },
+  label: {
+    fontFamily: fontFamily.InterRegular,
+    marginTop: pxScale.hp(20),
+    marginBottom: pxScale.hp(10),
+  },
+  wrapTextInput: {
+    paddingHorizontal: pxScale.wp(5),
+    flexDirection: 'row',
+    borderWidth: pxScale.wp(0.5),
+    alignItems: 'center',
+    borderRadius: pxScale.wp(10),
+  },
+  wrapTextInputdisabled: {
+    paddingHorizontal: pxScale.wp(5),
+    flexDirection: 'row',
+    borderWidth: pxScale.wp(0.5),
+    alignItems: 'center',
+    borderRadius: pxScale.wp(10),
+    backgroundColor: colors.disabledInput,
+  },
+  wrapTextInputActive: {
+    paddingHorizontal: pxScale.wp(5),
+    flexDirection: 'row',
+    borderWidth: pxScale.wp(1),
+    alignItems: 'center',
+    borderRadius: pxScale.wp(10),
+  },
+  wrapTextInputError: {
+    paddingHorizontal: pxScale.wp(5),
+    flexDirection: 'row',
+    borderWidth: pxScale.wp(1),
+    borderColor: colors.label['text-EF5350'],
+    alignItems: 'center',
+    borderRadius: pxScale.wp(10),
+  },
+  textInput: {
+    fontFamily: fontFamily.InterRegular,
+    fontSize: pxScale.fontSize(18),
+  },
+  styleContainerButton: {
+    marginTop: pxScale.hp(20),
+  },
+});

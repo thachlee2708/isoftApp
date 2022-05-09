@@ -8,6 +8,7 @@ export const colors = {
     black: '#2F2F2F',
     green: '#00AB9D',
   },
+  disabledInput: '#F0F0F0',
   label: {
     'text-EF5350': '#EF5350',
     'text-EF6C00': '#EF6C00',
@@ -36,7 +37,9 @@ export const SCREEN_HEIGHT = Dimensions.get('window').height;
 
 export const screenName = {
   FirstTimeLogin: 'FirstTimeLogin',
+  StaffAccess: 'StaffAccess',
 };
 export const fontFamily = {
-  Inter: 'Inter',
+  InterRegular: 'Inter-Regular',
+  InterBold: 'Inter-Bold',
 };

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {SvgCss} from 'react-native-svg';
 
 const AppImageSvg = ({height, width, source}) => {
-  <SvgCss height={height} width={width} source={source} />;
+  return <SvgCss height={height} width={width} xml={source} />;
 };
 AppImageSvg.propTypes = {
   width: PropTypes.number,
