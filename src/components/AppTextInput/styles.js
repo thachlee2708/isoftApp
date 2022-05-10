@@ -3,33 +3,34 @@ import {fontFamily} from '../../constants';
 import {pxScale} from '../../Helpers';
 import {colors} from '../../constants';
 export default StyleSheet.create({
-  container: {
-    marginHorizontal: pxScale.wp(16),
-  },
+  container: {},
   label: {
+    fontSize: pxScale.fontSize(14),
     fontFamily: fontFamily.InterRegular,
     marginTop: pxScale.hp(20),
     marginBottom: pxScale.hp(10),
   },
   wrapTextInput: {
+    marginVertical: pxScale.hp(5),
     paddingHorizontal: pxScale.wp(5),
     flexDirection: 'row',
-    borderWidth: pxScale.wp(0.5),
+    borderWidth: pxScale.wp(1),
     alignItems: 'center',
     borderRadius: pxScale.wp(10),
   },
   wrapTextInputdisabled: {
     paddingHorizontal: pxScale.wp(5),
     flexDirection: 'row',
-    borderWidth: pxScale.wp(0.5),
+    borderWidth: pxScale.wp(1),
     alignItems: 'center',
     borderRadius: pxScale.wp(10),
     backgroundColor: colors.disabledInput,
   },
   wrapTextInputActive: {
+    marginVertical: pxScale.hp(5),
     paddingHorizontal: pxScale.wp(5),
     flexDirection: 'row',
-    borderWidth: pxScale.wp(1),
+    borderWidth: pxScale.wp(1.8),
     alignItems: 'center',
     borderRadius: pxScale.wp(10),
   },
@@ -42,6 +43,7 @@ export default StyleSheet.create({
     borderRadius: pxScale.wp(10),
   },
   textInput: {
+    flex: 1,
     fontFamily: fontFamily.InterRegular,
     fontSize: pxScale.fontSize(18),
   },

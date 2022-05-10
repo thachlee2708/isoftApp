@@ -28,8 +28,8 @@ const AppHeader = ({textTitle, onpressBackIcon}) => {
             height={pxScale.hp(20)}
             width={pxScale.wp(20)}></AppImageSvg>
         </TouchableOpacity>
-        <Text style={styles.titleText}>{textTitle}</Text>
       </View>
+      <Text style={styles.titleText}>{textTitle}</Text>
     </View>
   );
 };

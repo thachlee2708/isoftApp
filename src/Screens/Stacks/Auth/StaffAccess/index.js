@@ -17,10 +17,19 @@ import {AppIcon} from '../../../../assets/icons';
 import AppButton from '../../../../components/AppButton';
 import styles from './styles';
 import AppTextInput from '../../../../components/AppTextInput';
+import {screenName} from '../../../../constants';
 const StaffAccess = () => {
+  const [companyCode, setCompanyCode] = React.useState('');
+  const [userName, setUserName] = React.useState('');
   const navigation = useNavigation();
   const onGoBack = React.useCallback(() => {
     navigation.goBack();
+  }, [navigation]);
+  const navigateToPDPAAgree = React.useCallback(() => {
+    navigation.navigate(screenName.PDPAAgree);
+  }, [navigation]);
+  const navigateToResetPassword = React.useCallback(() => {
+    navigation.navigate(screenName.ResetPassword);
   }, [navigation]);
   return (
     <SafeAreaView>
@@ -34,20 +43,25 @@ const StaffAccess = () => {
         }}
       />
       <View style={styles.container}>
-        <Text style={styles.titleInput}>Company Code</Text>
-        <View style={styles.wrapTextInput}>
-          <AppImageSvg
-            source={AppIcon.companyCodeIcon}
-            height={pxScale.hp(18)}
-            width={pxScale.wp(20)}
-          />
-          <TextInput
-            placeholder="Enter Company Code"
-            style={styles.textInput}
-          />
-        </View>
-        <AppTextInput />
-        <TouchableOpacity>
+        <AppTextInput
+          label={'Company Code'}
+          leftIconSource={AppIcon.companyCodeIcon}
+          placeholder="Enter Company Code"
+          textInputProps={{
+            value: companyCode,
+            onChangeText: setCompanyCode,
+          }}
+        />
+        <AppTextInput
+          label={'Username'}
+          leftIconSource={AppIcon.userIcon}
+          placeholder="Enter Username"
+          textInputProps={{
+            value: userName,
+            onChangeText: setUserName,
+          }}
+        />
+        <TouchableOpacity onPress={navigateToResetPassword}>
           <Text
             style={[
               styles.titleInput,
@@ -57,6 +71,10 @@ const StaffAccess = () => {
           </Text>
         </TouchableOpacity>
         <AppButton
+          disabled={
+            companyCode.length === 0 || userName.length === 0 ? true : false
+          }
+          onPress={navigateToPDPAAgree}
           buttonText="Login"
           styleContainer={styles.styleContainerButton}
         />

@@ -38,6 +38,12 @@ export const SCREEN_HEIGHT = Dimensions.get('window').height;
 export const screenName = {
   FirstTimeLogin: 'FirstTimeLogin',
   StaffAccess: 'StaffAccess',
+  PDPAAgree: 'PDPAAgree',
+  ResetPassword: 'ResetPassword',
+  HomeTab: 'Home',
+  AccountTab: 'Account',
+  MoreTab: 'More',
+  RootTab: 'RootTab',
 };
 export const fontFamily = {
   InterRegular: 'Inter-Regular',

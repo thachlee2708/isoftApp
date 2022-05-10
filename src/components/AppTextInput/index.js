@@ -13,55 +13,42 @@ import AppImageSvg from '../AppImageSvg';
 import {AppIcon} from '../../assets/icons';
 import {pxScale} from '../../Helpers';
 import styles from './styles';
+import {colors} from '../../constants';
 const AppInput = ({
+  textInputProps,
   label,
   placeholder,
   disabled,
-  isEmail,
-  isPassword,
-  isRequired,
+  leftIconSource,
+  secureTextEntry,
+  errorMessage,
+  isValidText,
+  checkValidText,
 }) => {
-  const [text, setText] = React.useState('');
-  const [validText, setValidText] = React.useState(true);
-  const [errorMessage, setErrorMessage] = React.useState('');
-  const [isPassHide, setIsPassHide] = React.useState(isPassword ? true : false);
   const [active, setActive] = React.useState(false);
-  const checkText = React.useCallback(() => {
-    if (isRequired) {
-      checkRequired();
-    }
-    if (isEmail) {
-      checkEmail();
-    }
-    if (isPassword) {
-      checkPassword();
-    }
-  }, [text, checkEmail, checkPassword, checkRequired]);
-  const checkEmail = () => {
-    if (
-      text.match(/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/)
-    ) {
-      setValidText(true);
-    } else {
-      setValidText(false);
-      setErrorMessage('This email is invalid');
-    }
-  };
-  const checkPassword = () => {};
-  const checkRequired = () => {
-    if (text.length === 0) {
-      setErrorMessage(label + ' is required');
-    }
-  };
-  const onPressHidePass = () => {
-    isPassHide ? setIsPassHide(false) : setIsPassHide(true);
-  };
+  const [eyeIcon, setEyeIcon] = React.useState(AppIcon.eye_gray);
+  const [isPassHide, setIsPassHide] = React.useState(
+    secureTextEntry ? true : false,
+  );
+  const onPressHidePass = React.useCallback(
+    isPassHide => () => {
+      isPassHide ? setIsPassHide(false) : setIsPassHide(true);
+      isPassHide
+        ? setEyeIcon(AppIcon.eye_close_gray)
+        : setEyeIcon(AppIcon.eye_gray);
+    },
+    [setIsPassHide, setEyeIcon],
+  );
+  const onEndEditing = React.useCallback(() => {
+    setActive(false);
+    checkValidText ? checkValidText() : null;
+  }, [setActive, checkValidText]);
   return (
-    <View>
+    <View style={styles.container}>
       <Text style={styles.label}>{label}</Text>
       <View
         style={
-          !validText
+          !isValidText
             ? styles.wrapTextInputError
             : active
             ? styles.wrapTextInputActive
@@ -70,33 +57,49 @@ const AppInput = ({
             : styles.wrapTextInput
         }>
         <AppImageSvg
-          source={AppIcon.companyCodeIcon}
+          source={leftIconSource}
           height={pxScale.hp(18)}
           width={pxScale.wp(20)}
         />
         <TextInput
+          {...textInputProps}
           disabled={disabled}
-          onFocus={setActive(true)}
-          onChangeText={setText}
+          onFocus={() => setActive(true)}
+          onEndEditing={onEndEditing}
           placeholder={placeholder}
           style={styles.textInput}
-          onEndEditing={checkText}
           secureTextEntry={isPassHide}
         />
-        <TouchableOpacity onPress={onPressHidePass}>
-          <AppImageSvg
-            source={isPassHide ? AppIcon.eye_gray : AppIcon.eye_close_gray}
-            height={pxScale.hp(18)}
-            width={pxScale.wp(20)}
-          />
-        </TouchableOpacity>
+        {secureTextEntry && (
+          <TouchableOpacity onPress={onPressHidePass(isPassHide)}>
+            <AppImageSvg
+              source={eyeIcon}
+              height={pxScale.hp(18)}
+              width={pxScale.wp(20)}
+            />
+          </TouchableOpacity>
+        )}
       </View>
-      {!validText && <Text>{errorMessage}</Text>}
+      {!isValidText && (
+        <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          <AppImageSvg
+            source={AppIcon.errorIcon}
+            height={pxScale.hp(16)}
+            width={pxScale.wp(16)}
+          />
+          <Text style={{color: '#EF5350'}}>{errorMessage}</Text>
+        </View>
+      )}
     </View>
   );
 };
 AppInput.defaultProps = {
   label: 'Label',
   disabled: false,
+  leftIconSource: AppIcon.userIcon,
+  errorMessage: '',
+  secureTextEntry: false,
+  isValidText: true,
+  checkValidText: null,
 };
 export default React.memo(AppInput);
