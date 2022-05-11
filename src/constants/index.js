@@ -48,4 +48,5 @@ export const screenName = {
 export const fontFamily = {
   InterRegular: 'Inter-Regular',
   InterBold: 'Inter-Bold',
+  InterSemiBold: 'Inter-SemiBold',
 };

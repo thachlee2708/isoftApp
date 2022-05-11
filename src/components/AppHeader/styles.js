@@ -12,16 +12,16 @@ export default StyleSheet.create({
   contentContainer: {
     flexDirection: 'row',
     marginTop: pxScale.hp(25),
-    marginBottom: pxScale.hp(80),
+    marginBottom: pxScale.hp(50),
     marginLeft: pxScale.wp(16),
     position: 'absolute',
   },
   titleText: {
     alignSelf: 'center',
-    marginTop: pxScale.hp(25),
-    fontSize: pxScale.fontSize(20),
+    marginTop: pxScale.hp(20),
+    fontSize: pxScale.fontSize(25),
     fontFamily: fontFamily.InterBold,
     color: colors.primary.white,
-    marginBottom: pxScale.hp(80),
+    marginBottom: pxScale.hp(50),
   },
 });

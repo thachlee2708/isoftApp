@@ -1,5 +1,4 @@
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
-import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import React from 'react';
 import {SafeAreaView} from 'react-native';
 import {AppIcon} from '../../assets/icons';
@@ -15,35 +14,49 @@ const Tab = createMaterialTopTabNavigator();
 const RootTabNavigator = () => {
   return (
     <Tab.Navigator
+      labelStyle={colors.primary.green}
       screenOptions={({route}) => ({
         headerShown: false,
         swipeEnabled: false,
-        tabBarIconStyle: {alignItems: 'center'},
-        tabBarOptions: {
-          activeTintColor: colors.primary.green,
-          inactiveTintColor: '#fff',
+        tabBarIndicatorStyle: {
+          backgroundColor: 'transparent',
         },
+        tabBarIconStyle: {alignItems: 'center', justifyContent: 'center'},
+        tabBarLabelStyle: {
+          textTransform: 'none',
+          fontSize: pxScale.fontSize(18),
+        },
+        tabBarActiveTintColor: colors.primary.green,
+        tabBarInactiveTintColor: '#979797',
         tabBarIcon: ({focused}) => {
-          let iconName;
-
-          if (route.name === screenName.HomeTab) {
-            iconName = focused
-              ? AppIcon.homeTabIconActive
-              : AppIcon.homeTabIconInActive;
-          } else if (route.name === screenName.AccountTab) {
-            iconName = focused
-              ? AppIcon.accountTabIconActive
-              : AppIcon.accountTabIconInActive;
-          } else if (route.name === screenName.MoreTab) {
-            iconName = focused
-              ? AppIcon.moreTabIconActive
-              : AppIcon.moreTabIconInActive;
+          let iconSource;
+          switch (route.name) {
+            case screenName.HomeTab: {
+              iconSource = focused
+                ? AppIcon.homeTabIconActive
+                : AppIcon.homeTabIconInActive;
+              break;
+            }
+            case screenName.AccountTab: {
+              iconSource = focused
+                ? AppIcon.accountTabIconActive
+                : AppIcon.accountTabIconInActive;
+              break;
+            }
+            case screenName.MoreTab: {
+              iconSource = focused
+                ? AppIcon.moreTabIconActive
+                : AppIcon.moreTabIconInActive;
+              break;
+            }
+            default:
+              break;
           }
           return (
             <AppImageSvg
-              source={iconName}
-              height={pxScale.hp(18)}
-              width={pxScale.wp(16)}
+              source={iconSource}
+              height={pxScale.hp(27)}
+              width={pxScale.wp(24)}
             />
           );
         },

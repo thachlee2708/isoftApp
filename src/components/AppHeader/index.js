@@ -13,21 +13,23 @@ import styles from './styles';
 import {AppIcon} from '../../assets/icons';
 import {pxScale} from '../../Helpers';
 import {colors, fontFamily} from '../../constants';
-const AppHeader = ({textTitle, onpressBackIcon}) => {
+const AppHeader = ({textTitle, onpressBackIcon, isShowBackIcon}) => {
   const navigation = useNavigation();
   return (
-    <View>
+    <View style={{backgroundColor: colors.primary.white}}>
       <ImageBackground
         source={AppImage.headerBackground}
         resizeMode="contain"
         style={styles.imageBackground}></ImageBackground>
       <View style={styles.contentContainer}>
-        <TouchableOpacity onPress={onpressBackIcon}>
-          <AppImageSvg
-            source={AppIcon.iconBack}
-            height={pxScale.hp(20)}
-            width={pxScale.wp(20)}></AppImageSvg>
-        </TouchableOpacity>
+        {isShowBackIcon && (
+          <TouchableOpacity onPress={onpressBackIcon}>
+            <AppImageSvg
+              source={AppIcon.iconBack}
+              height={pxScale.hp(20)}
+              width={pxScale.wp(20)}></AppImageSvg>
+          </TouchableOpacity>
+        )}
       </View>
       <Text style={styles.titleText}>{textTitle}</Text>
     </View>
@@ -35,5 +37,6 @@ const AppHeader = ({textTitle, onpressBackIcon}) => {
 };
 AppHeader.defaultProps = {
   textTitle: 'textTitle',
+  isShowBackIcon: true,
 };
 export default React.memo(AppHeader);

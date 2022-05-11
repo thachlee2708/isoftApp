@@ -4,4 +4,6 @@ export const AppImage = {
   headerFirstTimeLogin: require('./headerFirstTimeLogin.png'),
   headerBackground: require('./headerBackground.png'),
   lockAndTree: require('./lockAndTree.png'),
+  accountBackground: require('./accountBackground.png'),
+  starkTony: require('./Stark.png'),
 };

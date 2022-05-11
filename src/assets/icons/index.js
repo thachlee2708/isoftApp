@@ -144,4 +144,16 @@ export const AppIcon = {
  </g>
 </svg>
 `,
+  arrowToRight: `<svg xmlns="http://www.w3.org/2000/svg" width="8.414" height="14.828" viewBox="0 0 8.414 14.828">
+<path id="chevron-right" d="M9,18l4.125-4.125L15,12l-2-2L9,6" transform="translate(-7.586 -4.586)" fill="none" stroke="#2f2f2f" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+</svg>
+`,
+  arrowToBottom: `<svg xmlns="http://www.w3.org/2000/svg" width="14.828" height="8.414" viewBox="0 0 14.828 8.414">
+<path id="chevron-down" d="M6,9l6,6,6-6" transform="translate(-4.586 -7.586)" fill="none" stroke="#2f2f2f" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+</svg>
+`,
+  line: `<svg xmlns="http://www.w3.org/2000/svg" width="3" height="40" viewBox="0 0 3 40">
+<rect id="accordion-box" width="3" height="40" rx="1.5" fill="#00ab9d"/>
+</svg>
+`,
 };
