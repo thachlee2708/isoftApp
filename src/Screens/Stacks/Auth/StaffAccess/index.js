@@ -17,10 +17,11 @@ import {AppIcon} from '../../../../assets/icons';
 import AppButton from '../../../../components/AppButton';
 import styles from './styles';
 import AppTextInput from '../../../../components/AppTextInput';
-import {screenName} from '../../../../constants';
+import {colors, screenName} from '../../../../constants';
 const StaffAccess = () => {
   const [companyCode, setCompanyCode] = React.useState('');
   const [userName, setUserName] = React.useState('');
+  const [password, setPassword] = React.useState('');
   const navigation = useNavigation();
   const onGoBack = React.useCallback(() => {
     navigation.goBack();
@@ -61,18 +62,26 @@ const StaffAccess = () => {
             onChangeText: setUserName,
           }}
         />
+        <AppTextInput
+          secureTextEntry={true}
+          label={'Password'}
+          leftIconSource={AppIcon.lockIcon}
+          placeholder="Enter Password"
+          textInputProps={{
+            value: password,
+            onChangeText: setPassword,
+          }}
+        />
         <TouchableOpacity onPress={navigateToResetPassword}>
-          <Text
-            style={[
-              styles.titleInput,
-              {textDecorationLine: 'underline', fontSize: pxScale.fontSize(12)},
-            ]}>
-            Forgot password?
-          </Text>
+          <Text style={styles.titleInput}>Forgot password?</Text>
         </TouchableOpacity>
         <AppButton
           disabled={
-            companyCode.length === 0 || userName.length === 0 ? true : false
+            companyCode.length === 0 ||
+            userName.length === 0 ||
+            password.length === 0
+              ? true
+              : false
           }
           onPress={navigateToPDPAAgree}
           buttonText="Login"
