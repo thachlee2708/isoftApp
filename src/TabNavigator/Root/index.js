@@ -14,6 +14,7 @@ const Tab = createMaterialTopTabNavigator();
 const RootTabNavigator = () => {
   return (
     <Tab.Navigator
+      backBehavior={'none'}
       labelStyle={colors.primary.green}
       screenOptions={({route}) => ({
         headerShown: false,

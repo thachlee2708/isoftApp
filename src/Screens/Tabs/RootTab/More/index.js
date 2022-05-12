@@ -12,33 +12,63 @@ import AppHeader from '../../../../components/AppHeader';
 import AppImageSvg from '../../../../components/AppImageSvg';
 import {AppImage} from '../../../../assets/images';
 import {pxScale} from '../../../../Helpers';
-import {colors, fontFamily} from '../../../../constants';
+import {colors, fontFamily, screenName} from '../../../../constants';
+import styles from './styles';
+import {AppIcon} from '../../../../assets/icons';
+import {useNavigation} from '@react-navigation/native';
 const MoreTab = () => {
+  const navigation = useNavigation();
+  const navigateToChangePassword = React.useCallback(() => {
+    navigation.navigate(screenName.ChangePassword);
+  }, [navigation]);
   return (
-    <SafeAreaView
-      style={{
-        flex: 1,
-        backgroundColor: colors.primary.white,
-      }}>
+    <SafeAreaView style={styles.container}>
       <AppHeader textTitle={'More'} isShowBackIcon={false} />
       <ScrollView style={{marginHorizontal: pxScale.wp(16)}}>
         <>
-          <Text>Security</Text>
-          <TouchableOpacity>
-            <Text>Change password</Text>
+          <Text style={styles.labelText}>Security</Text>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={navigateToChangePassword}>
+            <Text style={styles.littleText}>Change password</Text>
+            <AppImageSvg
+              source={AppIcon.arrowToRight}
+              height={pxScale.hp(20)}
+              width={pxScale.wp(20)}
+            />
           </TouchableOpacity>
-          <Text>About</Text>
-          <TouchableOpacity>
-            <Text>Terms of Use</Text>
+          <Text style={styles.labelText}>About</Text>
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.littleText}>Terms of Use</Text>
+            <AppImageSvg
+              source={AppIcon.arrowToRight}
+              height={pxScale.hp(20)}
+              width={pxScale.wp(20)}
+            />
           </TouchableOpacity>
-          <TouchableOpacity>
-            <Text>Privacy Policy</Text>
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.littleText}>Privacy Policy</Text>
+            <AppImageSvg
+              source={AppIcon.arrowToRight}
+              height={pxScale.hp(20)}
+              width={pxScale.wp(20)}
+            />
           </TouchableOpacity>
-          <TouchableOpacity>
-            <Text>Logout</Text>
+          <TouchableOpacity style={styles.button}>
+            <AppImageSvg
+              source={AppIcon.logOutIcon}
+              height={pxScale.hp(25)}
+              width={pxScale.wp(25)}
+            />
+            <Text style={styles.logOutText}>Logout</Text>
+            <AppImageSvg
+              source={AppIcon.arrowToRightGreen}
+              height={pxScale.hp(20)}
+              width={pxScale.wp(20)}
+            />
           </TouchableOpacity>
-          <Text>App version 1.0.1</Text>
-          <Text>Powered by iSoft Apps</Text>
+          <Text style={styles.littleText}>App version 1.0.1</Text>
+          <Text style={styles.littleText}>Powered by iSoft Apps</Text>
         </>
       </ScrollView>
     </SafeAreaView>

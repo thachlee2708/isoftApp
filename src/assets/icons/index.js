@@ -36,6 +36,13 @@ export const AppIcon = {
 </g>
 </svg>
 `,
+  lockIcon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="22" viewBox="0 0 20 22">
+<g id="lock" transform="translate(1 1)">
+  <rect id="Rectangle_7" data-name="Rectangle 7" width="18" height="11" rx="2" transform="translate(0 9)" fill="none" stroke="#78909c" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+  <path id="Path_25" data-name="Path 25" d="M7,11V7A5,5,0,1,1,17,7v4" transform="translate(-3 -2)" fill="none" stroke="#78909c" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+</g>
+</svg>
+`,
   errorIcon: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
 <g id="alert-circle" transform="translate(-1 -1)">
   <circle id="Ellipse_582" data-name="Ellipse 582" cx="8" cy="8" r="8" transform="translate(2 2)" fill="none" stroke="#ef5350" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
@@ -154,6 +161,53 @@ export const AppIcon = {
 `,
   line: `<svg xmlns="http://www.w3.org/2000/svg" width="3" height="40" viewBox="0 0 3 40">
 <rect id="accordion-box" width="3" height="40" rx="1.5" fill="#00ab9d"/>
+</svg>
+`,
+  logOutIcon: `<svg xmlns="http://www.w3.org/2000/svg" width="27" height="26.714" viewBox="0 0 27 26.714">
+<g id="log-out" transform="translate(1 1)">
+  <path id="Path_44" data-name="Path 44" d="M11.238,27.714H5.746A2.746,2.746,0,0,1,3,24.968V5.746A2.746,2.746,0,0,1,5.746,3h5.492" transform="translate(-3 -3)" fill="none" stroke="#00ab9d" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+  <path id="Path_45" data-name="Path 45" d="M16,20.73l6.865-6.865L16,7" transform="translate(1.849 -1.508)" fill="none" stroke="#00ab9d" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+  <line id="Line_4" data-name="Line 4" x1="17" transform="translate(8 12)" fill="none" stroke="#00ab9d" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+</g>
+</svg>
+`,
+  arrowToRightGreen: `<svg xmlns="http://www.w3.org/2000/svg" width="8.414" height="14.828" viewBox="0 0 8.414 14.828">
+<path id="chevron-right" d="M9,18l6-6L9,6" transform="translate(-7.586 -4.586)" fill="none" stroke="#00ab9d" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+</svg>
+`,
+  hrIcon: `<svg xmlns="http://www.w3.org/2000/svg" width="23" height="19" viewBox="0 0 23 19">
+  <g id="users" transform="translate(-0.5 -2.5)">
+    <path id="Path_1751" data-name="Path 1751" d="M17,21V19a4,4,0,0,0-4-4H5a4,4,0,0,0-4,4v2" fill="none" stroke="#2f2f2f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <circle id="Ellipse_359" data-name="Ellipse 359" cx="4" cy="4" r="4" transform="translate(5 3)" fill="none" stroke="#2f2f2f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="Path_1752" data-name="Path 1752" d="M23,21V19a4,4,0,0,0-3-3.87" fill="none" stroke="#2f2f2f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="Path_1753" data-name="Path 1753" d="M16,3.13a4,4,0,0,1,0,7.75" fill="none" stroke="#2f2f2f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+  </g>
+</svg>
+ `,
+  posIcon: `<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
+  <g id="target" transform="translate(-1.5 -1.5)">
+    <circle id="Ellipse_384" data-name="Ellipse 384" cx="10" cy="10" r="10" transform="translate(2 2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <circle id="Ellipse_385" data-name="Ellipse 385" cx="6" cy="6" r="6" transform="translate(6 6)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <circle id="Ellipse_386" data-name="Ellipse 386" cx="2" cy="2" r="2" transform="translate(10 10)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+  </g>
+</svg>
+`,
+  IntranetIcon: `<svg xmlns="http://www.w3.org/2000/svg" width="21.342" height="21" viewBox="0 0 21.342 21">
+  <g id="layers" transform="translate(-1.329 -1.5)">
+    <path id="Path_1760" data-name="Path 1760" d="M12,2,2,7l10,5L22,7Z" fill="none" stroke="#2f2f2f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="Path_1761" data-name="Path 1761" d="M2,17l10,5,10-5" fill="none" stroke="#2f2f2f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="Path_1762" data-name="Path 1762" d="M2,12l10,5,10-5" fill="none" stroke="#2f2f2f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+  </g>
+</svg>
+`,
+  formsIcon: `<svg xmlns="http://www.w3.org/2000/svg" width="17" height="21" viewBox="0 0 17 21">
+  <g id="file-text" transform="translate(-3.5 -1.5)">
+    <path id="Path_1757" data-name="Path 1757" d="M14,2H6A2,2,0,0,0,4,4V20a2,2,0,0,0,2,2H18a2,2,0,0,0,2-2V8Z" fill="none" stroke="#2f2f2f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="Path_1758" data-name="Path 1758" d="M14,2V8h6" fill="none" stroke="#2f2f2f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <line id="Line_138" data-name="Line 138" x1="8" transform="translate(8 13)" fill="none" stroke="#2f2f2f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <line id="Line_139" data-name="Line 139" x1="8" transform="translate(8 17)" fill="none" stroke="#2f2f2f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="Path_1759" data-name="Path 1759" d="M10,9H8" fill="none" stroke="#2f2f2f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+  </g>
 </svg>
 `,
 };

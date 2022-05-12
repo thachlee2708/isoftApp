@@ -22,6 +22,7 @@ const ResetPassword = () => {
   const [companyCode, setCompanyCode] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [isValidEmail, setIsValidEmail] = React.useState(true);
+  const [resetPassword, setResetPassword] = React.useState(false);
   const navigation = useNavigation();
   const onGoBack = React.useCallback(() => {
     navigation.goBack();
@@ -38,44 +39,64 @@ const ResetPassword = () => {
     },
     [setIsValidEmail],
   );
+  const onPressResetPasword = React.useCallback(() => {
+    setResetPassword(true);
+  }, [setResetPassword]);
   return (
     <SafeAreaView>
       <AppHeader textTitle={'Reset Password'} onpressBackIcon={onGoBack} />
       <AppImageSvg
+        style={{alignSelf: 'center', marginBottom: pxScale.hp(15)}}
         source={AppIcon.resetPassImage}
         height={pxScale.hp(227.05)}
         width={pxScale.wp(349.95)}
       />
       <View style={styles.container}>
-        <AppTextInput
-          errorMessage={'This email is invalid'}
-          checkValidText={() => checkValidMail(email)}
-          isValidText={isValidEmail}
-          label={'Email'}
-          leftIconSource={AppIcon.email}
-          placeholder="Enter Email"
-          textInputProps={{
-            value: email,
-            onChangeText: setEmail,
-          }}
-        />
-        <AppTextInput
-          label={'Company Code'}
-          leftIconSource={AppIcon.companyCodeIcon}
-          placeholder="Enter Company Code"
-          textInputProps={{
-            value: companyCode,
-            onChangeText: setCompanyCode,
-          }}
-        />
+        {!resetPassword && (
+          <>
+            <AppTextInput
+              errorMessage={'This email is invalid'}
+              checkValidText={() => checkValidMail(email)}
+              isValidText={isValidEmail}
+              label={'Email'}
+              leftIconSource={AppIcon.email}
+              placeholder="Enter Email"
+              textInputProps={{
+                value: email,
+                onChangeText: setEmail,
+              }}
+            />
+            <AppTextInput
+              label={'Company Code'}
+              leftIconSource={AppIcon.companyCodeIcon}
+              placeholder="Enter Company Code"
+              textInputProps={{
+                value: companyCode,
+                onChangeText: setCompanyCode,
+              }}
+            />
+            <AppButton
+              onPress={onPressResetPasword}
+              disabled={
+                companyCode.length === 0 || email.length === 0 || !isValidEmail
+                  ? true
+                  : false
+              }
+              buttonText="Reset Password"
+              styleContainer={styles.styleContainerButton}
+            />
+          </>
+        )}
 
-        <AppButton
-          disabled={
-            companyCode.length === 0 || email.length === 0 ? true : false
-          }
-          buttonText="Reset Password"
-          styleContainer={styles.styleContainerButton}
-        />
+        {resetPassword && (
+          <>
+            <Text>Please check your inbox for password reset email.</Text>
+            <AppButton
+              buttonText="Login"
+              styleContainer={styles.styleContainerButton}
+            />
+          </>
+        )}
       </View>
     </SafeAreaView>
   );

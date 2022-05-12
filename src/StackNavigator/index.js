@@ -6,6 +6,7 @@ import PDPAAgree from '../Screens/Stacks/Auth/PDPAAgree';
 import ResetPassword from '../Screens/Stacks/Auth/ResetPassword';
 import RootTabNavigator from '../TabNavigator/Root';
 import {screenName} from '../constants';
+import ChangePassword from '../Screens/Stacks/Auth/ChangePassword';
 const Stack = createNativeStackNavigator();
 const RootStack = () => {
   return (
@@ -28,6 +29,11 @@ const RootStack = () => {
       <Stack.Screen
         component={ResetPassword}
         name="ResetPassword"
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        component={ChangePassword}
+        name="ChangePassword"
         options={{headerShown: false}}
       />
       <Stack.Screen

@@ -5,13 +5,13 @@ import {colors} from '../../constants';
 export default StyleSheet.create({
   container: {},
   label: {
-    fontSize: pxScale.fontSize(14),
+    color: colors.primary.black,
+    fontSize: pxScale.fontSize(18),
     fontFamily: fontFamily.InterRegular,
     marginTop: pxScale.hp(20),
     marginBottom: pxScale.hp(10),
   },
   wrapTextInput: {
-    marginVertical: pxScale.hp(5),
     paddingHorizontal: pxScale.wp(5),
     flexDirection: 'row',
     borderWidth: pxScale.wp(1),
@@ -27,7 +27,6 @@ export default StyleSheet.create({
     backgroundColor: colors.disabledInput,
   },
   wrapTextInputActive: {
-    marginVertical: pxScale.hp(5),
     paddingHorizontal: pxScale.wp(5),
     flexDirection: 'row',
     borderWidth: pxScale.wp(1.8),
@@ -35,7 +34,6 @@ export default StyleSheet.create({
     borderRadius: pxScale.wp(10),
   },
   wrapTextInputError: {
-    paddingHorizontal: pxScale.wp(5),
     flexDirection: 'row',
     borderWidth: pxScale.wp(1),
     borderColor: colors.label['text-EF5350'],
@@ -46,6 +44,7 @@ export default StyleSheet.create({
     flex: 1,
     fontFamily: fontFamily.InterRegular,
     fontSize: pxScale.fontSize(18),
+    color: colors.primary.black,
   },
   styleContainerButton: {
     marginTop: pxScale.hp(20),

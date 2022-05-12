@@ -7,7 +7,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: pxScale.wp(396),
-    height: pxScale.hp(48),
+    height: pxScale.hp(55),
     backgroundColor: colors.primary.green,
     borderRadius: pxScale.wp(10),
   },
@@ -15,7 +15,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: pxScale.wp(396),
-    height: pxScale.hp(48),
+    height: pxScale.hp(55),
     backgroundColor: colors.primary.green,
     opacity: 0.4,
     borderRadius: 10,
@@ -23,6 +23,6 @@ export default StyleSheet.create({
   buttonText: {
     fontFamily: fontFamily.InterBold,
     color: colors.primary.white,
-    fontSize: pxScale.fontSize(16),
+    fontSize: pxScale.fontSize(20),
   },
 });

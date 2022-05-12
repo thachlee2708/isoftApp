@@ -25,6 +25,6 @@ export default StyleSheet.create({
     fontSize: pxScale.fontSize(18),
   },
   styleContainerButton: {
-    marginTop: pxScale.hp(20),
+    marginTop: pxScale.hp(25),
   },
 });

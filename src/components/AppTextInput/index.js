@@ -74,8 +74,8 @@ const AppInput = ({
           <TouchableOpacity onPress={onPressHidePass(isPassHide)}>
             <AppImageSvg
               source={eyeIcon}
-              height={pxScale.hp(18)}
-              width={pxScale.wp(20)}
+              height={pxScale.hp(27)}
+              width={pxScale.wp(30)}
             />
           </TouchableOpacity>
         )}
