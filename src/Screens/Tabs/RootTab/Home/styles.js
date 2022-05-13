@@ -17,6 +17,14 @@ export default StyleSheet.create({
   },
   optionContainer: {
     flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: pxScale.hp(15),
   },
-  optionImage: {},
+
+  ApplicationText: {
+    color: colors.primary.black,
+    fontFamily: fontFamily.InterSemiBold,
+    fontSize: pxScale.fontSize(25),
+    marginVertical: pxScale.hp(10),
+  },
 });

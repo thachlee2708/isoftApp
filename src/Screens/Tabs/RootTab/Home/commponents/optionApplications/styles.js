@@ -2,12 +2,13 @@ import {StyleSheet, Dimensions} from 'react-native';
 import {colors, fontFamily} from '../../../../constants';
 import {pxScale} from '../../../../../../Helpers';
 export default StyleSheet.create({
-  container: {alignSelf: 'stretch'},
+  container: {},
   Imagecontainer: {
     flexDirection: 'row',
-    height: pxScale.hp(140),
+    height: pxScale.hp(120),
     width: pxScale.wp(190),
-    padding: pxScale.wp(20),
+    paddingVertical: pxScale.hp(25),
+    paddingHorizontal: pxScale.wp(15),
   },
   icon: {},
   text: {flex: 1},

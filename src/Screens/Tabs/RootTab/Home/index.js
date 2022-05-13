@@ -61,7 +61,7 @@ const HomeTab = () => {
         {shouldRenderBlur && (
           <BlurView
             blurType={'light'}
-            blurAmount={20}
+            blurAmount={50}
             style={[
               {
                 justifyContent: 'center',
@@ -76,10 +76,9 @@ const HomeTab = () => {
         </Text>
       </View>
       <View style={{marginHorizontal: pxScale.wp(16)}}>
-        <Text>Applications</Text>
+        <Text style={styles.ApplicationText}>Applications</Text>
         <View style={styles.optionContainer}>
           <OptionApplications
-            styleContainer={styles.optionImage}
             titleText={'Human\nResource'}
             sourceImage={AppImage.option1}
             sourceIcon={AppIcon.hrIcon}

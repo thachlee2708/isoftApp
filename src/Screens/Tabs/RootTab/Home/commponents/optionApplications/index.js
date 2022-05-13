@@ -18,11 +18,11 @@ const optionApplication = ({
 }) => {
   return (
     <TouchableOpacity onPress={onPress}>
-      <View style={styles.container}>
+      <View style={[styleContainer, styles.container]}>
         <ImageBackground
           resizeMode="contain"
           source={sourceImage}
-          style={[styleContainer, styles.Imagecontainer]}>
+          style={styles.Imagecontainer}>
           <Text style={styles.text}>{titleText}</Text>
           <AppImageSvg
             style={styles.icon}
