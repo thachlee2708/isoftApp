@@ -1,0 +1,34 @@
+import {StyleSheet} from 'react-native';
+import {fontFamily} from '../../../../../../constants';
+import {pxScale} from '../../../../../../Helpers';
+export default StyleSheet.create({
+  imageHeader: {
+    height: pxScale.hp(280),
+    width: pxScale.wp(428),
+  },
+  blurContainer: {
+    top: pxScale.hp(45),
+    borderRadius: pxScale.wp(6),
+    overflow: 'hidden',
+    flex: 1,
+    width: pxScale.wp(380),
+    backgroundColor: 'transparent',
+    position: 'absolute',
+    alignSelf: 'center',
+    justifyContent: 'center',
+  },
+  blurView: {
+    justifyContent: 'center',
+    width: '100%',
+    height: pxScale.hp(45),
+    backgroundColor: 'rgba(0,171,157,0.1)',
+  },
+  lastLoggedInText: {
+    position: 'absolute',
+    textAlignVertical: 'center',
+    alignSelf: 'center',
+    fontFamily: fontFamily.InterRegular,
+    color: '#78909C',
+    fontSize: pxScale.fontSize(18),
+  },
+});

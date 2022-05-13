@@ -19,7 +19,7 @@ import AppHeader from '../../../../components/AppHeader';
 const FirstTimeLogin = () => {
   const navigation = useNavigation();
   const navigateToStaffAccess = React.useCallback(() => {
-    navigation.navigate(screenName.StaffAccess);
+    navigation.navigate(screenName.StaffAccess, {isReload: Math.random()});
   }, [navigation]);
   return (
     <SafeAreaView>

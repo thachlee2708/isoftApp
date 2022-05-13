@@ -25,10 +25,7 @@ const ResetPassword = () => {
   const [resetPassword, setResetPassword] = React.useState(false);
   const navigation = useNavigation();
   const onGoBack = React.useCallback(() => {
-    navigation.goBack();
-  }, [navigation]);
-  const navigateToPDPAAgree = React.useCallback(() => {
-    navigation.navigate(screenName.PDPAAgree);
+    navigation.navigate(screenName.StaffAccess, {isReload: Math.random()});
   }, [navigation]);
   const checkValidMail = React.useCallback(
     email => {
@@ -92,6 +89,7 @@ const ResetPassword = () => {
           <>
             <Text>Please check your inbox for password reset email.</Text>
             <AppButton
+              onPress={onGoBack}
               buttonText="Login"
               styleContainer={styles.styleContainerButton}
             />

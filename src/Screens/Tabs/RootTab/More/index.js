@@ -1,18 +1,9 @@
-import {
-  SafeAreaView,
-  Text,
-  Image,
-  View,
-  ImageBackground,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import {SafeAreaView, Text, TouchableOpacity, ScrollView} from 'react-native';
 import React, {memo} from 'react';
 import AppHeader from '../../../../components/AppHeader';
 import AppImageSvg from '../../../../components/AppImageSvg';
-import {AppImage} from '../../../../assets/images';
 import {pxScale} from '../../../../Helpers';
-import {colors, fontFamily, screenName} from '../../../../constants';
+import {screenName} from '../../../../constants';
 import styles from './styles';
 import {AppIcon} from '../../../../assets/icons';
 import {useNavigation} from '@react-navigation/native';

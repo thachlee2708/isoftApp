@@ -1,16 +1,8 @@
-import {
-  SafeAreaView,
-  Text,
-  Image,
-  View,
-  ImageBackground,
-  TouchableOpacity,
-} from 'react-native';
+import {SafeAreaView, Text, View, TouchableOpacity} from 'react-native';
 import React, {memo} from 'react';
 import AppImageSvg from '../../../../../../components/AppImageSvg';
 import {AppIcon} from '../../../../../../assets/icons';
 import {pxScale} from '../../../../../../Helpers';
-import {colors} from '../../../../../../constants';
 import styles from './styles';
 const cardQR = ({sourceIcon, sourceQR, textTitle}) => {
   const [showQR, setShowQR] = React.useState(false);
@@ -20,7 +12,7 @@ const cardQR = ({sourceIcon, sourceQR, textTitle}) => {
   return (
     <SafeAreaView
       style={{
-        overflow: 'hidden',
+        // overflow: 'hidden',
         paddingBottom: pxScale.hp(10),
         paddingHorizontal: pxScale.hp(5),
       }}>

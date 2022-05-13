@@ -18,7 +18,8 @@ import AppButton from '../../../../components/AppButton';
 import styles from './styles';
 import AppTextInput from '../../../../components/AppTextInput';
 import {colors, screenName} from '../../../../constants';
-const StaffAccess = () => {
+const StaffAccess = ({route}) => {
+  const {isReload} = route.params;
   const [companyCode, setCompanyCode] = React.useState('');
   const [userName, setUserName] = React.useState('');
   const [password, setPassword] = React.useState('');
@@ -32,6 +33,11 @@ const StaffAccess = () => {
   const navigateToResetPassword = React.useCallback(() => {
     navigation.navigate(screenName.ResetPassword);
   }, [navigation]);
+  React.useEffect(() => {
+    setCompanyCode('');
+    setUserName('');
+    setPassword('');
+  }, [isReload]);
   return (
     <SafeAreaView>
       <AppHeader textTitle={'Login'} onpressBackIcon={onGoBack} />
