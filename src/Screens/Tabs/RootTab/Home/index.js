@@ -17,7 +17,7 @@ const HomeTab = () => {
     Platform.OS === 'android' ? false : true,
   );
   React.useEffect(() => {
-    setTimeout(() => setShouldRenderBlur(true), 50);
+    setTimeout(() => setShouldRenderBlur(true), 1000);
   });
   const backAction = () => {
     setShouldRenderBlur(false);

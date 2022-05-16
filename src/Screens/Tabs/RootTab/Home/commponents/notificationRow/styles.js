@@ -6,7 +6,7 @@ export default StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     // justifyContent: 'flex-end',
-    marginVertical: pxScale.hp(10),
+    marginVertical: pxScale.hp(15),
   },
   textNewContainer: {
     paddingVertical: pxScale.wp(4),
@@ -18,11 +18,11 @@ export default StyleSheet.create({
   },
   textNew: {
     color: colors.primary.green,
-    fontSize: pxScale.fontSize(20),
+    fontSize: pxScale.fontSize(16),
     textAlignVertical: 'center',
   },
   textViewAll: {
     color: colors.primary.green,
-    fontSize: pxScale.fontSize(20),
+    fontSize: pxScale.fontSize(16),
   },
 });

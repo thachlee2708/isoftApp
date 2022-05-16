@@ -73,6 +73,7 @@ const AppInput = ({
         {secureTextEntry && (
           <TouchableOpacity onPress={onPressHidePass(isPassHide)}>
             <AppImageSvg
+              style={{marginRight: pxScale.wp(10)}}
               source={eyeIcon}
               height={pxScale.hp(27)}
               width={pxScale.wp(30)}

@@ -16,8 +16,9 @@ export default StyleSheet.create({
     height: pxScale.hp(926),
   },
   headerContainer: {
-    marginTop: pxScale.hp(28),
+    marginTop: pxScale.hp(0),
     flexDirection: 'row',
+    alignItems: 'center',
   },
   headerText: {
     fontFamily: fontFamily.InterRegular,
@@ -25,7 +26,7 @@ export default StyleSheet.create({
     fontSize: pxScale.fontSize(14),
   },
   frontIconContainer: {
-    marginTop: pxScale.hp(109),
+    marginTop: pxScale.hp(80),
   },
   getStartedButton: {
     marginTop: pxScale.hp(151),

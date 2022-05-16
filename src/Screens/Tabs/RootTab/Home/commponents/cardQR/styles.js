@@ -8,6 +8,8 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   buttonContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
     flexDirection: 'row',
     backgroundColor: colors.primary.white,
     borderRadius: pxScale.wp(8),
@@ -17,13 +19,15 @@ export default StyleSheet.create({
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
-      height: 10,
+      height: 3,
     },
-    shadowRadius: 3.84,
-    shadowOpacity: 1,
-    elevation: 8,
+    shadowRadius: 2,
+    shadowOpacity: 0.15,
+    elevation: 6,
   },
   text: {
+    padding: 0,
+    marginLeft: pxScale.wp(10),
     color: colors.primary.black,
   },
 });

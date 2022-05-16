@@ -10,10 +10,10 @@ export default StyleSheet.create({
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
-      height: 8,
+      height: 4,
     },
-    shadowRadius: 3.84,
-    shadowOpacity: 0.25,
+    shadowRadius: 1,
+    shadowOpacity: 0.05,
     elevation: 5,
   },
 });

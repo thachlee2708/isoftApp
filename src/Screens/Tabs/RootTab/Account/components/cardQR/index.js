@@ -28,7 +28,7 @@ const cardQR = ({sourceIcon, sourceQR, textTitle}) => {
               style={{position: 'absolute'}}
               source={AppIcon.line}
               height={pxScale.hp(50)}
-              width={pxScale.wp(3)}
+              width={pxScale.wp(4)}
             />
             <AppImageSvg
               source={sourceIcon}

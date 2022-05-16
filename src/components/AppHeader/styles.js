@@ -7,7 +7,7 @@ export default StyleSheet.create({
     width: pxScale.wp(820),
     height: pxScale.hp(246),
     left: pxScale.wp(-210),
-    top: pxScale.hp(-140),
+    top: pxScale.hp(-150),
   },
   contentContainer: {
     flexDirection: 'row',

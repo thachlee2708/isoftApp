@@ -38,24 +38,16 @@ const listCard = ({data}) => {
     <View>
       <Animated.FlatList
         ref={flatlistRef}
-        // pagingEnabled
+        pagingEnabled
         horizontal
         data={data}
         showsHorizontalScrollIndicator={false}
         renderItem={renderItems}
         keyExtractor={(_, index) => index.toString()}
-        initialNumToRender={10}
-        removeClippedSubviews
         contentContainerStyle={{
           marginVertical: pxScale.hp(5),
         }}
-        getItemLayout={(data, index) => ({
-          length: 0,
-          offset: 0 * index,
-          index,
-        })}
       />
-      <SlidingDot data={data} scrollX={scrollX} />
     </View>
   );
 };

@@ -1,16 +1,15 @@
-import {StyleSheet} from 'react-native';
+import {Platform, StyleSheet} from 'react-native';
 import {fontFamily} from '../../../../../../constants';
 import {pxScale} from '../../../../../../Helpers';
 export default StyleSheet.create({
   imageHeader: {
     height: pxScale.hp(280),
-    width: pxScale.wp(428),
+    width: pxScale.wp(440),
   },
   blurContainer: {
-    top: pxScale.hp(45),
+    top: Platform.OS === 'android' ? pxScale.hp(40) : pxScale.hp(70),
     borderRadius: pxScale.wp(6),
     overflow: 'hidden',
-    flex: 1,
     width: pxScale.wp(380),
     backgroundColor: 'transparent',
     position: 'absolute',
