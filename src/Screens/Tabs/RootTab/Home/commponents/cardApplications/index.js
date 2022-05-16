@@ -17,14 +17,14 @@ const cardApplications = () => {
         />
         <OptionApplications
           titleText={'POS'}
-          sourceImage={AppImage.option2}
+          sourceImage={AppImage.option3}
           sourceIcon={AppIcon.hrIcon}
         />
       </View>
       <View style={styles.optionContainer}>
         <OptionApplications
           titleText={'Intranet'}
-          sourceImage={AppImage.option3}
+          sourceImage={AppImage.option2}
           sourceIcon={AppIcon.hrIcon}
         />
         <OptionApplications
