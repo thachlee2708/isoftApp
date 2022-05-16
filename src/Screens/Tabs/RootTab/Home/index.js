@@ -9,7 +9,8 @@ import NotificationRow from './commponents/notificationRow';
 import CardApplications from './commponents/cardApplications';
 import CardQR from './commponents/cardQR';
 import ListCard from './commponents/listCard';
-import dataTest from './dataTest';
+import dataTest from './dataTest/dataListTest.js';
+import dataNotificationTest from './dataTest/dataNotificationTest';
 const HomeTab = () => {
   const navigation = useNavigation();
   const [shouldRenderBlur, setShouldRenderBlur] = React.useState(
@@ -39,7 +40,7 @@ const HomeTab = () => {
           marginHorizontal: pxScale.wp(16),
         }}>
         <CardQR />
-        <NotificationRow newNumber={4} />
+        <NotificationRow newNumber={dataNotificationTest?.length} />
         <ListCard data={dataTest} />
         <Text style={styles.ApplicationText}>Applications</Text>
         <CardApplications />
