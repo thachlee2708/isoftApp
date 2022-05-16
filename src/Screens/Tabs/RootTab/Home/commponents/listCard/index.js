@@ -36,7 +36,7 @@ const listCard = ({data}) => {
   });
   return (
     <View>
-      <Animated.FlatList
+      <FlatList
         ref={flatlistRef}
         pagingEnabled
         horizontal

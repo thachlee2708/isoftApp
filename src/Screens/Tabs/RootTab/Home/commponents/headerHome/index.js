@@ -3,9 +3,10 @@ import React, {memo} from 'react';
 import {AppImage} from '../../../../../../assets/images';
 import {BlurView} from '@react-native-community/blur';
 import styles from './styles';
+import {pxScale} from '../../../../../../Helpers';
 const headerHome = ({lastLoggedInTime, shouldRenderBlur}) => {
   return (
-    <>
+    <View style={{margin: 0, padding: 0, height: pxScale.hp(230)}}>
       <ImageBackground
         resizeMode="contain"
         source={AppImage.headerHome}
@@ -21,7 +22,7 @@ const headerHome = ({lastLoggedInTime, shouldRenderBlur}) => {
           Last logged in: {lastLoggedInTime}
         </Text>
       </View>
-    </>
+    </View>
   );
 };
 export default memo(headerHome);
