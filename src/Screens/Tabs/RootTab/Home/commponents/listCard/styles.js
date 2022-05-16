@@ -42,4 +42,24 @@ export default StyleSheet.create({
     fontFamily: fontFamily.InterRegular,
     fontSize: pxScale.fontSize(16),
   },
+  dotsContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  activeDot: {
+    backgroundColor: colors.primary.green,
+    width: pxScale.wp(10),
+    height: pxScale.wp(10),
+    marginLeft: pxScale.wp(8),
+    borderRadius: pxScale.wp(100),
+  },
+  inActiveDot: {
+    backgroundColor: colors.label['text-D9ECDA'],
+    padding: 0,
+    width: pxScale.wp(10),
+    height: pxScale.wp(10),
+    marginLeft: pxScale.wp(8),
+    borderRadius: pxScale.wp(100),
+  },
 });

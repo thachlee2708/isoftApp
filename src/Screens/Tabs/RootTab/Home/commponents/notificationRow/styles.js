@@ -6,7 +6,7 @@ export default StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     // justifyContent: 'flex-end',
-    marginVertical: pxScale.hp(15),
+    marginTop: pxScale.hp(30),
   },
   textNewContainer: {
     paddingVertical: pxScale.wp(4),

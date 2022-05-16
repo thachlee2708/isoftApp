@@ -12,33 +12,76 @@ import styles from './styles';
 import {SlidingDot} from 'react-native-animated-pagination-dots';
 import AppImageSvg from '../../../../../../components/AppImageSvg';
 import {SCREEN_WIDTH} from '../../../../../../constants';
+import useDynamicRefs from 'use-dynamic-refs';
 const listCard = ({data}) => {
   const flatlistRef = React.useRef();
-  const scrollX = React.useRef(new Animated.Value(0)).current;
+  const [dots, setDots] = React.useState([]);
+  const [currentDotIndex, setCurrentDotIndex] = React.useState(0);
+  React.useEffect(() => {
+    const arr = new Array(data.length).fill(0);
+    setDots(arr);
+  }, [data?.length]);
+  const handleOnScroll = React.useCallback(
+    event => {
+      setCurrentDotIndex(
+        Math.abs(
+          parseInt(
+            event.nativeEvent.contentOffset.x /
+              (pxScale.wp(428) - pxScale.wp(25) * dots.length),
+            10,
+          ),
+        ),
+      );
+    },
+    [dots.length],
+  );
+
+  // React.useEffect(() => {
+  //   getRef(`${currentDotIndex}k`)?.current &&
+  //     getRef(`${currentDotIndex}k`)?.current?.bounceIn(1000);
+  // }, [currentDotIndex, getRef]);
+
+  const renderDot = React.useCallback(
+    (item, index) => {
+      return (
+        <View
+          key={index.toString()}
+          useNativeDriver={true}
+          duration={500}
+          style={
+            index === currentDotIndex ? styles.activeDot : styles.inActiveDot
+          }
+        />
+      );
+    },
+    [currentDotIndex],
+  );
+  const onpressItem = React.useCallback(item => {}, []);
   const renderItems = React.useCallback(({item, index}) => {
     return (
-      <TouchableOpacity activeOpacity={1}>
-        <View style={styles.container}>
-          <View style={styles.titleContainer}>
-            <AppImageSvg
-              source={item.icon}
-              width={pxScale.wp(30)}
-              height={pxScale.hp(40)}
-            />
-            <Text style={styles.titleText}>{item.title}</Text>
+      <>
+        <TouchableOpacity activeOpacity={1} onPress={onpressItem}>
+          <View style={styles.container}>
+            <View style={styles.titleContainer}>
+              <AppImageSvg
+                source={item.icon}
+                width={pxScale.wp(30)}
+                height={pxScale.hp(40)}
+              />
+              <Text style={styles.titleText}>{item.title}</Text>
+            </View>
+            <Text>{item.time}</Text>
+            <Text style={styles.detailsText}>{item.details}</Text>
+            <Text style={styles.viewMoreText}>{'View more >'}</Text>
           </View>
-          <Text>{item.time}</Text>
-          <Text style={styles.detailsText}>{item.details}</Text>
-          <Text style={styles.viewMoreText}>{'View more >'}</Text>
-        </View>
-      </TouchableOpacity>
+        </TouchableOpacity>
+      </>
     );
   });
   return (
     <View>
       <FlatList
-        ref={flatlistRef}
-        pagingEnabled
+        onScroll={e => handleOnScroll(e)}
         horizontal
         data={data}
         showsHorizontalScrollIndicator={false}
@@ -48,6 +91,9 @@ const listCard = ({data}) => {
           marginVertical: pxScale.hp(5),
         }}
       />
+      <View style={styles.dotsContainer}>
+        {dots.length > 0 && dots.map(renderDot)}
+      </View>
     </View>
   );
 };
