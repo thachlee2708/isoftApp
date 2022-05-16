@@ -16,7 +16,7 @@ const listCard = ({data}) => {
       console.log('2708', event.nativeEvent.contentOffset.x);
       setCurrentDotIndex(
         Math.abs(
-          parseInt(event.nativeEvent.contentOffset.x / pxScale.wp(335), 10),
+          parseInt(event.nativeEvent.contentOffset.x / pxScale.wp(337), 10),
         ),
       );
     },
