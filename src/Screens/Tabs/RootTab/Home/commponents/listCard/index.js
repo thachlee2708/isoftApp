@@ -1,9 +1,10 @@
 import {Text, View, FlatList, TouchableOpacity} from 'react-native';
-import React, {memo} from 'react';
+import React, {memo, useRef} from 'react';
 import {pxScale} from '../../../../../../Helpers';
 import styles from './styles';
 import AppImageSvg from '../../../../../../components/AppImageSvg';
 const listCard = ({data}) => {
+  const flatListRef = React.useRef();
   const [dots, setDots] = React.useState([]);
   const [currentDotIndex, setCurrentDotIndex] = React.useState(0);
   React.useEffect(() => {
@@ -12,17 +13,14 @@ const listCard = ({data}) => {
   }, [data?.length]);
   const handleOnScroll = React.useCallback(
     event => {
+      console.log('2708', event.nativeEvent.contentOffset.x);
       setCurrentDotIndex(
         Math.abs(
-          parseInt(
-            event.nativeEvent.contentOffset.x /
-              (pxScale.wp(428) - pxScale.wp(25) * dots.length),
-            10,
-          ),
+          parseInt(event.nativeEvent.contentOffset.x / pxScale.wp(335), 10),
         ),
       );
     },
-    [dots.length],
+    [dots.length, flatListRef],
   );
 
   const renderDot = React.useCallback(
@@ -65,6 +63,7 @@ const listCard = ({data}) => {
   return (
     <View>
       <FlatList
+        ref={flatListRef}
         onScroll={e => handleOnScroll(e)}
         horizontal
         data={data}
