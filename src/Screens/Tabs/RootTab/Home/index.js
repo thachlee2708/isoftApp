@@ -34,7 +34,10 @@ const HomeTab = () => {
         lastLoggedInTime={'21 Oct 2021 10:44:20'}
         shouldRenderBlur={shouldRenderBlur}
       />
-      <View style={{marginHorizontal: pxScale.wp(16)}}>
+      <View
+        style={{
+          marginHorizontal: pxScale.wp(16),
+        }}>
         <CardQR />
         <NotificationRow newNumber={4} />
         <ListCard data={dataTest} />

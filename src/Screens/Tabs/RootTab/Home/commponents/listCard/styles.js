@@ -3,6 +3,8 @@ import {colors, fontFamily} from '../../../../../../constants';
 import {pxScale} from '../../../../../../Helpers';
 export default StyleSheet.create({
   container: {
+    maxWidth: pxScale.wp(337),
+    maxHeight: pxScale.hp(220),
     marginRight: pxScale.wp(20),
     shadowColor: '#000',
     shadowOffset: {
@@ -10,13 +12,12 @@ export default StyleSheet.create({
       height: 3,
     },
     shadowRadius: 2,
-    shadowOpacity: 0.15,
+    shadowOpacity: 0.1,
     elevation: 6,
     backgroundColor: colors.primary.white,
     borderRadius: pxScale.wp(8),
     padding: pxScale.hp(15),
     marginVertical: pxScale.hp(15),
-    marginLeft: pxScale.wp(5),
   },
   titleContainer: {
     flexDirection: 'row',
@@ -31,7 +32,8 @@ export default StyleSheet.create({
   },
   detailsText: {
     marginTop: pxScale.hp(5),
-    maxWidth: pxScale.wp(310),
+    maxWidth: pxScale.wp(300),
+    maxHeight: pxScale.hp(40),
     color: colors.primary.black,
     fontSize: pxScale.fontSize(16),
   },

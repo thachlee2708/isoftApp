@@ -1,4 +1,4 @@
-import {Text, View, FlatList, TouchableOpacity} from 'react-native';
+import {Text, View, FlatList, TouchableOpacity, Platform} from 'react-native';
 import React, {memo, useRef} from 'react';
 import {pxScale} from '../../../../../../Helpers';
 import styles from './styles';
@@ -13,16 +13,15 @@ const listCard = ({data}) => {
   }, [data?.length]);
   const handleOnScroll = React.useCallback(
     event => {
-      console.log('2708', event.nativeEvent.contentOffset.x);
+      console.log('2708', 280 / pxScale.wp(308));
       setCurrentDotIndex(
-        Math.abs(
-          parseInt(event.nativeEvent.contentOffset.x / pxScale.wp(337), 10),
+        Math.round(
+          parseInt(event.nativeEvent.contentOffset.x / pxScale.wp(308)),
         ),
       );
     },
     [dots.length, flatListRef],
   );
-
   const renderDot = React.useCallback(
     (item, index) => {
       return (
@@ -53,7 +52,9 @@ const listCard = ({data}) => {
               <Text style={styles.titleText}>{item.title}</Text>
             </View>
             <Text>{item.time}</Text>
-            <Text style={styles.detailsText}>{item.details}</Text>
+            <Text numberOfLines={2} style={styles.detailsText}>
+              {item.details}
+            </Text>
             <Text style={styles.viewMoreText}>{'View more >'}</Text>
           </View>
         </TouchableOpacity>
@@ -61,17 +62,23 @@ const listCard = ({data}) => {
     );
   });
   return (
-    <View>
+    <View style={{}}>
       <FlatList
         ref={flatListRef}
         onScroll={e => handleOnScroll(e)}
         horizontal
+        pagingEnabled
+        decelerationRate={0}
+        snapToInterval={
+          Platform.OS === 'ios' ? pxScale.wp(330) : pxScale.wp(330)
+        }
         data={data}
         showsHorizontalScrollIndicator={false}
         renderItem={renderItems}
         keyExtractor={(_, index) => index.toString()}
         contentContainerStyle={{
           marginVertical: pxScale.hp(5),
+          paddingHorizontal: pxScale.wp(5),
         }}
       />
       <View style={styles.dotsContainer}>

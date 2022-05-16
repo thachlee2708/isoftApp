@@ -149,6 +149,7 @@ export default dataTest = [
   `,
     title: 'FRH - 2021-12 Payroll Approved',
     time: '3 day(s) ago',
-    details: 'FRH - 2021-12 - Payroll was Approved By Jason Tan Jun Jie',
+    details:
+      'FRH - 2021-12 - Payroll was Approved By Jason Tan Jun Jie FRH - 2021-12 - Payroll was Approved By Jason Tan Jun Jie FRH - 2021-12 - Payroll was Approved By Jason Tan Jun Jie FRH - 2021-12 - Payroll was Approved By Jason Tan Jun Jie FRH - 2021-12 - Payroll was Approved By Jason Tan Jun Jie FRH - 2021-12 - Payroll was Approved By Jason Tan Jun Jie',
   },
 ];
