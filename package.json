@@ -29,7 +29,6 @@
     "react-native-svg": "^12.3.0",
     "react-native-tab-view": "^3.1.1",
     "react-navigation-stack": "^2.10.4",
-    "use-dynamic-refs": "^1.0.0",
     "yarn": "^1.22.18"
   },
   "devDependencies": {

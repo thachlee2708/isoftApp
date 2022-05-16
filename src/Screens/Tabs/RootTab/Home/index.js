@@ -4,7 +4,6 @@ import {AppImage} from '../../../../assets/images';
 import {pxScale} from '../../../../Helpers';
 import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
-import {AppIcon} from '../../../../assets/icons';
 import HeaderHome from './commponents/headerHome';
 import NotificationRow from './commponents/notificationRow';
 import CardApplications from './commponents/cardApplications';
@@ -30,7 +29,7 @@ const HomeTab = () => {
       BackHandler.removeEventListener('hardwareBackPress', backAction);
   });
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <HeaderHome
         lastLoggedInTime={'21 Oct 2021 10:44:20'}
         shouldRenderBlur={shouldRenderBlur}

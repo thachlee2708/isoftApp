@@ -1,20 +1,9 @@
-import {
-  Text,
-  View,
-  ImageBackground,
-  FlatList,
-  Animated,
-  TouchableOpacity,
-} from 'react-native';
+import {Text, View, FlatList, TouchableOpacity} from 'react-native';
 import React, {memo} from 'react';
 import {pxScale} from '../../../../../../Helpers';
 import styles from './styles';
-import {SlidingDot} from 'react-native-animated-pagination-dots';
 import AppImageSvg from '../../../../../../components/AppImageSvg';
-import {SCREEN_WIDTH} from '../../../../../../constants';
-import useDynamicRefs from 'use-dynamic-refs';
 const listCard = ({data}) => {
-  const flatlistRef = React.useRef();
   const [dots, setDots] = React.useState([]);
   const [currentDotIndex, setCurrentDotIndex] = React.useState(0);
   React.useEffect(() => {
@@ -35,11 +24,6 @@ const listCard = ({data}) => {
     },
     [dots.length],
   );
-
-  // React.useEffect(() => {
-  //   getRef(`${currentDotIndex}k`)?.current &&
-  //     getRef(`${currentDotIndex}k`)?.current?.bounceIn(1000);
-  // }, [currentDotIndex, getRef]);
 
   const renderDot = React.useCallback(
     (item, index) => {
