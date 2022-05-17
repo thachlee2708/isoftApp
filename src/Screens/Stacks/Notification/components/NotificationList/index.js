@@ -20,7 +20,7 @@ const NotificationList = ({data}) => {
     return (
       <View style={{flex: 1}}>
         <Text>{formatDay(item[0].date)}</Text>
-        {item.map((item, index) => {
+        {item.map(item => {
           return (
             <View
               style={{
@@ -54,7 +54,7 @@ const NotificationList = ({data}) => {
     );
   });
   return (
-    <View style={{height: pxScale.hp(550), marginTop: pxScale.hp(20)}}>
+    <View style={{height: pxScale.hp(600), marginTop: pxScale.hp(20)}}>
       <FlatList
         ref={flatListRef}
         data={data}
@@ -62,7 +62,7 @@ const NotificationList = ({data}) => {
         renderItem={renderItems}
         keyExtractor={(_, index) => index.toString()}
         contentContainerStyle={{
-          paddingBottom: pxScale.hp(30),
+          paddingBottom: pxScale.hp(70),
         }}
       />
     </View>
