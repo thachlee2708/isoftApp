@@ -25,7 +25,8 @@ const RootTabNavigator = () => {
         tabBarIconStyle: {alignItems: 'center', justifyContent: 'center'},
         tabBarLabelStyle: {
           textTransform: 'none',
-          fontSize: pxScale.fontSize(18),
+          fontSize: pxScale.fontSize(16),
+          marginBottom: pxScale.hp(20),
         },
         tabBarActiveTintColor: colors.primary.green,
         tabBarInactiveTintColor: '#979797',

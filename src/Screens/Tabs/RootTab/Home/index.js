@@ -5,12 +5,13 @@ import {pxScale} from '../../../../Helpers';
 import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
 import HeaderHome from './commponents/headerHome';
-import NotificationRow from './commponents/notificationRow';
+import NotificationRow from './commponents/NotificationRow';
 import CardApplications from './commponents/cardApplications';
 import CardQR from './commponents/cardQR';
 import ListCard from './commponents/listCard';
 import dataListTest from './dataTest/dataListTest.js';
 import dataNotificationTest from './dataTest/dataNotificationTest';
+import {screenName} from '../../../../constants';
 const HomeTab = () => {
   const navigation = useNavigation();
   const [shouldRenderBlur, setShouldRenderBlur] = React.useState(
@@ -29,6 +30,9 @@ const HomeTab = () => {
     return () =>
       BackHandler.removeEventListener('hardwareBackPress', backAction);
   });
+  const navigateToNotifications = React.useCallback(() => {
+    navigation.navigate(screenName.Notification);
+  }, [navigation]);
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <HeaderHome
@@ -40,7 +44,11 @@ const HomeTab = () => {
           marginHorizontal: pxScale.wp(16),
         }}>
         <CardQR />
-        <NotificationRow newNumber={dataNotificationTest?.length} />
+        <NotificationRow
+          viewAll={true}
+          newNumber={dataNotificationTest?.length}
+          onPress={navigateToNotifications}
+        />
         <ListCard data={dataTest} />
         <Text style={styles.ApplicationText}>Applications</Text>
         <CardApplications />

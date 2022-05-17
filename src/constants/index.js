@@ -45,6 +45,7 @@ export const screenName = {
   MoreTab: 'More',
   RootTab: 'RootTab',
   ChangePassword: 'ChangePassword',
+  Notification: 'Notification',
 };
 export const fontFamily = {
   InterRegular: 'Inter-Regular',

@@ -7,6 +7,7 @@ import ResetPassword from '../Screens/Stacks/Auth/ResetPassword';
 import RootTabNavigator from '../TabNavigator/Root';
 import {screenName} from '../constants';
 import ChangePassword from '../Screens/Stacks/Auth/ChangePassword';
+import Notification from '../Screens/Stacks/Notification';
 const Stack = createNativeStackNavigator();
 const RootStack = () => {
   return (
@@ -39,6 +40,11 @@ const RootStack = () => {
       <Stack.Screen
         component={RootTabNavigator}
         name={screenName.RootTab}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        component={Notification}
+        name={screenName.Notification}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

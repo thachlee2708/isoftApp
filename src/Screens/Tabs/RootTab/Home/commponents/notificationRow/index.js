@@ -6,7 +6,7 @@ import styles from './styles';
 import AppImageSvg from '../../../../../../components/AppImageSvg';
 import {AppIcon} from '../../../../../../assets/icons';
 import {pxScale} from '../../../../../../Helpers';
-const notificationRow = ({onPress, newNumber}) => {
+const notificationRow = ({onPress, newNumber, viewAll, markAsRead}) => {
   return (
     <View style={styles.container}>
       <AppImageSvg
@@ -18,9 +18,24 @@ const notificationRow = ({onPress, newNumber}) => {
         <Text style={styles.textNew}>{newNumber} new</Text>
       </View>
       <View style={{flex: 1}}></View>
-      <TouchableOpacity onPress={onPress}>
-        <Text style={styles.textViewAll}>{'View all notifications >'}</Text>
-      </TouchableOpacity>
+      {viewAll && (
+        <TouchableOpacity onPress={onPress}>
+          <Text style={styles.textViewAll}>{'View all notifications >'}</Text>
+        </TouchableOpacity>
+      )}
+      {markAsRead && (
+        <TouchableOpacity onPress={onPress}>
+          <View style={{flexDirection: 'row'}}>
+            <AppImageSvg
+              style={{marginRight: pxScale.wp(5)}}
+              source={AppIcon.readMark}
+              width={pxScale.wp(18)}
+              height={pxScale.wp(18)}
+            />
+            <Text style={styles.textViewAll}>{'Mark all as read'}</Text>
+          </View>
+        </TouchableOpacity>
+      )}
     </View>
   );
 };

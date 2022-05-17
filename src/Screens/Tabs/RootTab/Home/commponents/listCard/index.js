@@ -13,7 +13,6 @@ const listCard = ({data}) => {
   }, [data?.length]);
   const handleOnScroll = React.useCallback(
     event => {
-      console.log('2708', 280 / pxScale.wp(308));
       setCurrentDotIndex(
         Math.round(
           parseInt(event.nativeEvent.contentOffset.x / pxScale.wp(308)),
