@@ -5,7 +5,7 @@ import {
 import {isIphoneX} from 'react-native-iphone-x-helper';
 import {RFValue} from 'react-native-responsive-fontsize';
 import {Platform, Dimensions, StatusBar} from 'react-native';
-
+import moment from 'moment';
 const {width: SCREEN_WIDTH, height: SCREEN_HEIGHT} = Dimensions.get('window');
 
 export const pxScale = {
@@ -30,4 +30,7 @@ export const pxScale = {
   fontSize(px, baseHeight = isIphoneX() ? 926 : this.guidelineBaseHeight) {
     return RFValue(px, baseHeight);
   },
+};
+export const formatDay = day => {
+  return moment(day).format('ddd,MMM,DD');
 };

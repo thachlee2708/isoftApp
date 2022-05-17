@@ -9,7 +9,7 @@ import NotificationRow from './commponents/notificationRow';
 import CardApplications from './commponents/cardApplications';
 import CardQR from './commponents/cardQR';
 import ListCard from './commponents/listCard';
-import dataTest from './dataTest/dataListTest.js';
+import dataListTest from './dataTest/dataListTest.js';
 import dataNotificationTest from './dataTest/dataNotificationTest';
 const HomeTab = () => {
   const navigation = useNavigation();
