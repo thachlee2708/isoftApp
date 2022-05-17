@@ -12,14 +12,15 @@ import ListCard from './commponents/listCard';
 import dataListTest from './dataTest/dataListTest.js';
 import dataNotificationTest from './dataTest/dataNotificationTest';
 import {screenName} from '../../../../constants';
-const HomeTab = () => {
+const Home = ({route}) => {
+  const isReload = route.params;
   const navigation = useNavigation();
   const [shouldRenderBlur, setShouldRenderBlur] = React.useState(
     Platform.OS === 'android' ? false : true,
   );
   React.useEffect(() => {
     setTimeout(() => setShouldRenderBlur(true), 1000);
-  });
+  }, [isReload]);
   const backAction = () => {
     setShouldRenderBlur(false);
     navigation.goBack();
@@ -31,6 +32,7 @@ const HomeTab = () => {
       BackHandler.removeEventListener('hardwareBackPress', backAction);
   });
   const navigateToNotifications = React.useCallback(() => {
+    setShouldRenderBlur(false);
     navigation.navigate(screenName.Notification);
   }, [navigation]);
   return (
@@ -56,4 +58,4 @@ const HomeTab = () => {
     </ScrollView>
   );
 };
-export default memo(HomeTab);
+export default memo(Home);

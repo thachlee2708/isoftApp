@@ -14,37 +14,32 @@ const RootStack = () => {
     <Stack.Navigator>
       <Stack.Screen
         component={FirstTimeLogin}
-        name="FirstTimeLogin"
+        name={screenName.FirstTimeLogin}
         options={{headerShown: false}}
       />
       <Stack.Screen
         component={StaffAccess}
-        name="StaffAccess"
+        name={screenName.StaffAccess}
         options={{headerShown: false}}
       />
       <Stack.Screen
         component={PDPAAgree}
-        name="PDPAAgree"
+        name={screenName.PDPAAgree}
         options={{headerShown: false}}
       />
       <Stack.Screen
         component={ResetPassword}
-        name="ResetPassword"
+        name={screenName.ResetPassword}
         options={{headerShown: false}}
       />
       <Stack.Screen
         component={ChangePassword}
-        name="ChangePassword"
+        name={screenName.ChangePassword}
         options={{headerShown: false}}
       />
       <Stack.Screen
         component={RootTabNavigator}
         name={screenName.RootTab}
-        options={{headerShown: false}}
-      />
-      <Stack.Screen
-        component={Notification}
-        name={screenName.Notification}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

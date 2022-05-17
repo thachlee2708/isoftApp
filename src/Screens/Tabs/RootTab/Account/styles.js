@@ -3,7 +3,7 @@ import {pxScale} from '../../../../Helpers';
 import {colors} from '../../../../constants';
 import {fontFamily} from '../../../../constants';
 export default StyleSheet.create({
-  container: {flex: 1, backgroundColor: colors.primary.white},
+  container: {backgroundColor: colors.primary.white},
   imageBackground: {
     width: pxScale.wp(600),
     height: pxScale.hp(418),

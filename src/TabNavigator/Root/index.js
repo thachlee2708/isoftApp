@@ -10,6 +10,7 @@ import Home from '../../Screens/Tabs/RootTab/Home';
 import More from '../../Screens/Tabs/RootTab/More';
 import {TabBar} from 'react-native-tab-view';
 import styles from './styles';
+import HomeStack from '../../StackNavigator/HomeStack';
 const Tab = createMaterialTopTabNavigator();
 const RootTabNavigator = () => {
   return (
@@ -65,7 +66,7 @@ const RootTabNavigator = () => {
       })}
       tabBarPosition="bottom"
       keyboardDismissMode="auto">
-      <Tab.Screen name={screenName.HomeTab} component={Home} />
+      <Tab.Screen name={screenName.HomeTab} component={HomeStack} />
       <Tab.Screen name={screenName.AccountTab} component={Account} />
       <Tab.Screen name={screenName.MoreTab} component={More} />
     </Tab.Navigator>

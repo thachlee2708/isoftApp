@@ -32,5 +32,5 @@ export const pxScale = {
   },
 };
 export const formatDay = day => {
-  return moment(day).format('ddd,MMM,DD');
+  return moment(day).format('ddd, MMM DD');
 };
