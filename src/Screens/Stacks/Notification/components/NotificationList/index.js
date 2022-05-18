@@ -21,6 +21,7 @@ const NotificationList = ({data}) => {
       <View style={{flex: 1}}>
         <Text>{formatDay(item[0].date)}</Text>
         {item.map((item, index) => {
+          item.key = index;
           return (
             <View
               style={{
@@ -35,16 +36,14 @@ const NotificationList = ({data}) => {
               />
               <Text
                 numberOfLines={2}
-                style={{
-                  maxWidth: pxScale.wp(330),
-                  maxHeight: pxScale.hp(60),
-                  fontFamily: item.read
-                    ? fontFamily.InterRegular
-                    : fontFamily.InterBold,
-                  color: colors.primary.black,
-                  fontSize: pxScale.fontSize(18),
-                  marginLeft: pxScale.wp(15),
-                }}>
+                style={[
+                  styles.titleText,
+                  {
+                    fontFamily: item.read
+                      ? fontFamily.InterRegular
+                      : fontFamily.InterBold,
+                  },
+                ]}>
                 {item.title}
               </Text>
             </View>
@@ -54,7 +53,7 @@ const NotificationList = ({data}) => {
     );
   });
   return (
-    <View style={{height: pxScale.hp(550), marginTop: pxScale.hp(20)}}>
+    <View style={{height: pxScale.hp(600), marginTop: pxScale.hp(20)}}>
       <FlatList
         ref={flatListRef}
         data={data}
@@ -62,7 +61,7 @@ const NotificationList = ({data}) => {
         renderItem={renderItems}
         keyExtractor={(_, index) => index.toString()}
         contentContainerStyle={{
-          paddingBottom: pxScale.hp(30),
+          paddingBottom: pxScale.hp(35),
         }}
       />
     </View>
