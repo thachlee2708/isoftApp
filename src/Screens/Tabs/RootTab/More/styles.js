@@ -28,5 +28,6 @@ export default StyleSheet.create({
     flex: 1,
     fontFamily: fontFamily.InterRegular,
     fontSize: pxScale.fontSize(20),
+    marginVertical: pxScale.hp(5),
   },
 });
