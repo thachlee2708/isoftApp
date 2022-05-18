@@ -21,7 +21,7 @@ const NotificationList = ({data}) => {
       <View style={{flex: 1}}>
         <Text>{formatDay(item[0].date)}</Text>
         {item.map((item, index) => {
-          item.key = index;
+          item.key = index.toString();
           return (
             <View
               style={{
