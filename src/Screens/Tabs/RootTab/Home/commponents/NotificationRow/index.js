@@ -6,7 +6,37 @@ import styles from './styles';
 import AppImageSvg from '../../../../../../components/AppImageSvg';
 import {AppIcon} from '../../../../../../assets/icons';
 import {pxScale} from '../../../../../../Helpers';
+import {useDispatch, useSelector} from 'react-redux';
+import {UPDATE_NOTIFICATION_LIST} from '../../../../../../Redux/Notification/actions';
+import dataNotificationTest from '../../dataTest/dataNotificationTest';
 const notificationRow = ({onPress, newNumber, viewAll, markAsRead}) => {
+  const dispatch = useDispatch();
+  const notificationList = useSelector(
+    rootState => rootState.notificationReducer?.notificationList,
+  );
+  const arrNotificationList = JSON.parse(JSON.stringify(dataNotificationTest));
+  const [newNotificationAmount, setNewNotificationAmount] = React.useState(0);
+  React.useEffect(() => {
+    let newAmount = 0;
+    notificationList.forEach(element => {
+      element.forEach(item => {
+        if (item.read == false) {
+          newAmount++;
+        }
+      });
+    });
+    setNewNotificationAmount(newAmount);
+    if (notificationList.length === 0) {
+      try {
+        dispatch({
+          type: UPDATE_NOTIFICATION_LIST,
+          payload: [...arrNotificationList],
+        });
+      } catch (error) {
+        console.log('error UPDATE_NOTIFICATION_LIST', error);
+      }
+    }
+  });
   return (
     <View style={styles.container}>
       <AppImageSvg
@@ -15,7 +45,7 @@ const notificationRow = ({onPress, newNumber, viewAll, markAsRead}) => {
         width={pxScale.wp(18)}
       />
       <View style={styles.textNewContainer}>
-        <Text style={styles.textNew}>{newNumber} new</Text>
+        <Text style={styles.textNew}>{newNotificationAmount} new</Text>
       </View>
       <View style={{flex: 1}}></View>
       {viewAll && (

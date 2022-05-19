@@ -4,6 +4,7 @@ import {pxScale} from '../../../../../Helpers';
 export default StyleSheet.create({
   detailsButtonContainer: {
     flexDirection: 'row',
+    justifyContent: 'center',
     alignItems: 'center',
     marginBottom: Platform.OS === 'android' ? pxScale.hp(30) : null,
   },

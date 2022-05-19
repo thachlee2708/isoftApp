@@ -53,11 +53,7 @@ const Home = ({route}) => {
           marginHorizontal: pxScale.wp(16),
         }}>
         <CardQR />
-        <NotificationRow
-          viewAll={true}
-          newNumber={dataNotificationTest?.length}
-          onPress={navigateToNotifications}
-        />
+        <NotificationRow viewAll={true} onPress={navigateToNotifications} />
         <ListCard data={dataTest} />
         <Text style={styles.ApplicationText}>Applications</Text>
         <CardApplications />

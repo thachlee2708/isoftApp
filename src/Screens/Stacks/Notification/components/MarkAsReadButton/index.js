@@ -13,11 +13,12 @@ import {pxScale} from '../../../../../Helpers';
 import {colors} from '../../../../../constants';
 import styles from './styles';
 
-const markAsReadButton = ({onPressMarkAsRead, onPressMarkAsUnRead}) => {
-  const [showOptions, setShowOptions] = React.useState(false);
-  const onpressOptions = React.useCallback(() => {
-    !showOptions ? setShowOptions(true) : setShowOptions(false);
-  }, [setShowOptions, showOptions]);
+const markAsReadButton = ({
+  onPressMarkAsRead,
+  onPressMarkAsUnRead,
+  showOptions,
+  onpressOptions,
+}) => {
   return (
     <>
       {!showOptions && (
