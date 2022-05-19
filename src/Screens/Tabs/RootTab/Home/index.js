@@ -1,4 +1,11 @@
-import {SafeAreaView, Text, View, BackHandler, ScrollView} from 'react-native';
+import {
+  SafeAreaView,
+  Text,
+  View,
+  BackHandler,
+  ScrollView,
+  Platform,
+} from 'react-native';
 import React, {memo} from 'react';
 import {AppImage} from '../../../../assets/images';
 import {pxScale} from '../../../../Helpers';
@@ -22,7 +29,7 @@ const Home = ({route}) => {
     setTimeout(() => setShouldRenderBlur(true), 1000);
   }, [isReload]);
   const backAction = () => {
-    setShouldRenderBlur(false);
+    Platform.OS === 'android' ? setShouldRenderBlur(false) : null;
     navigation.goBack();
     return true;
   };
@@ -32,7 +39,7 @@ const Home = ({route}) => {
       BackHandler.removeEventListener('hardwareBackPress', backAction);
   });
   const navigateToNotifications = React.useCallback(() => {
-    setShouldRenderBlur(false);
+    Platform.OS === 'android' ? setShouldRenderBlur(false) : null;
     navigation.navigate(screenName.Notification);
   }, [navigation]);
   return (

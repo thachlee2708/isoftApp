@@ -320,4 +320,16 @@ export const AppIcon = {
 </g>
 </svg>
 `,
+  iconCheck: `<svg xmlns="http://www.w3.org/2000/svg" width="17.113" height="16.762" viewBox="0 0 17.113 16.762">
+  <g id="check-circle" transform="translate(-0.801 -0.834)">
+    <path id="Path_1730" data-name="Path 1730" d="M16.5,8.581v.667a7.25,7.25,0,1,1-4.3-6.626" transform="translate(0 0)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <path id="Path_1731" data-name="Path 1731" d="M18.425,4l-7.25,7.257L9,9.082" transform="translate(-1.925 -0.552)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+  </g>
+</svg>`,
+  closeXIcon: `<svg xmlns="http://www.w3.org/2000/svg" width="18.243" height="18.243" viewBox="0 0 18.243 18.243">
+<g id="x" transform="translate(-3.879 -3.879)">
+  <line id="Line_126" data-name="Line 126" x1="14" y2="14" transform="translate(6 6)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+  <line id="Line_127" data-name="Line 127" x2="14" y2="14" transform="translate(6 6)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+</g>
+</svg>`,
 };

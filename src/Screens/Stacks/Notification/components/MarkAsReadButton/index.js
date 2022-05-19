@@ -13,7 +13,7 @@ import {pxScale} from '../../../../../Helpers';
 import {colors} from '../../../../../constants';
 import styles from './styles';
 
-const markAsReadButton = () => {
+const markAsReadButton = ({onPressMarkAsRead, onPressMarkAsUnRead}) => {
   const [showOptions, setShowOptions] = React.useState(false);
   const onpressOptions = React.useCallback(() => {
     !showOptions ? setShowOptions(true) : setShowOptions(false);
@@ -25,7 +25,7 @@ const markAsReadButton = () => {
           onPress={onpressOptions}
           style={{
             position: 'absolute',
-            bottom: pxScale.hp(170),
+            bottom: pxScale.hp(210),
             right: pxScale.wp(16),
             zIndex: 1,
           }}>
@@ -41,7 +41,9 @@ const markAsReadButton = () => {
       {showOptions && (
         <Modal visible={showOptions} transparent>
           <View style={styles.modalContainer}>
-            <Pressable style={styles.detailsButtonContainer}>
+            <Pressable
+              style={styles.detailsButtonContainer}
+              onPress={onPressMarkAsUnRead}>
               <View style={styles.textContainer}>
                 <Text style={styles.text}>Mark as unread</Text>
               </View>
@@ -53,7 +55,9 @@ const markAsReadButton = () => {
                 />
               </View>
             </Pressable>
-            <Pressable style={styles.detailsButtonContainer}>
+            <Pressable
+              style={styles.detailsButtonContainer}
+              onPress={onPressMarkAsRead}>
               <View style={styles.textContainer}>
                 <Text style={styles.text}>Mark as read</Text>
               </View>

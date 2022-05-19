@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   Platform,
   Pressable,
+  SafeAreaView,
   Animated,
 } from 'react-native';
 import React, {memo, useRef} from 'react';
@@ -13,11 +14,12 @@ import styles from './styles';
 import AppImageSvg from '../../../../../components/AppImageSvg';
 import {formatDay} from '../../../../../Helpers';
 import {colors, fontFamily} from '../../../../../constants';
-const NotificationList = ({data}) => {
+import CheckBox from '@react-native-community/checkbox';
+const NotificationList = ({data, isShowCheckbox, onCheckItem}) => {
   const flatListRef = React.useRef();
   const onpressItem = React.useCallback(item => {}, []);
   const renderItems = React.useCallback(({item, index}) => {
-    const renderItemline = ({item, index}) => {
+    const renderItemline = ({item, indexLine}) => {
       return (
         <View
           style={{
@@ -25,6 +27,9 @@ const NotificationList = ({data}) => {
             alignItems: 'center',
             marginVertical: pxScale.wp(10),
           }}>
+          {isShowCheckbox && (
+            <CheckBox onValueChange={onCheckItem(index, indexLine)} />
+          )}
           <AppImageSvg
             source={item.icon}
             width={pxScale.wp(30)}
@@ -49,6 +54,7 @@ const NotificationList = ({data}) => {
       <View style={{flex: 1}}>
         <Text>{formatDay(item[0].date)}</Text>
         <FlatList
+          scrollEnabled={false}
           data={item}
           renderItem={renderItemline}
           keyExtractor={(_, index) => index.toString()}
@@ -57,7 +63,7 @@ const NotificationList = ({data}) => {
     );
   });
   return (
-    <View style={{height: pxScale.hp(600), marginTop: pxScale.hp(20)}}>
+    <SafeAreaView style={{height: pxScale.hp(600), marginTop: pxScale.hp(20)}}>
       <FlatList
         ref={flatListRef}
         data={data}
@@ -68,7 +74,7 @@ const NotificationList = ({data}) => {
           paddingBottom: pxScale.hp(80),
         }}
       />
-    </View>
+    </SafeAreaView>
   );
 };
 export default memo(NotificationList);

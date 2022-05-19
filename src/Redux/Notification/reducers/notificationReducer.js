@@ -1,4 +1,4 @@
-import UPDATE_NOTIFICATION_LIST from '../actions';
+import {UPDATE_NOTIFICATION_LIST} from '../actions';
 
 const defaultState = {
   notificationList: [],
