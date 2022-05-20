@@ -6,6 +6,7 @@ import {
   View,
   Text,
   SafeAreaView,
+  Platform,
 } from 'react-native';
 import {AppIcon} from '../../../../../assets/icons';
 import AppImageSvg from '../../../../../components/AppImageSvg';
@@ -26,7 +27,7 @@ const markAsReadButton = ({
           onPress={onpressOptions}
           style={{
             position: 'absolute',
-            bottom: pxScale.hp(210),
+            bottom: Platform.OS === 'ios' ? pxScale.hp(210) : pxScale.hp(170),
             right: pxScale.wp(16),
             zIndex: 1,
           }}>

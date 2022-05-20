@@ -7,7 +7,10 @@ import AppImageSvg from '../../../../../../components/AppImageSvg';
 import {AppIcon} from '../../../../../../assets/icons';
 import {pxScale} from '../../../../../../Helpers';
 import {useDispatch, useSelector} from 'react-redux';
-import {UPDATE_NOTIFICATION_LIST} from '../../../../../../Redux/Notification/actions';
+import {
+  UPDATE_NOTIFICATION_LIST,
+  UPDATE_PREVIOUS_NOTIFICATION_LIST,
+} from '../../../../../../Redux/Notification/actions';
 import dataNotificationTest from '../../dataTest/dataNotificationTest';
 const notificationRow = ({onPress, newNumber, viewAll, markAsRead}) => {
   const dispatch = useDispatch();
@@ -27,14 +30,14 @@ const notificationRow = ({onPress, newNumber, viewAll, markAsRead}) => {
     });
     setNewNotificationAmount(newAmount);
     if (notificationList.length === 0) {
-      try {
-        dispatch({
-          type: UPDATE_NOTIFICATION_LIST,
-          payload: [...arrNotificationList],
-        });
-      } catch (error) {
-        console.log('error UPDATE_NOTIFICATION_LIST', error);
-      }
+      dispatch({
+        type: UPDATE_NOTIFICATION_LIST,
+        payload: [...arrNotificationList],
+      });
+      dispatch({
+        type: UPDATE_PREVIOUS_NOTIFICATION_LIST,
+        payload: [...JSON.parse(JSON.stringify(arrNotificationList))],
+      });
     }
   });
   return (

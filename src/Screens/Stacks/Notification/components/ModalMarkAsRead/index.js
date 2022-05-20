@@ -19,20 +19,7 @@ const ModalMarkAsRead = ({isVisible, amountNumer, onPress, readOrUnread}) => {
       transparent
       visible={isVisible}
       animationType="fade">
-      <Pressable
-        onPress={onPress}
-        style={{
-          flexDirection: 'row',
-          alignItems: 'center',
-          flex: 1,
-          position: 'absolute',
-          backgroundColor: colors.label['text-43A047'],
-          width: 350,
-          height: 50,
-          alignSelf: 'center',
-          top: pxScale.hp(130),
-          borderRadius: 10,
-        }}>
+      <Pressable onPress={onPress} style={styles.modalContainer}>
         <AppImageSvg
           style={{marginHorizontal: 10}}
           source={AppIcon.iconCheck}

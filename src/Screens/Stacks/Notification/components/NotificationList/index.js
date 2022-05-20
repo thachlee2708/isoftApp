@@ -21,12 +21,7 @@ const NotificationList = ({data}) => {
   const renderItems = React.useCallback(({item, index}) => {
     const renderItemline = ({item, indexLine}) => {
       return (
-        <View
-          style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-            marginVertical: pxScale.wp(10),
-          }}>
+        <View style={styles.container}>
           <AppImageSvg
             source={item.icon}
             width={pxScale.wp(30)}

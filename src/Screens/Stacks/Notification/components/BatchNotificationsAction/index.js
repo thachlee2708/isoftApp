@@ -7,32 +7,24 @@ import {
   Modal,
   Pressable,
 } from 'react-native';
-import {useDispatch, useSelector} from 'react-redux';
 import {AppIcon} from '../../../../../assets/icons';
 import AppImageSvg from '../../../../../components/AppImageSvg';
 import {colors, fontFamily} from '../../../../../constants';
 import {pxScale} from '../../../../../Helpers';
 import NotificationList from './components/NotificationList';
+import styles from './styles';
 const BatchNotificationsAction = ({
   isVisible,
   readOrUnread,
   dataList,
-  onPressDoneMark,
+  onDoneMark,
   checkedAmount,
-  onCheckItem,
   onPressCloseModal,
 }) => {
   return (
     <Modal statusBarTranslucent visible={isVisible} animationType="fade">
       <View style={{flex: 1}}>
-        <View
-          style={{
-            backgroundColor: colors.primary.green,
-            flexDirection: 'row',
-            padding: pxScale.wp(20),
-            paddingTop: pxScale.hp(50),
-            alignItems: 'center',
-          }}>
+        <View style={styles.headerBackground}>
           <Pressable onPress={onPressCloseModal}>
             <AppImageSvg
               source={AppIcon.closeXIcon}
@@ -41,27 +33,16 @@ const BatchNotificationsAction = ({
             />
           </Pressable>
 
-          <Text
-            style={{
-              marginLeft: pxScale.wp(20),
-              fontFamily: fontFamily.InterBold,
-              color: colors.primary.white,
-              alignSelf: 'center',
-              justifyContent: 'center',
-              fontSize: pxScale.fontSize(25),
-            }}>
-            Batch Notifications Action
-          </Text>
+          <Text style={styles.headerText}>Batch Notifications Action</Text>
           <View></View>
         </View>
         <View style={{marginHorizontal: pxScale.wp(16)}}>
           <NotificationList
             readOrUnread={readOrUnread}
-            onPressDoneMark={onPressDoneMark}
+            onDoneMark={onDoneMark}
             checkedAmount={checkedAmount}
             data={dataList}
             isShowCheckbox={true}
-            onCheckItem={onCheckItem}
           />
         </View>
       </View>

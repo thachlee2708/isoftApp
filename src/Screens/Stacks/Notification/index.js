@@ -8,14 +8,25 @@ import {pxScale} from '../../../Helpers';
 import NotificationRow from '../../Tabs/RootTab/Home/commponents/NotificationRow';
 import MarkAsReadButton from './components/MarkAsReadButton';
 import NotificationList from './components/NotificationList';
-import {UPDATE_NOTIFICATION_LIST} from '../../../Redux/Notification/actions';
+import {
+  UPDATE_CHECKED_AMOUNT,
+  UPDATE_NOTIFICATION_LIST,
+  UPDATE_PREVIOUS_NOTIFICATION_LIST,
+} from '../../../Redux/Notification/actions';
 import ModalMarkAsRead from './components/ModalMarkAsRead';
 import BatchNotificationsAction from './components/BatchNotificationsAction';
+import styles from './styles';
 const Notification = () => {
   const navigation = useNavigation();
   const dispatch = useDispatch();
   const notificationList = useSelector(
     rootState => rootState.notificationReducer?.notificationList,
+  );
+  const previousNotificationList = useSelector(
+    rootState => rootState.notificationReducer?.previousNotificationList,
+  );
+  const checkedAmount = useSelector(
+    rootState => rootState.notificationReducer?.checkedAmount,
   );
   const [notificationAmountToChange, setNotificationAmountToChange] =
     React.useState(0);
@@ -24,11 +35,13 @@ const Notification = () => {
     !showOptions ? setShowOptions(true) : setShowOptions(false);
   }, [setShowOptions, showOptions]);
   const onPressMarkAsRead = React.useCallback(() => {
+    setIsMarkAllAsRead(false);
     setShowOptions(!showOptions);
     setStateBatch(!stateBatch);
     setReadOrUnread('read');
   }, [setShowOptions, showOptions]);
   const onPressMarkAsUnRead = React.useCallback(() => {
+    setIsMarkAllAsRead(false);
     setShowOptions(!showOptions);
     setStateBatch(!stateBatch);
     setReadOrUnread('unread');
@@ -36,23 +49,31 @@ const Notification = () => {
   const [stateModal, setStateModal] = React.useState(false);
   const [stateBatch, setStateBatch] = React.useState(false);
   const [readOrUnread, setReadOrUnread] = React.useState('');
-  const [checkedAmount, setCheckedAmount] = React.useState(0);
+  const [isMarkAllAsRead, setIsMarkAllAsRead] = React.useState(false);
+
   const onGoBack = React.useCallback(() => {
     navigation.navigate(screenName.HomeScreen, {isReload: Math.random()});
   }, [navigation]);
-  const arrNotificationList = notificationList;
-  const onPressMarkAllAsRead = React.useCallback(() => {
+  const arrList = notificationList;
+  const caculateFalseAmount = React.useCallback(() => {
     let newAmount = 0;
-    notificationList.forEach(element => {
-      element.forEach(item => {
+    notificationList.forEach((item, index) => {
+      item.forEach((item, index) => {
         if (item.read == false) {
           newAmount++;
         }
       });
     });
-    console.log(newAmount);
     setNotificationAmountToChange(newAmount);
-    arrNotificationList.map(item => {
+  }, [
+    setNotificationAmountToChange,
+    notificationList,
+    previousNotificationList,
+  ]);
+  const onPressMarkAllAsRead = React.useCallback(() => {
+    setIsMarkAllAsRead(true);
+    caculateFalseAmount();
+    arrList.map(item => {
       item.map(e => {
         e.read = true;
       });
@@ -61,35 +82,42 @@ const Notification = () => {
     setStateModal(true);
     setTimeout(() => {
       setStateModal(false);
-    }, 1000);
-    try {
       dispatch({
-        type: UPDATE_NOTIFICATION_LIST,
-        payload: [...arrNotificationList],
+        type: UPDATE_PREVIOUS_NOTIFICATION_LIST,
+        payload: [...JSON.parse(JSON.stringify(notificationList))],
       });
-    } catch (error) {
-      console.log('error UPDATE_NOTIFICATION_LIST', error);
-    }
-  }, [dispatch, arrNotificationList]);
+    }, 1000);
+    dispatch({
+      type: UPDATE_NOTIFICATION_LIST,
+      payload: [...arrList],
+    });
+  }, [dispatch, arrList]);
   const onPressCloseModal = React.useCallback(() => {
+    dispatch({
+      type: UPDATE_CHECKED_AMOUNT,
+      payload: 0,
+    });
     setStateBatch(false);
-    setCheckedAmount(0);
+    setNotificationAmountToChange(0);
   }, [setStateBatch]);
-  const onPressDoneMark = React.useCallback(() => {
+  const onDoneMark = React.useCallback(() => {
+    setNotificationAmountToChange(checkedAmount);
     setStateBatch(false);
     setStateModal(true);
-    setCheckedAmount(0);
     setTimeout(() => {
       setStateModal(false);
+      dispatch({
+        type: UPDATE_PREVIOUS_NOTIFICATION_LIST,
+        payload: [...JSON.parse(JSON.stringify(notificationList))],
+      });
+      dispatch({
+        type: UPDATE_CHECKED_AMOUNT,
+        payload: 0,
+      });
     }, 2000);
   }, [setStateBatch, setStateModal]);
   return (
-    <SafeAreaView
-      style={{
-        marginTop: Platform.OS === 'ios' ? pxScale.hp(40) : 0,
-        backgroundColor: colors.primary.white,
-        height: pxScale.hp(926),
-      }}>
+    <SafeAreaView style={styles.container}>
       <AppHeader textTitle={'Notifications'} onpressBackIcon={onGoBack} />
       <View style={{marginHorizontal: pxScale.wp(16)}}>
         <NotificationRow onPress={onPressMarkAllAsRead} markAsRead={true} />
@@ -107,10 +135,8 @@ const Notification = () => {
           isVisible={stateBatch}
           readOrUnread={readOrUnread}
           dataList={notificationList}
-          onPressDoneMark={onPressDoneMark}
-          onCheckItem={() => setCheckedAmount(checkedAmount + 1)}
+          onDoneMark={onDoneMark}
           onPressCloseModal={onPressCloseModal}
-          checkedAmount={checkedAmount}
         />
       )}
       {stateModal && (
@@ -118,7 +144,9 @@ const Notification = () => {
           onPress={() => {
             setStateModal(!stateModal);
           }}
-          amountNumer={notificationAmountToChange}
+          amountNumer={
+            isMarkAllAsRead ? notificationAmountToChange : checkedAmount
+          }
           isVisible={stateModal}
           readOrUnread={readOrUnread}
         />

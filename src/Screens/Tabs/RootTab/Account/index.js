@@ -31,7 +31,11 @@ const AccountTab = () => {
           <Text style={styles.userIDText}>{dataTest.id}</Text>
           <Text style={styles.userPosition}>{dataTest.Position}</Text>
         </ImageBackground>
-        <View style={{marginHorizontal: pxScale.wp(16)}}>
+        <View
+          style={{
+            marginHorizontal: pxScale.wp(16),
+            paddingBottom: pxScale.hp(100),
+          }}>
           <Text style={styles.staffProfileText}>Staff Profile</Text>
           <CardQR
             sourceIcon={dataTest.iconStaff}
