@@ -332,4 +332,7 @@ export const AppIcon = {
   <line id="Line_127" data-name="Line 127" x2="14" y2="14" transform="translate(6 6)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
 </g>
 </svg>`,
+  iconCheckBox: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+  <path id="_Color" data-name=" ↳Color" d="M16,18H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0H16a2,2,0,0,1,2,2V16A2,2,0,0,1,16,18ZM3.41,7.59h0L2,9l5,5,9-9L14.59,3.58,7,11.17,3.41,7.59Z" fill="#00ab9d"/>
+</svg>`,
 };

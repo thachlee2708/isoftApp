@@ -13,7 +13,6 @@
     "@callstack/react-theme-provider": "^3.0.7",
     "@react-native-async-storage/async-storage": "^1.17.4",
     "@react-native-community/blur": "^3.6.0",
-    "@react-native-community/checkbox": "^0.5.12",
     "@react-navigation/material-top-tabs": "^6.2.1",
     "@react-navigation/native": "^6.0.10",
     "moment": "^2.29.3",

@@ -1,15 +1,7 @@
 import React, {memo} from 'react';
-import {
-  View,
-  SafeAreaView,
-  Platform,
-  Text,
-  Modal,
-  Pressable,
-} from 'react-native';
+import {View, Text, Modal, Pressable} from 'react-native';
 import {AppIcon} from '../../../../../assets/icons';
 import AppImageSvg from '../../../../../components/AppImageSvg';
-import {colors, fontFamily} from '../../../../../constants';
 import {pxScale} from '../../../../../Helpers';
 import NotificationList from './components/NotificationList';
 import styles from './styles';

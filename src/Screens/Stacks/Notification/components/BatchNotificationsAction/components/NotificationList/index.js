@@ -1,20 +1,11 @@
-import {
-  Text,
-  View,
-  FlatList,
-  TouchableOpacity,
-  Platform,
-  Pressable,
-  SafeAreaView,
-  Animated,
-} from 'react-native';
+import {Text, View, FlatList, Platform, Pressable} from 'react-native';
 import React, {memo, useRef, useState} from 'react';
 import styles from './styles';
 import AppImageSvg from '../../../../../../../components/AppImageSvg';
 import {formatDay} from '../../../../../../../Helpers';
 import {pxScale} from '../../../../../../../Helpers';
 import {colors, fontFamily} from '../../../../../../../constants';
-import CheckBox from '@react-native-community/checkbox';
+import CheckBox from '../CheckBox';
 import {useDispatch, useSelector} from 'react-redux';
 import {
   UPDATE_CHECKED_AMOUNT,
@@ -22,9 +13,6 @@ import {
 } from '../../../../../../../Redux/Notification/actions';
 const NotificationList = ({data, onDoneMark, readOrUnread}) => {
   const dispatch = useDispatch();
-  const notificationList = useSelector(
-    rootState => rootState.notificationReducer?.notificationList,
-  );
   const [arrList, setArrList] = useState(JSON.parse(JSON.stringify(data)));
   const flatListRef = React.useRef();
   const checkedAmount = useSelector(
@@ -65,17 +53,8 @@ const NotificationList = ({data, onDoneMark, readOrUnread}) => {
         };
         return (
           <View style={styles.container}>
-            <CheckBox
-              tintColor={colors.primary.green}
-              onCheckColor={colors.primary.white}
-              onFillColor={colors.primary.green}
-              onTintColor={colors.primary.green}
-              style={{
-                transform: [{scaleX: 0.8}, {scaleY: 0.8}],
-              }}
-              boxType={'square'}
-              onValueChange={onValueChange}
-            />
+            <CheckBox onValueChange={onValueChange} />
+
             <AppImageSvg
               style={{marginLeft: pxScale.wp(10)}}
               source={item.icon}

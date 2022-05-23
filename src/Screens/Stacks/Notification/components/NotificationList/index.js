@@ -14,7 +14,6 @@ import styles from './styles';
 import AppImageSvg from '../../../../../components/AppImageSvg';
 import {formatDay} from '../../../../../Helpers';
 import {colors, fontFamily} from '../../../../../constants';
-import CheckBox from '@react-native-community/checkbox';
 const NotificationList = ({data}) => {
   const flatListRef = React.useRef();
   const onpressItem = React.useCallback(item => {}, []);
