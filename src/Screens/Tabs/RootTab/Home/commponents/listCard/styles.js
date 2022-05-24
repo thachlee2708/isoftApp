@@ -3,8 +3,8 @@ import {colors, fontFamily} from '../../../../../../constants';
 import {pxScale} from '../../../../../../Helpers';
 export default StyleSheet.create({
   container: {
-    maxWidth: pxScale.wp(337),
-    maxHeight: pxScale.hp(220),
+    width: pxScale.wp(320),
+    height: pxScale.hp(200),
     marginRight: pxScale.wp(20),
     shadowColor: '#000',
     shadowOffset: {
@@ -32,8 +32,8 @@ export default StyleSheet.create({
   },
   detailsText: {
     marginTop: pxScale.hp(5),
-    maxWidth: pxScale.wp(300),
-    maxHeight: pxScale.hp(40),
+    width: pxScale.wp(290),
+    height: pxScale.hp(40),
     color: colors.primary.black,
     fontSize: pxScale.fontSize(16),
   },

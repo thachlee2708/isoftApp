@@ -69,7 +69,7 @@ const listCard = ({data}) => {
         pagingEnabled
         decelerationRate={0}
         snapToInterval={
-          Platform.OS === 'ios' ? pxScale.wp(330) : pxScale.wp(330)
+          Platform.OS === 'ios' ? pxScale.wp(330) : pxScale.wp(337)
         }
         data={data}
         showsHorizontalScrollIndicator={false}
