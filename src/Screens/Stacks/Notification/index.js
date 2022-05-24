@@ -1,6 +1,6 @@
 import React, {memo} from 'react';
 import {useNavigation} from '@react-navigation/native';
-import {View, SafeAreaView, Platform, Text, Modal} from 'react-native';
+import {View, SafeAreaView, BackHandler, Text, Modal} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import AppHeader from '../../../components/AppHeader';
 import {colors, screenName} from '../../../constants';

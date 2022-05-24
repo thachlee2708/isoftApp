@@ -26,7 +26,7 @@ const ModalMarkAsRead = ({isVisible, amountNumer, onPress, readOrUnread}) => {
           height={pxScale.hp(30)}
           width={pxScale.hp(30)}
         />
-        <Text style={{color: colors.primary.white}}>
+        <Text style={styles.text}>
           {amountNumer} notifications marked as {readOrUnread}
         </Text>
       </Pressable>

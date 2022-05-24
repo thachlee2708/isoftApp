@@ -111,19 +111,22 @@ const NotificationList = ({data, onDoneMark, readOrUnread}) => {
         <View
           style={{
             flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'center',
           }}>
           <Text
             style={{
               color: colors.primary.green,
               fontFamily: fontFamily.InterBold,
+              fontSize: pxScale.fontSize(18),
             }}>
             {checkedAmount}
           </Text>
-          <Text> Selected</Text>
+          <Text style={styles.bottomTextLeft}> Selected</Text>
         </View>
 
         <Pressable style={styles.markButtonContainer} onPress={onPressDoneMark}>
-          <Text>Mark as {readOrUnread}</Text>
+          <Text style={styles.bottomTextRight}>Mark as {readOrUnread}</Text>
         </Pressable>
       </View>
     </View>

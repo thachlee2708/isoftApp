@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {colors} from '../../../../../../../constants';
+import {colors, fontFamily} from '../../../../../../../constants';
 import {pxScale} from '../../../../../../../Helpers';
 export default StyleSheet.create({
   container: {
@@ -15,6 +15,7 @@ export default StyleSheet.create({
     marginLeft: pxScale.wp(15),
   },
   footerContainer: {
+    paddingTop: pxScale.hp(15),
     bottom: 0,
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -24,5 +25,14 @@ export default StyleSheet.create({
     padding: 10,
     borderRadius: pxScale.wp(9),
     backgroundColor: '#E1F3F1',
+  },
+  bottomTextLeft: {
+    fontFamily: fontFamily.InterRegular,
+    fontSize: pxScale.fontSize(16),
+  },
+  bottomTextRight: {
+    color: colors.primary.green,
+    fontFamily: fontFamily.InterRegular,
+    fontSize: pxScale.fontSize(18),
   },
 });
