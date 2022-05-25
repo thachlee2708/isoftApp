@@ -1,14 +1,20 @@
 import {SafeAreaView, Text, View, TouchableOpacity} from 'react-native';
 import React, {memo} from 'react';
-import AppImageSvg from '../../../../../../components/AppImageSvg';
-import {AppIcon} from '../../../../../../assets/icons';
-import {pxScale} from '../../../../../../Helpers';
+import AppImageSvg from '../../../../../../../../components/AppImageSvg';
+import {AppIcon} from '../../../../../../../../assets/icons';
+import {pxScale} from '../../../../../../../../Helpers';
 import styles from './styles';
-const cardQR = ({sourceIcon, sourceQR, textTitle}) => {
-  const [showQR, setShowQR] = React.useState(false);
+const cardItem = ({
+  sourceLine,
+  sourceIcon,
+  textTitle,
+  textDetails,
+  renderFooter,
+}) => {
+  const [showFooter, setShowFooter] = React.useState(false);
   const handleShowQR = React.useCallback(() => {
-    showQR ? setShowQR(false) : setShowQR(true);
-  }, [setShowQR, showQR]);
+    showFooter ? setShowFooter(false) : setShowFooter(true);
+  }, [setShowFooter, showFooter]);
   return (
     <SafeAreaView
       style={{
@@ -26,7 +32,7 @@ const cardQR = ({sourceIcon, sourceQR, textTitle}) => {
             }}>
             <AppImageSvg
               style={{position: 'absolute'}}
-              source={AppIcon.line.primary}
+              source={sourceLine}
               height={pxScale.hp(50)}
               width={pxScale.wp(4)}
             />
@@ -35,29 +41,21 @@ const cardQR = ({sourceIcon, sourceQR, textTitle}) => {
               height={pxScale.hp(40)}
               width={pxScale.wp(40)}
             />
-            <Text style={{flex: 1}}>{textTitle}</Text>
+            <View>
+              <Text style={{flex: 1}}>{textTitle}</Text>
+              <Text style={{flex: 1}}>{textDetails}</Text>
+            </View>
+
             <AppImageSvg
               source={AppIcon.arrowToRight}
               height={pxScale.hp(20)}
               width={pxScale.wp(20)}
               style={{
-                transform: [{rotate: showQR ? '90deg' : '0deg'}],
+                transform: [{rotate: showFooter ? '90deg' : '0deg'}],
               }}
             />
           </View>
-          {showQR && (
-            <View
-              style={{
-                alignItems: 'center',
-                padding: 20,
-              }}>
-              <AppImageSvg
-                source={sourceQR}
-                height={pxScale.hp(150)}
-                width={pxScale.wp(150)}
-              />
-            </View>
-          )}
+          {showFooter && renderFooter}
         </View>
       </TouchableOpacity>
     </SafeAreaView>
@@ -66,4 +64,4 @@ const cardQR = ({sourceIcon, sourceQR, textTitle}) => {
 cardQR.defaultProps = {
   textTitle: 'textTitle',
 };
-export default memo(cardQR);
+export default memo(cardItem);

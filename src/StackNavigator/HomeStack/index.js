@@ -3,6 +3,7 @@ import React from 'react';
 import {screenName} from '../../constants';
 import Notification from '../../Screens/Stacks/Notification';
 import Home from '../../Screens/Tabs/RootTab/Home';
+import HumanResourceMain from '../../Screens/Stacks/HumanResource/HumanResourceMain';
 const Stack = createNativeStackNavigator();
 const HomeStack = () => {
   return (
@@ -15,6 +16,11 @@ const HomeStack = () => {
       <Stack.Screen
         component={Notification}
         name={screenName.Notification}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        component={HumanResourceMain}
+        name={screenName.HumanResourceMain}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

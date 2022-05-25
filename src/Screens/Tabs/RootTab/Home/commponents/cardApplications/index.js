@@ -5,12 +5,17 @@ import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
 import OptionApplications from './components/optionApplications';
 import {AppIcon} from '../../../../../../assets/icons';
+import {screenName} from '../../../../../../constants';
 const cardApplications = () => {
   const navigation = useNavigation();
+  const navigateToHumanResource = React.useCallback(() => {
+    navigation.navigate(screenName.HumanResourceMain);
+  }, [navigation]);
   return (
     <>
       <View style={styles.optionContainer}>
         <OptionApplications
+          onPress={navigateToHumanResource}
           titleText={'Human\nResource'}
           sourceImage={AppImage.option1}
           sourceIcon={AppIcon.hrIcon}

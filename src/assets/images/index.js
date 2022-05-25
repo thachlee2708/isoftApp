@@ -11,4 +11,5 @@ export const AppImage = {
   option2: require('./option2.png'),
   option3: require('./option3.png'),
   option4: require('./option4.png'),
+  top_bg_human_resource_main: require('./top_bg_human_resource_main.png'),
 };

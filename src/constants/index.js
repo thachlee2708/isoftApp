@@ -47,6 +47,12 @@ export const screenName = {
   HomeScreen: 'HomeScreen',
   ChangePassword: 'ChangePassword',
   Notification: 'Notification',
+  HumanResourceMain: 'HumanResourceMain',
+
+  Payroll: 'Payroll',
+  Leave: 'Leave',
+  Claim: 'Claim',
+  Approval: 'Approval',
 };
 export const fontFamily = {
   InterRegular: 'Inter-Regular',
