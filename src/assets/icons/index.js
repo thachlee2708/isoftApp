@@ -163,14 +163,35 @@ export const AppIcon = {
     primary: `<svg xmlns="http://www.w3.org/2000/svg" width="3" height="40" viewBox="0 0 3 40">
   <rect id="accordion-box" width="3" height="40" rx="1.5" fill="#00ab9d"/>
   </svg>`,
-    blue: ``,
-    orange: ``,
-    pink: ``,
-    red: ``,
-    lightPurple: ``,
-    darkGreen: ``,
-    darkPurple: ``,
-    brown: ``,
+    blue: `<svg xmlns="http://www.w3.org/2000/svg" width="3" height="40" viewBox="0 0 3 40"><rect width="3" height="40" rx="1.5" fill="#2196f3"/></svg>`,
+    orange: `<svg xmlns="http://www.w3.org/2000/svg" width="3" height="40" viewBox="0 0 3 40">
+    <rect id="Rectangle_297" data-name="Rectangle 297" width="3" height="40" rx="1.5" fill="#ef6c00"/>
+  </svg>
+  `,
+    pink: `<svg xmlns="http://www.w3.org/2000/svg" width="3" height="40" viewBox="0 0 3 40">
+    <rect id="accordion-box" width="3" height="40" rx="1.5" fill="#f06292"/>
+  </svg>
+  `,
+    red: `<svg xmlns="http://www.w3.org/2000/svg" width="3" height="40" viewBox="0 0 3 40">
+    <rect id="accordion-box" width="3" height="40" rx="1.5" fill="#ef5350"/>
+  </svg>
+  `,
+    lightPurple: `<svg xmlns="http://www.w3.org/2000/svg" width="3" height="40" viewBox="0 0 3 40">
+    <rect id="accordion-box" width="3" height="40" rx="1.5" fill="#ba68c8"/>
+  </svg>
+  `,
+    darkGreen: `<svg xmlns="http://www.w3.org/2000/svg" width="3" height="40" viewBox="0 0 3 40">
+    <rect id="accordion-box" width="3" height="40" rx="1.5" fill="#43a047"/>
+  </svg>
+  `,
+    darkPurple: `<svg xmlns="http://www.w3.org/2000/svg" width="3" height="40" viewBox="0 0 3 40">
+    <rect id="accordion-box" width="3" height="40" rx="1.5" fill="#7986cb"/>
+  </svg>
+  `,
+    brown: `<svg xmlns="http://www.w3.org/2000/svg" width="3" height="40" viewBox="0 0 3 40">
+    <rect id="accordion-box" width="3" height="40" rx="1.5" fill="#795548"/>
+  </svg>
+  `,
   },
   logOutIcon: `<svg xmlns="http://www.w3.org/2000/svg" width="27" height="26.714" viewBox="0 0 27 26.714">
 <g id="log-out" transform="translate(1 1)">

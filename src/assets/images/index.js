@@ -12,4 +12,13 @@ export const AppImage = {
   option3: require('./option3.png'),
   option4: require('./option4.png'),
   top_bg_human_resource_main: require('./top_bg_human_resource_main.png'),
+  payroll: require('./iconPayroll.png'),
+  leave: require('./iconLeave.png'),
+  attendance: require('./iconAttendance.png'),
+  mealOrder: require('./iconMeal.png'),
+  claim: require('./iconClaim.png'),
+  award: require('./iconLongServiceAward.png'),
+  education: require('./iconEducation.png'),
+  disciplinary: require('./iconDisciplinary.png'),
+  announcement: require('./iconGeneral.png'),
 };
