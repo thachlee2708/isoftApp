@@ -63,6 +63,7 @@ const Dashboard = () => {
             sourceIcon={item.icon}
             textTitle={item.title}
             textDetails={item.details}
+            renderFooter={{}}
           />
         );
       })}

@@ -183,7 +183,7 @@ const HeaderHumanResource = ({scrollY}) => {
   );
   const renderSmallHeader = React.useCallback(() => {
     const opacity = scrollY.interpolate({
-      inputRange: [0, pxScale.hp(100), pxScale.hp(200)],
+      inputRange: [0, pxScale.hp(50), pxScale.hp(100)],
       outputRange: [0, 0.5, 1],
       extrapolate: 'clamp',
     });

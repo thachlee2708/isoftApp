@@ -15,7 +15,7 @@ const listCard = ({data}) => {
     event => {
       setCurrentDotIndex(
         Math.round(
-          parseInt(event.nativeEvent.contentOffset.x / pxScale.wp(308)),
+          parseInt(event.nativeEvent.contentOffset.x / pxScale.wp(335)),
         ),
       );
     },
@@ -68,7 +68,7 @@ const listCard = ({data}) => {
         horizontal
         pagingEnabled
         decelerationRate={0}
-        snapToInterval={pxScale.wp(337)}
+        snapToInterval={pxScale.wp(341)}
         data={data}
         showsHorizontalScrollIndicator={false}
         renderItem={renderItems}
@@ -76,6 +76,7 @@ const listCard = ({data}) => {
         contentContainerStyle={{
           marginVertical: pxScale.hp(5),
           paddingHorizontal: pxScale.wp(5),
+          paddingRight: pxScale.wp(50),
         }}
       />
       <View style={styles.dotsContainer}>
