@@ -83,7 +83,9 @@ const HeaderHumanResource = ({scrollY}) => {
               height={pxScale.hp(50)}
               width={pxScale.hp(50)}
             />
-            <Text style={{alignSelf: 'center'}}>{item.name}</Text>
+            <Text style={{alignSelf: 'center', color: colors.primary.black}}>
+              {item.name}
+            </Text>
           </TouchableOpacity>
         </View>
       );
@@ -92,13 +94,13 @@ const HeaderHumanResource = ({scrollY}) => {
   );
   const renderBigHeader = React.useCallback(() => {
     const opacity = scrollY.interpolate({
-      inputRange: [0, pxScale.hp(50), pxScale.hp(100)],
+      inputRange: [0, pxScale.hp(100), pxScale.hp(200)],
       outputRange: [1, 0.5, 0],
       extrapolate: 'clamp',
     });
     const translateY = scrollY.interpolate({
-      inputRange: [0, pxScale.hp(50), pxScale.hp(100)],
-      outputRange: [0, pxScale.hp(-50), pxScale.hp(-100)],
+      inputRange: [0, pxScale.hp(100), pxScale.hp(200)],
+      outputRange: [0, pxScale.hp(-100), pxScale.hp(-200)],
       extrapolate: 'clamp',
     });
     return (
@@ -111,6 +113,7 @@ const HeaderHumanResource = ({scrollY}) => {
           source={AppImage.top_bg_human_resource_main}
           resizeMode="stretch"
           style={{
+            top: pxScale.hp(-20),
             width: pxScale.wp(500),
             height: pxScale.hp(250),
           }}>
@@ -118,17 +121,13 @@ const HeaderHumanResource = ({scrollY}) => {
             style={{
               width: pxScale.wp(428),
               paddingHorizontal: pxScale.wp(16),
-              marginTop:
-                Platform.OS === 'android'
-                  ? pxScale.hp(70)
-                  : isIphoneX()
-                  ? pxScale.hp(75)
-                  : pxScale.hp(20),
+              marginTop: pxScale.hp(70),
             }}>
             <Text
               style={{
                 fontFamily: fontFamily.InterRegular,
                 fontSize: pxScale.fontSize(16),
+                color: colors.primary.black,
               }}>
               Hello,
             </Text>
@@ -136,6 +135,7 @@ const HeaderHumanResource = ({scrollY}) => {
               style={{
                 fontFamily: fontFamily.InterBold,
                 fontSize: pxScale.fontSize(20),
+                color: colors.primary.black,
               }}>
               JONATHAN LIN JUN JIE
             </Text>
@@ -157,18 +157,22 @@ const HeaderHumanResource = ({scrollY}) => {
   const renderListSmallIcon = React.useCallback(
     (item, index) => {
       return (
-        <View style={{alignItems: 'center', justifyContent: 'center'}}>
+        <View
+          style={{
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
           <TouchableOpacity onPress={onPressIcon(item)}>
             <View
               style={{
                 backgroundColor: colors.primary.white,
-                padding: pxScale.wp(5),
+                padding: pxScale.wp(3),
                 borderRadius: pxScale.wp(8),
               }}>
               <AppImageSvg
                 source={item.icon}
-                height={pxScale.hp(30)}
-                width={pxScale.hp(30)}
+                height={pxScale.hp(40)}
+                width={pxScale.hp(40)}
               />
             </View>
           </TouchableOpacity>
@@ -179,7 +183,7 @@ const HeaderHumanResource = ({scrollY}) => {
   );
   const renderSmallHeader = React.useCallback(() => {
     const opacity = scrollY.interpolate({
-      inputRange: [0, pxScale.hp(50), pxScale.hp(100)],
+      inputRange: [0, pxScale.hp(100), pxScale.hp(200)],
       outputRange: [0, 0.5, 1],
       extrapolate: 'clamp',
     });
@@ -193,23 +197,17 @@ const HeaderHumanResource = ({scrollY}) => {
           source={AppImage.top_bg_human_resource_main}
           resizeMode="stretch"
           style={{
-            top: pxScale.hp(-50),
+            top: pxScale.hp(-20),
             width: pxScale.wp(500),
-            height: pxScale.hp(210),
+            height: pxScale.hp(150),
           }}>
           <View
             style={{
-              width: pxScale.wp(280),
-              flex: 1,
+              width: pxScale.wp(428),
               flexDirection: 'row',
               justifyContent: 'space-between',
               paddingHorizontal: pxScale.wp(32),
-              marginTop:
-                Platform.OS === 'android'
-                  ? pxScale.hp(30)
-                  : isIphoneX()
-                  ? pxScale.hp(70)
-                  : pxScale.hp(20),
+              marginTop: pxScale.hp(40),
             }}>
             {iconList().map(renderListSmallIcon)}
           </View>
@@ -218,10 +216,10 @@ const HeaderHumanResource = ({scrollY}) => {
     );
   }, [renderListSmallIcon, scrollY]);
   return (
-    <>
+    <View>
       {renderBigHeader()}
       {renderSmallHeader()}
-    </>
+    </View>
   );
 };
 export default React.memo(HeaderHumanResource);

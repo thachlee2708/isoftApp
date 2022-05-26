@@ -1,4 +1,11 @@
-import {SafeAreaView, Text, View, BackHandler} from 'react-native';
+import {
+  SafeAreaView,
+  Text,
+  View,
+  BackHandler,
+  PlatformColor,
+  Platform,
+} from 'react-native';
 import React, {memo} from 'react';
 import {AppImage} from '../../../../../../assets/images';
 import styles from './styles';
@@ -6,11 +13,12 @@ import {useNavigation} from '@react-navigation/native';
 import OptionApplications from './components/optionApplications';
 import {AppIcon} from '../../../../../../assets/icons';
 import {screenName} from '../../../../../../constants';
-const cardApplications = () => {
+const cardApplications = ({setShouldRenderBlur}) => {
   const navigation = useNavigation();
   const navigateToHumanResource = React.useCallback(() => {
+    Platform.OS === 'android' ? setShouldRenderBlur() : null;
     navigation.navigate(screenName.HumanResourceMain);
-  }, [navigation]);
+  }, [navigation, setShouldRenderBlur]);
   return (
     <>
       <View style={styles.optionContainer}>

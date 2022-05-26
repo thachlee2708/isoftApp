@@ -22,6 +22,6 @@ export default StyleSheet.create({
     fontSize: pxScale.fontSize(25),
     fontFamily: fontFamily.InterBold,
     color: colors.primary.white,
-    marginBottom: pxScale.hp(50),
+    marginBottom: pxScale.hp(30),
   },
 });

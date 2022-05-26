@@ -3,10 +3,18 @@ import React from 'react';
 import HeaderHumanResource from './components/HeaderHumanResource';
 import {pxScale} from '../../../../Helpers';
 import {isIphoneX} from 'react-native-iphone-x-helper';
+import {useNavigation} from '@react-navigation/native';
 import styles from './styles';
-import {colors, fontFamily} from '../../../../constants';
+import {colors, fontFamily, screenName} from '../../../../constants';
 import Dashboard from './components/Dashboard';
+import AppHeader from '../../../../components/AppHeader';
+import Approval from './components/Approval';
+import Announcement from './components/Announcement';
 const HumanResourceMain = () => {
+  const navigation = useNavigation();
+  const onPressBack = React.useCallback(() => {
+    navigation.navigate(screenName.HomeScreen, {isReload: Math.random()});
+  }, [navigation]);
   const scrollY = React.useRef(new Animated.Value(0)).current;
   const translateY = scrollY.interpolate({
     inputRange: [0, pxScale.hp(50), pxScale.hp(100)],
@@ -32,8 +40,12 @@ const HumanResourceMain = () => {
     }
   }, []);
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
+      <View style={{zIndex: 1}}>
+        <AppHeader textTitle={'Human Resource'} onpressBackIcon={onPressBack} />
+      </View>
       <HeaderHumanResource scrollY={scrollY} />
+
       <View>
         <Animated.ScrollView
           ref={scrollViewRef}
@@ -65,16 +77,20 @@ const HumanResourceMain = () => {
           <View
             style={{
               marginHorizontal: pxScale.wp(16),
-              marginTop: pxScale.hp(20),
+              marginBottom: pxScale.hp(15),
             }}>
             <Text style={styles.titleText}>Dashboard</Text>
             <Dashboard />
+
             <Text style={styles.titleText}>Approval</Text>
+            <Approval />
+
             <Text style={styles.titleText}>Announcement</Text>
+            <Announcement />
           </View>
         </Animated.ScrollView>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 export default React.memo(HumanResourceMain);

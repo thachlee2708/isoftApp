@@ -4,6 +4,7 @@ import {screenName} from '../../constants';
 import Notification from '../../Screens/Stacks/Notification';
 import Home from '../../Screens/Tabs/RootTab/Home';
 import HumanResourceMain from '../../Screens/Stacks/HumanResource/HumanResourceMain';
+import Approval from '../../Screens/Stacks/HumanResource/HumanResourceMain/components/Approval';
 const Stack = createNativeStackNavigator();
 const HomeStack = () => {
   return (

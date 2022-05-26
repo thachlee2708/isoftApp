@@ -11,6 +11,7 @@ const CardItem = ({
   textTitle,
   textDetails,
   renderFooter,
+  sourceArrow,
 }) => {
   const [showFooter, setShowFooter] = React.useState(false);
   const handleShowFooter = React.useCallback(() => {
@@ -46,11 +47,14 @@ const CardItem = ({
             />
             <View style={{flex: 1}}>
               <Text style={styles.text}>{textTitle}</Text>
-              <Text style={styles.text}>{textDetails}</Text>
+              <Text style={styles.text}>
+                Pending Approval:{' '}
+                <Text style={styles.numberDetails}>{textDetails}</Text>
+              </Text>
             </View>
 
             <AppImageSvg
-              source={AppIcon.arrowToRight}
+              source={sourceArrow}
               height={pxScale.hp(20)}
               width={pxScale.wp(20)}
               style={{

@@ -159,6 +159,9 @@ export const AppIcon = {
 <path id="chevron-down" d="M6,9l6,6,6-6" transform="translate(-4.586 -7.586)" fill="none" stroke="#2f2f2f" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
 </svg>
 `,
+  arrowToRightDoubleBlue: `1:33 CH
+  <svg xmlns="http://www.w3.org/2000/svg" width="14.414" height="12.828" viewBox="0 0 14.414 12.828"><g fill="none" stroke="#2196f3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path data-name="Path 1743" d="m8.414 11.414 5-5-5-5"/><path data-name="Path 1744" d="m1.414 11.414 5-5-5-5"/></g></svg>`,
+  arrowToRightDoubleOrange: `<svg xmlns="http://www.w3.org/2000/svg" width="14.414" height="12.828" viewBox="0 0 14.414 12.828"><g fill="none" stroke="#ef5350" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path data-name="Path 1743" d="m8.414 11.414 5-5-5-5"/><path data-name="Path 1744" d="m1.414 11.414 5-5-5-5"/></g></svg>`,
   line: {
     primary: `<svg xmlns="http://www.w3.org/2000/svg" width="3" height="40" viewBox="0 0 3 40">
   <rect id="accordion-box" width="3" height="40" rx="1.5" fill="#00ab9d"/>

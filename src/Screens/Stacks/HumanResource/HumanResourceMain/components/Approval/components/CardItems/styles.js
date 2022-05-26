@@ -1,6 +1,7 @@
 import {StyleSheet} from 'react-native';
 import {pxScale} from '../../../../../../../../Helpers';
 import {colors} from '../../../../../../../../constants';
+import {fontFamily} from '../../../../../../../../constants';
 export default StyleSheet.create({
   wrap: {
     backgroundColor: colors.primary.white,
@@ -17,4 +18,8 @@ export default StyleSheet.create({
     elevation: 5,
   },
   text: {color: colors.primary.black},
+  numberDetails: {
+    color: colors.primary.black,
+    fontFamily: fontFamily.InterBold,
+  },
 });

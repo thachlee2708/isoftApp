@@ -56,7 +56,9 @@ const Home = ({route}) => {
         <NotificationRow viewAll={true} onPress={navigateToNotifications} />
         <ListCard data={dataTest} />
         <Text style={styles.ApplicationText}>Applications</Text>
-        <CardApplications />
+        <CardApplications
+          setShouldRenderBlur={() => setShouldRenderBlur(false)}
+        />
       </View>
     </ScrollView>
   );
