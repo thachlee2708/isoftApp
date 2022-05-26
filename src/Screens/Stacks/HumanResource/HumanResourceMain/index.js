@@ -5,6 +5,7 @@ import {pxScale} from '../../../../Helpers';
 import {isIphoneX} from 'react-native-iphone-x-helper';
 import styles from './styles';
 import {colors, fontFamily} from '../../../../constants';
+import Dashboard from './components/Dashboard';
 const HumanResourceMain = () => {
   const scrollY = React.useRef(new Animated.Value(0)).current;
   const translateY = scrollY.interpolate({
@@ -67,7 +68,7 @@ const HumanResourceMain = () => {
               marginTop: pxScale.hp(20),
             }}>
             <Text style={styles.titleText}>Dashboard</Text>
-
+            <Dashboard />
             <Text style={styles.titleText}>Approval</Text>
             <Text style={styles.titleText}>Announcement</Text>
           </View>

@@ -1,10 +1,10 @@
-import {SafeAreaView, Text, View, TouchableOpacity} from 'react-native';
+import {SafeAreaView, Text, View, TouchableOpacity, Image} from 'react-native';
 import React, {memo} from 'react';
 import AppImageSvg from '../../../../../../../../components/AppImageSvg';
 import {AppIcon} from '../../../../../../../../assets/icons';
 import {pxScale} from '../../../../../../../../Helpers';
 import styles from './styles';
-const cardItem = ({
+const CardItem = ({
   sourceLine,
   sourceIcon,
   textTitle,
@@ -12,7 +12,7 @@ const cardItem = ({
   renderFooter,
 }) => {
   const [showFooter, setShowFooter] = React.useState(false);
-  const handleShowQR = React.useCallback(() => {
+  const handleShowFooter = React.useCallback(() => {
     showFooter ? setShowFooter(false) : setShowFooter(true);
   }, [setShowFooter, showFooter]);
   return (
@@ -22,7 +22,7 @@ const cardItem = ({
         paddingBottom: pxScale.hp(10),
         paddingHorizontal: pxScale.hp(5),
       }}>
-      <TouchableOpacity activeOpacity={1} onPress={handleShowQR}>
+      <TouchableOpacity activeOpacity={1} onPress={handleShowFooter}>
         <View style={styles.wrap}>
           <View
             style={{
@@ -36,14 +36,17 @@ const cardItem = ({
               height={pxScale.hp(50)}
               width={pxScale.wp(4)}
             />
-            <AppImageSvg
+            <Image
               source={sourceIcon}
-              height={pxScale.hp(40)}
-              width={pxScale.wp(40)}
+              style={{
+                height: pxScale.hp(40),
+                width: pxScale.wp(40),
+                marginHorizontal: pxScale.wp(10),
+              }}
             />
-            <View>
-              <Text style={{flex: 1}}>{textTitle}</Text>
-              <Text style={{flex: 1}}>{textDetails}</Text>
+            <View style={{flex: 1}}>
+              <Text>{textTitle}</Text>
+              <Text>{textDetails}</Text>
             </View>
 
             <AppImageSvg
@@ -61,7 +64,4 @@ const cardItem = ({
     </SafeAreaView>
   );
 };
-cardQR.defaultProps = {
-  textTitle: 'textTitle',
-};
-export default memo(cardItem);
+export default memo(CardItem);
