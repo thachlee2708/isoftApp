@@ -13,8 +13,9 @@ export default StyleSheet.create({
   },
   blurView: {
     justifyContent: 'center',
-    width: '100%',
+    width: pxScale.wp(45),
     height: pxScale.hp(45),
     backgroundColor: 'rgba(0,171,157,0.1)',
+    marginHorizontal: 10,
   },
 });

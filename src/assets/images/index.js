@@ -21,4 +21,6 @@ export const AppImage = {
   education: require('./iconEducation.png'),
   disciplinary: require('./iconDisciplinary.png'),
   announcement: require('./iconGeneral.png'),
+  blurImage: require('./Rectangle.png'),
+  wallet: require('./wallet.png'),
 };

@@ -1,8 +1,12 @@
 import React from 'react';
 import {AppIcon} from '../../../../../../assets/icons';
 import {AppImage} from '../../../../../../assets/images';
+import AppImageSvg from '../../../../../../components/AppImageSvg';
+import {pxScale} from '../../../../../../Helpers';
 import CardItems from './components/CardItems';
-import {View, Text} from 'react-native';
+import {View, Text, TouchableOpacity, Image} from 'react-native';
+import {colors, fontFamily} from '../../../../../../constants';
+import PayrollFooter from './components/PayrollFooter';
 const Dashboard = () => {
   const listItemsDashboard = [
     {
@@ -10,6 +14,7 @@ const Dashboard = () => {
       details: 'Payslip & Year-To-Date summary',
       sourceLine: AppIcon.line.primary,
       icon: AppImage.payroll,
+      renderFooter: <PayrollFooter />,
     },
     {
       title: 'Leave',
@@ -63,7 +68,7 @@ const Dashboard = () => {
             sourceIcon={item.icon}
             textTitle={item.title}
             textDetails={item.details}
-            renderFooter={{}}
+            renderFooter={item.renderFooter}
           />
         );
       })}

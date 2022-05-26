@@ -78,14 +78,25 @@ const HeaderHumanResource = ({scrollY}) => {
             backgroundColor: 'transparent',
           }}>
           <TouchableOpacity onPress={onPressIcon(item)}>
-            <AppImageSvg
-              source={item.icon}
-              height={pxScale.hp(50)}
-              width={pxScale.hp(50)}
-            />
-            <Text style={{alignSelf: 'center', color: colors.primary.black}}>
-              {item.name}
-            </Text>
+            <ImageBackground
+              source={AppImage.blurImage}
+              blurRadius={20}
+              resizeMode="cover"
+              style={{
+                width: pxScale.hp(70),
+                height: pxScale.hp(70),
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}>
+              <AppImageSvg
+                source={item.icon}
+                height={pxScale.hp(40)}
+                width={pxScale.hp(40)}
+              />
+              <Text style={{alignSelf: 'center', color: colors.primary.black}}>
+                {item.name}
+              </Text>
+            </ImageBackground>
           </TouchableOpacity>
         </View>
       );
@@ -206,8 +217,8 @@ const HeaderHumanResource = ({scrollY}) => {
               width: pxScale.wp(428),
               flexDirection: 'row',
               justifyContent: 'space-between',
-              paddingHorizontal: pxScale.wp(32),
-              marginTop: pxScale.hp(40),
+              paddingHorizontal: pxScale.wp(50),
+              marginTop: pxScale.hp(60),
             }}>
             {iconList().map(renderListSmallIcon)}
           </View>

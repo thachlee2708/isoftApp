@@ -68,7 +68,7 @@ const listCard = ({data}) => {
         horizontal
         pagingEnabled
         decelerationRate={0}
-        snapToInterval={pxScale.wp(341)}
+        snapToInterval={pxScale.wp(340)}
         data={data}
         showsHorizontalScrollIndicator={false}
         renderItem={renderItems}

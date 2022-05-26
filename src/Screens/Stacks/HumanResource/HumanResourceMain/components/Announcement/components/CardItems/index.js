@@ -26,7 +26,8 @@ const CardItem = ({
         <View style={styles.wrap}>
           <View
             style={{
-              padding: pxScale.wp(8),
+              paddingVertical: pxScale.wp(8),
+              paddingHorizontal: pxScale.wp(10),
               flexDirection: 'row',
               alignItems: 'center',
             }}>
@@ -51,8 +52,8 @@ const CardItem = ({
 
             <AppImageSvg
               source={AppIcon.arrowToRight}
-              height={pxScale.hp(20)}
-              width={pxScale.wp(20)}
+              height={pxScale.hp(15)}
+              width={pxScale.wp(15)}
               style={{
                 transform: [{rotate: showFooter ? '90deg' : '0deg'}],
               }}
