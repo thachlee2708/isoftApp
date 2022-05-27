@@ -124,7 +124,7 @@ const HeaderHumanResource = ({scrollY}) => {
           source={AppImage.top_bg_human_resource_main}
           resizeMode="stretch"
           style={{
-            top: pxScale.hp(-20),
+            // top: pxScale.hp(-20),
             width: pxScale.wp(500),
             height: pxScale.hp(250),
           }}>
@@ -208,7 +208,7 @@ const HeaderHumanResource = ({scrollY}) => {
           source={AppImage.top_bg_human_resource_main}
           resizeMode="stretch"
           style={{
-            top: pxScale.hp(-20),
+            // top: pxScale.hp(-20),
             width: pxScale.wp(500),
             height: pxScale.hp(150),
           }}>
