@@ -34,3 +34,6 @@ export const pxScale = {
 export const formatDay = day => {
   return moment(day).format('ddd, MMM DD');
 };
+export const formatMoney = money => {
+  return money.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+};
