@@ -406,4 +406,14 @@ export const AppIcon = {
   greenEye: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 18"><g transform="translate(1 1)" fill="none" stroke="#00ab9d" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path data-name="Path 1675" d="M0 8s4-8 11-8 11 8 11 8-4 8-11 8S0 8 0 8Z"/><circle data-name="Ellipse 288" cx="3" cy="3" r="3" transform="translate(8 5)"/></g></svg>`,
   greenEyeClose: `<svg xmlns="http://www.w3.org/2000/svg" width="24.828" height="24.828" viewBox="0 0 24.828 24.828"><g fill="none" stroke="#00ab9d" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path data-name="Path 1676" d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24" transform="translate(.414 .414)"/><path data-name="Line 72" d="m1 1 22 22" transform="translate(.414 .414)"/></g></svg>`,
   iconPencil: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7.127 22.562l-7.127 1.438 1.438-7.128 5.689 5.69zm1.414-1.414l11.228-11.225-5.69-5.692-11.227 11.227 5.689 5.69zm9.768-21.148l-2.816 2.817 5.691 5.691 2.816-2.819-5.691-5.689z"/></svg>`,
+  iconKey: `<svg xmlns="http://www.w3.org/2000/svg" width="21.999" height="21.413" viewBox="0 0 21.999 21.413"><path d="m19.999 1.414-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.779 0 5.5 5.5 0 0 1 7.779 0Zm0 0 4.11-4.11m0 0 3 3 3.5-3.5-3-3m-3.5 3.5 3.5-3.5" fill="none" stroke="#00ab9d" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>`,
+  iconDragable: `<svg xmlns="http://www.w3.org/2000/svg" width="25" height="3" viewBox="0 0 25 3"><rect data-name="Rectangle 306" width="25" height="3" rx="1.5" fill="silver"/></svg>`,
+  iconSearch: `<svg xmlns="http://www.w3.org/2000/svg" width="20.414" height="20.414" viewBox="0 0 20.414 20.414"><g transform="translate(-2 -2)" fill="none" stroke="#78909c" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle data-name="Ellipse 583" cx="8" cy="8" r="8" transform="translate(3 3)"/><path data-name="Line 245" d="m21 21-4.35-4.35"/></g></svg>`,
+  iconGreenCheck: `<svg xmlns="http://www.w3.org/2000/svg" width="18.828" height="13.414" viewBox="0 0 18.828 13.414">
+  <path id="check" d="M20,6,9,17,4,12" transform="translate(-2.586 -4.586)" fill="none" stroke="#00ab9d" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+</svg>`,
+  blackRegtangle: `<svg id="triangle" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+<rect id="Boundary" width="24" height="24" fill="none"/>
+<path id="_Color" data-name=" ↳Color" d="M0,0,5,5l5-5Z" transform="translate(6.994 10)"/>
+</svg>`,
 };

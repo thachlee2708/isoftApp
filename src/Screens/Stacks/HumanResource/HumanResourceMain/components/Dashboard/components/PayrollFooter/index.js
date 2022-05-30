@@ -3,13 +3,15 @@ import React from 'react';
 import {formatMoney, pxScale} from '../../../../../../../../Helpers';
 import AppImageSvg from '../../../../../../../../components/AppImageSvg';
 import {AppIcon} from '../../../../../../../../assets/icons';
-import {fontFamily} from '../../../../../../../../constants';
+import {fontFamily, screenName} from '../../../../../../../../constants';
 import {colors} from '../../../../../../../../constants';
 import {AppImage} from '../../../../../../../../assets/images';
 import YearPickerModal from './components/YearPickerModal';
 import SalaryDetails from './components/SalaryDetails';
 import ListPaySlip from './components/ListPaySlip';
+import {useNavigation} from '@react-navigation/native';
 const PayrollFooter = () => {
+  const navigation = useNavigation();
   const [randomNum, setRandomNum] = React.useState(0);
   const [stateModal, setStateModal] = React.useState(false);
   const currentYear = new Date().getFullYear();
@@ -24,6 +26,9 @@ const PayrollFooter = () => {
     setRandomNum(Math.random());
     setStateModal(!stateModal);
   }, [setStateModal, stateModal]);
+  const navigateToPayroll = React.useCallback(() => {
+    navigation.navigate(screenName.Payroll);
+  }, [navigation]);
   return (
     <View
       style={{
@@ -51,25 +56,28 @@ const PayrollFooter = () => {
           }}>
           Payroll Summary
         </Text>
-        <View
-          style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}>
-          <Text
+        <TouchableOpacity onPress={navigateToPayroll}>
+          <View
             style={{
-              color: colors.primary.green,
-              marginHorizontal: pxScale.wp(10),
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'center',
             }}>
-            View more
-          </Text>
-          <AppImageSvg
-            source={AppIcon.arrowToRightGreen}
-            height={pxScale.hp(13)}
-            width={pxScale.wp(13)}
-          />
-        </View>
+            <Text
+              style={{
+                color: colors.primary.green,
+                marginHorizontal: pxScale.wp(10),
+              }}>
+              View more
+            </Text>
+
+            <AppImageSvg
+              source={AppIcon.arrowToRightGreen}
+              height={pxScale.hp(13)}
+              width={pxScale.wp(13)}
+            />
+          </View>
+        </TouchableOpacity>
       </View>
       <Text style={{color: colors.primary.black}}>Year to Date Summary</Text>
       <TouchableOpacity onPress={openModal}>

@@ -23,4 +23,6 @@ export const AppImage = {
   announcement: require('./iconGeneral.png'),
   blurImage: require('./Rectangle.png'),
   wallet: require('./wallet.png'),
+  report: require('./report.png'),
+  fullWallet: require('./fullWallet.png'),
 };

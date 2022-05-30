@@ -77,7 +77,7 @@ const HeaderHumanResource = ({scrollY}) => {
             overflow: 'hidden',
             backgroundColor: 'transparent',
           }}>
-          <TouchableOpacity onPress={onPressIcon(item)}>
+          <TouchableOpacity onPress={() => onPressIcon(item)}>
             <ImageBackground
               source={AppImage.blurImage}
               blurRadius={20}
@@ -173,7 +173,7 @@ const HeaderHumanResource = ({scrollY}) => {
             alignItems: 'center',
             justifyContent: 'center',
           }}>
-          <TouchableOpacity onPress={onPressIcon(item)}>
+          <TouchableOpacity onPress={() => onPressIcon(item)}>
             <View
               style={{
                 backgroundColor: colors.primary.white,
