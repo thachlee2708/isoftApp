@@ -20,8 +20,8 @@ const HumanResourceMain = () => {
     inputRange: [0, pxScale.hp(50), pxScale.hp(100)],
     outputRange: [
       0,
-      pxScale.hp(isIphoneX() ? -50 : -30),
-      pxScale.hp(isIphoneX() ? -100 : -80),
+      pxScale.hp(isIphoneX() ? -65 : -65),
+      pxScale.hp(isIphoneX() ? -130 : -130),
     ],
     extrapolate: 'clamp',
   });
@@ -45,7 +45,6 @@ const HumanResourceMain = () => {
         <AppHeader textTitle={'Human Resource'} onpressBackIcon={onPressBack} />
       </View>
       <HeaderHumanResource scrollY={scrollY} />
-
       <View>
         <Animated.ScrollView
           ref={scrollViewRef}
@@ -76,6 +75,7 @@ const HumanResourceMain = () => {
           ]}>
           <View
             style={{
+              marginTop: pxScale.hp(90),
               marginHorizontal: pxScale.wp(16),
               marginBottom: pxScale.hp(15),
             }}>

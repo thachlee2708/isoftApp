@@ -15,7 +15,7 @@ export default StyleSheet.create({
         : StatusBar.currentHeight,
   },
   scrollContainer: {
-    marginBottom: Platform.OS === 'ios' ? pxScale.hp(550) : pxScale.hp(600),
+    marginBottom: Platform.OS === 'ios' ? pxScale.hp(520) : pxScale.hp(530),
   },
   titleText: {
     marginTop: pxScale.hp(20),

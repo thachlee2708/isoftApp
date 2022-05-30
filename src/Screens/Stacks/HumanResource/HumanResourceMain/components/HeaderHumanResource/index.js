@@ -83,8 +83,8 @@ const HeaderHumanResource = ({scrollY}) => {
               blurRadius={20}
               resizeMode="cover"
               style={{
-                width: pxScale.hp(70),
-                height: pxScale.hp(70),
+                width: pxScale.hp(80),
+                height: pxScale.hp(80),
                 alignItems: 'center',
                 justifyContent: 'center',
               }}>
@@ -105,13 +105,13 @@ const HeaderHumanResource = ({scrollY}) => {
   );
   const renderBigHeader = React.useCallback(() => {
     const opacity = scrollY.interpolate({
-      inputRange: [0, pxScale.hp(100), pxScale.hp(200)],
+      inputRange: [0, pxScale.hp(50), pxScale.hp(100)],
       outputRange: [1, 0.5, 0],
       extrapolate: 'clamp',
     });
     const translateY = scrollY.interpolate({
-      inputRange: [0, pxScale.hp(100), pxScale.hp(200)],
-      outputRange: [0, pxScale.hp(-100), pxScale.hp(-200)],
+      inputRange: [0, pxScale.hp(50), pxScale.hp(100)],
+      outputRange: [0, pxScale.hp(-50), pxScale.hp(-100)],
       extrapolate: 'clamp',
     });
     return (
@@ -210,7 +210,7 @@ const HeaderHumanResource = ({scrollY}) => {
           style={{
             // top: pxScale.hp(-20),
             width: pxScale.wp(500),
-            height: pxScale.hp(150),
+            height: pxScale.hp(120),
           }}>
           <View
             style={{
@@ -218,7 +218,7 @@ const HeaderHumanResource = ({scrollY}) => {
               flexDirection: 'row',
               justifyContent: 'space-between',
               paddingHorizontal: pxScale.wp(50),
-              marginTop: pxScale.hp(60),
+              marginTop: pxScale.hp(35),
             }}>
             {iconList().map(renderListSmallIcon)}
           </View>

@@ -22,8 +22,8 @@ const CardItem = ({
         paddingBottom: pxScale.hp(10),
         paddingHorizontal: pxScale.hp(5),
       }}>
-      <TouchableOpacity activeOpacity={1} onPress={handleShowFooter}>
-        <View style={styles.wrap}>
+      <View style={styles.wrap}>
+        <TouchableOpacity activeOpacity={1} onPress={handleShowFooter}>
           <View
             style={{
               paddingVertical: pxScale.wp(8),
@@ -59,9 +59,9 @@ const CardItem = ({
               }}
             />
           </View>
-          {showFooter && renderFooter}
-        </View>
-      </TouchableOpacity>
+        </TouchableOpacity>
+        {showFooter && renderFooter}
+      </View>
     </SafeAreaView>
   );
 };
