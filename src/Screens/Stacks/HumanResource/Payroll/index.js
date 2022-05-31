@@ -9,6 +9,7 @@ import MyPayslipTabs from './components/MyPayslipTabs';
 import YTabs from './components/YTabs';
 import WorkLocationPicker from './components/WorkLocationPicker';
 import WorkLocationModal from './components/WorkLocationModal';
+import NoRecordFound from '../HumanResourceMain/components/Dashboard/components/PayrollFooter/components/NoRecordFound';
 const Payroll = () => {
   const [pickedTabPayroll, setPickedTabPayroll] = React.useState('My Payslip');
   const [pickedTabPayslip, setPickedTabPayslip] = React.useState('Payslip');
@@ -44,12 +45,12 @@ const Payroll = () => {
 
         <YTabs pickedYear={pickedYear} onPressItem={setpickedYear} />
 
-        {
+        {pickedYear === 2022 && (
           <WorkLocationPicker
             pickedWorkLocation={workLocation}
             onPressToogleModal={() => setStateModalWorkLocation(true)}
           />
-        }
+        )}
       </View>
       {stateModalWorkLocation && (
         <WorkLocationModal
@@ -59,6 +60,7 @@ const Payroll = () => {
           pickedItem={workLocation}
         />
       )}
+      {pickedYear === 2021 && <NoRecordFound />}
     </SafeAreaView>
   );
 };

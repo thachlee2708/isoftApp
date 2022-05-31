@@ -10,6 +10,7 @@ import YearPickerModal from './components/YearPickerModal';
 import SalaryDetails from './components/SalaryDetails';
 import ListPaySlip from './components/ListPaySlip';
 import {useNavigation} from '@react-navigation/native';
+import NoRecordFound from './components/NoRecordFound';
 const PayrollFooter = () => {
   const navigation = useNavigation();
   const [randomNum, setRandomNum] = React.useState(0);
@@ -144,25 +145,8 @@ const PayrollFooter = () => {
       <Text style={{color: colors.primary.black}}>
         Payslip in past 6 months
       </Text>
-      {/* {
-        <Image
-          source={AppImage.wallet}
-          style={{
-            height: pxScale.hp(200),
-            width: pxScale.wp(200),
-            alignSelf: 'center',
-            marginBottom: pxScale.hp(20),
-          }}
-        />
-      } */}
       {<ListPaySlip />}
-      {/* <Text
-        style={{
-          alignSelf: 'center',
-          color: colors.primary.black,
-        }}>
-        No rerords found
-      </Text> */}
+      {/* <NoRecordFound /> */}
       {stateModal && (
         <YearPickerModal
           isVisible={stateModal}
