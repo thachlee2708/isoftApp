@@ -9,15 +9,16 @@ import {screenName} from '../constants';
 import ChangePassword from '../Screens/Stacks/Auth/ChangePassword';
 import Notification from '../Screens/Stacks/Notification';
 const Stack = createNativeStackNavigator();
-const RootStack = () => {
+const RootStack = ({initialRouteName, initialParams}) => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator initialRouteName={initialRouteName}>
       <Stack.Screen
         component={FirstTimeLogin}
         name={screenName.FirstTimeLogin}
         options={{headerShown: false}}
       />
       <Stack.Screen
+        initialParams={initialParams}
         component={StaffAccess}
         name={screenName.StaffAccess}
         options={{headerShown: false}}

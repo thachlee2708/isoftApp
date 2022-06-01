@@ -13,6 +13,7 @@ import AppHeader from '../../../../components/AppHeader';
 import {fontFamily, screenName} from '../../../../constants';
 import {pxScale} from '../../../../Helpers';
 import AppButton from '../../../../components/AppButton';
+import {StackActions} from '@react-navigation/native';
 const PDPAAgree = () => {
   const navigation = useNavigation();
   const onGoBack = React.useCallback(() => {
@@ -20,10 +21,15 @@ const PDPAAgree = () => {
   }, [navigation]);
   const navigateToRootTab = React.useCallback(() => {
     navigation.navigate(screenName.RootTab);
+    // navigation.dispatch(StackActions.replace(screenName.RootTab));
   }, [navigation]);
   return (
     <SafeAreaView>
-      <AppHeader textTitle={'Terms'} onpressBackIcon={onGoBack} />
+      <AppHeader
+        textTitle={'Terms'}
+        onpressBackIcon={onGoBack}
+        isShowBackIcon={false}
+      />
       <View style={{marginHorizontal: pxScale.wp(16)}}>
         <Text
           style={{

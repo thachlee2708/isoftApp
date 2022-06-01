@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
   StatusBar,
 } from 'react-native';
+import {useDispatch, useSelector} from 'react-redux';
 import {AppImage} from '../../../../assets/images';
 import AppImageSvg from '../../../../components/AppImageSvg';
 import styles from './styles';
@@ -17,10 +18,19 @@ import {pxScale} from '../../../../Helpers';
 import {colors, fontFamily, screenName} from '../../../../constants';
 import AppButton from '../../../../components/AppButton';
 import AppHeader from '../../../../components/AppHeader';
+import {StackActions} from '@react-navigation/native';
+import {UPDATE_FIRST_LOGIN} from '../../../../Redux/Auth/actions';
 const FirstTimeLogin = () => {
   const navigation = useNavigation();
+  const dispatch = useDispatch();
   const navigateToStaffAccess = React.useCallback(() => {
-    navigation.navigate(screenName.StaffAccess, {isReload: Math.random()});
+    dispatch({
+      type: UPDATE_FIRST_LOGIN,
+      payload: false,
+    });
+    navigation.dispatch(
+      StackActions.replace(screenName.StaffAccess, {isReload: Math.random()}),
+    );
   }, [navigation]);
   return (
     <>

@@ -6,6 +6,8 @@ import {isIphoneX} from 'react-native-iphone-x-helper';
 import {RFValue} from 'react-native-responsive-fontsize';
 import {Platform, Dimensions, StatusBar} from 'react-native';
 import moment from 'moment';
+import {createNavigationContainerRef} from '@react-navigation/native';
+import React from 'react';
 const {width: SCREEN_WIDTH, height: SCREEN_HEIGHT} = Dimensions.get('window');
 
 export const pxScale = {
@@ -34,6 +36,13 @@ export const pxScale = {
 export const formatDay = day => {
   return moment(day).format('ddd, MMM DD');
 };
+export const formatDay2 = day => {
+  return moment(day).format('ddd, DD MMM YYYY');
+};
 export const formatMoney = money => {
   return money.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+};
+export const navigationRef = React.createRef();
+export const navigateFunction = (name, params) => {
+  navigationRef.current?.navigate(name, params);
 };

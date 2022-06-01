@@ -4,6 +4,7 @@ import AppImageSvg from '../../../../../../components/AppImageSvg';
 import {pxScale} from '../../../../../../Helpers';
 import React from 'react';
 import {colors} from '../../../../../../constants';
+import styles from './styles';
 const MyPayslipTabs = ({pickedPayslipTab, onPressItem}) => {
   const onPress = React.useCallback(
     item => {
@@ -21,18 +22,20 @@ const MyPayslipTabs = ({pickedPayslipTab, onPressItem}) => {
       <View
         style={{
           marginRight: pxScale.wp(10),
-          borderBottomWidth: pickedPayslipTab === 'Payslip' ? 1 : 0,
+          borderBottomWidth: pickedPayslipTab === 'Payslip' ? 3 : 0,
           borderBottomColor: colors.primary.green,
         }}>
         <TouchableOpacity onPress={() => onPress('Payslip')}>
           <Text
-            style={{
-              fontSize: pxScale.fontSize(18),
-              color:
-                pickedPayslipTab === 'Payslip'
-                  ? colors.primary.green
-                  : colors.primary.black,
-            }}>
+            style={[
+              styles.text,
+              {
+                color:
+                  pickedPayslipTab === 'Payslip'
+                    ? colors.primary.green
+                    : colors.primary.black,
+              },
+            ]}>
             Payslip
           </Text>
         </TouchableOpacity>
@@ -41,18 +44,20 @@ const MyPayslipTabs = ({pickedPayslipTab, onPressItem}) => {
       <View
         style={{
           marginRight: pxScale.wp(10),
-          borderBottomWidth: pickedPayslipTab === 'Taxation' ? 1 : 0,
+          borderBottomWidth: pickedPayslipTab === 'Taxation' ? 3 : 0,
           borderBottomColor: colors.primary.green,
         }}>
         <TouchableOpacity onPress={() => onPress('Taxation')}>
           <Text
-            style={{
-              fontSize: pxScale.fontSize(18),
-              color:
-                pickedPayslipTab === 'Taxation'
-                  ? colors.primary.green
-                  : colors.primary.black,
-            }}>
+            style={[
+              styles.text,
+              {
+                color:
+                  pickedPayslipTab === 'Taxation'
+                    ? colors.primary.green
+                    : colors.primary.black,
+              },
+            ]}>
             Taxation
           </Text>
         </TouchableOpacity>
@@ -61,8 +66,8 @@ const MyPayslipTabs = ({pickedPayslipTab, onPressItem}) => {
       <AppImageSvg
         style={{flex: 1}}
         source={AppIcon.iconKey}
-        width={pxScale.wp(20)}
-        height={pxScale.hp(20)}
+        width={pxScale.wp(25)}
+        height={pxScale.hp(25)}
       />
     </View>
   );

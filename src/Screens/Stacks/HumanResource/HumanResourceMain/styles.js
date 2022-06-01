@@ -12,7 +12,7 @@ export default StyleSheet.create({
         ? pxScale.hp(44)
         : Platform.OS === 'ios' && !isIphoneX()
         ? pxScale.hp(20)
-        : StatusBar.currentHeight,
+        : pxScale.hp(0),
   },
   scrollContainer: {
     marginBottom: Platform.OS === 'ios' ? pxScale.hp(520) : pxScale.hp(530),

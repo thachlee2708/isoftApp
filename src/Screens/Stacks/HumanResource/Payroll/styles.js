@@ -14,7 +14,7 @@ export default StyleSheet.create({
         ? pxScale.hp(44)
         : Platform.OS === 'ios' && !isIphoneX()
         ? pxScale.hp(20)
-        : StatusBar.currentHeight,
+        : pxScale.hp(0),
   },
   detailContainer: {
     marginTop: pxScale.hp(30),

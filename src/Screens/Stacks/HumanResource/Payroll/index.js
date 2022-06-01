@@ -2,7 +2,6 @@ import React from 'react';
 import {SafeAreaView, View, Text, TouchableOpacity} from 'react-native';
 import AppHeader from '../../../../components/AppHeader';
 import {useNavigation} from '@react-navigation/native';
-import {screenName} from '../../../../constants';
 import PayrollTabs from './components/PayrollTabs';
 import styles from './styles';
 import MyPayslipTabs from './components/MyPayslipTabs';
@@ -45,8 +44,9 @@ const Payroll = () => {
 
         <YTabs pickedYear={pickedYear} onPressItem={setpickedYear} />
 
-        {pickedYear === 2022 && (
+        {[2022, 2020, 2019].includes(pickedYear) && (
           <WorkLocationPicker
+            pickedYear={pickedYear}
             pickedWorkLocation={workLocation}
             onPressToogleModal={() => setStateModalWorkLocation(true)}
           />

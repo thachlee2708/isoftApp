@@ -7,6 +7,7 @@ import CardItems from './components/CardItems';
 import {View, Text, TouchableOpacity, Image} from 'react-native';
 import {colors, fontFamily} from '../../../../../../constants';
 import PayrollFooter from './components/PayrollFooter';
+import LeaveFooter from './components/LeaveFooter';
 const Dashboard = () => {
   const listItemsDashboard = [
     {
@@ -21,6 +22,7 @@ const Dashboard = () => {
       details: 'Leave details, leave calendar',
       sourceLine: AppIcon.line.blue,
       icon: AppImage.leave,
+      renderFooter: <LeaveFooter />,
     },
     {
       title: 'Attendance',

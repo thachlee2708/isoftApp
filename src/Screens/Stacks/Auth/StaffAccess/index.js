@@ -18,8 +18,12 @@ import AppButton from '../../../../components/AppButton';
 import styles from './styles';
 import AppTextInput from '../../../../components/AppTextInput';
 import {colors, screenName} from '../../../../constants';
+import {useDispatch, useSelector} from 'react-redux';
+import {UPDATE_TOKEN} from '../../../../Redux/Auth/actions';
+import {StackActions} from '@react-navigation/native';
 const StaffAccess = ({route}) => {
-  const {isReload} = route.params;
+  const dispatch = useDispatch();
+  const {isReload, notShowBackIcon} = route?.params;
   const [companyCode, setCompanyCode] = React.useState('');
   const [userName, setUserName] = React.useState('');
   const [password, setPassword] = React.useState('');
@@ -28,7 +32,11 @@ const StaffAccess = ({route}) => {
     navigation.goBack();
   }, [navigation]);
   const navigateToPDPAAgree = React.useCallback(() => {
-    navigation.navigate(screenName.PDPAAgree);
+    navigation.dispatch(StackActions.replace(screenName.PDPAAgree));
+    dispatch({
+      type: UPDATE_TOKEN,
+      payload: '123abc',
+    });
   }, [navigation]);
   const navigateToResetPassword = React.useCallback(() => {
     navigation.navigate(screenName.ResetPassword);
@@ -40,7 +48,11 @@ const StaffAccess = ({route}) => {
   }, [isReload]);
   return (
     <SafeAreaView>
-      <AppHeader textTitle={'Login'} onpressBackIcon={onGoBack} />
+      <AppHeader
+        textTitle={'Login'}
+        onpressBackIcon={onGoBack}
+        isShowBackIcon={false}
+      />
       <Image
         source={AppImage.lockAndTree}
         style={{

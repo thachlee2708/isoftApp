@@ -1,15 +1,11 @@
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import React from 'react';
-import {SafeAreaView} from 'react-native';
 import {AppIcon} from '../../assets/icons';
 import AppImageSvg from '../../components/AppImageSvg';
-import {colors, fontFamily, screenName} from '../../constants';
+import {colors, screenName} from '../../constants';
 import {pxScale} from '../../Helpers';
 import Account from '../../Screens/Tabs/RootTab/Account';
-import Home from '../../Screens/Tabs/RootTab/Home';
 import More from '../../Screens/Tabs/RootTab/More';
-import {TabBar} from 'react-native-tab-view';
-import styles from './styles';
 import HomeStack from '../../StackNavigator/HomeStack';
 const Tab = createMaterialTopTabNavigator();
 const RootTabNavigator = () => {
