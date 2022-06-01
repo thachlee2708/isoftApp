@@ -7,12 +7,12 @@ import {
   Text,
   TouchableOpacity,
 } from 'react-native';
-import {AppImage} from '../../assets/images';
+import {AppImage} from 'assets/images';
 import AppImageSvg from '../AppImageSvg';
 import styles from './styles';
-import {AppIcon} from '../../assets/icons';
-import {pxScale} from '../../Helpers';
-import {colors, fontFamily} from '../../constants';
+import {AppIcon} from 'assets/icons';
+import {pxScale} from 'Helpers';
+import {colors, fontFamily} from 'constants';
 const AppHeader = ({textTitle, onpressBackIcon, isShowBackIcon}) => {
   const navigation = useNavigation();
   return (

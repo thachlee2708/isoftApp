@@ -1,7 +1,7 @@
 import React, {memo} from 'react';
 import {ImageBackground, TouchableOpacity, Text, View} from 'react-native';
-import AppImageSvg from '../../../../../../../../components/AppImageSvg';
-import {pxScale} from '../../../../../../../../Helpers';
+import AppImageSvg from 'components/AppImageSvg';
+import {pxScale} from 'Helpers';
 import styles from './styles';
 const optionApplication = ({
   sourceImage,

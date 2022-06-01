@@ -1,7 +1,7 @@
 import {StyleSheet} from 'react-native';
-import {colors} from '../../../../../constants';
-import {pxScale} from '../../../../../Helpers';
-import {fontFamily} from '../../../../../constants';
+import {colors} from 'constants';
+import {pxScale} from 'Helpers';
+import {fontFamily} from 'constants';
 export default StyleSheet.create({
   headerBackground: {
     backgroundColor: colors.primary.green,

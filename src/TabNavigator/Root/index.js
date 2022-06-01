@@ -1,14 +1,16 @@
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import React from 'react';
-import {AppIcon} from '../../assets/icons';
-import AppImageSvg from '../../components/AppImageSvg';
-import {colors, screenName} from '../../constants';
-import {pxScale} from '../../Helpers';
-import Account from '../../Screens/Tabs/RootTab/Account';
-import More from '../../Screens/Tabs/RootTab/More';
-import HomeStack from '../../StackNavigator/HomeStack';
+import {AppIcon} from 'assets/icons';
+import AppImageSvg from 'components/AppImageSvg';
+import {colors, screenName} from 'constants';
+import {pxScale} from 'Helpers';
+import Account from 'Screens/Tabs/RootTab/Account';
+import More from 'Screens/Tabs/RootTab/More';
+import HomeStack from 'StackNavigator/HomeStack';
+import {useSelector} from 'react-redux';
 const Tab = createMaterialTopTabNavigator();
 const RootTabNavigator = () => {
+  const token = useSelector(rootState => rootState.authReducer?.token);
   return (
     <Tab.Navigator
       backBehavior={'none'}

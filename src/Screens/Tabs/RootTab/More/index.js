@@ -1,11 +1,11 @@
 import {SafeAreaView, Text, TouchableOpacity, ScrollView} from 'react-native';
 import React, {memo} from 'react';
-import AppHeader from '../../../../components/AppHeader';
-import AppImageSvg from '../../../../components/AppImageSvg';
-import {pxScale} from '../../../../Helpers';
-import {screenName} from '../../../../constants';
+import AppHeader from 'components/AppHeader';
+import AppImageSvg from 'components/AppImageSvg';
+import {pxScale} from 'Helpers';
+import {screenName} from 'constants';
 import styles from './styles';
-import {AppIcon} from '../../../../assets/icons';
+import {AppIcon} from 'assets/icons';
 import {useNavigation} from '@react-navigation/native';
 const MoreTab = () => {
   const navigation = useNavigation();

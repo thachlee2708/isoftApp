@@ -1,11 +1,10 @@
 import {createNativeStackNavigator} from 'react-native-screens/native-stack';
 import React from 'react';
-import {screenName} from '../../constants';
-import Notification from '../../Screens/Stacks/Notification';
-import Home from '../../Screens/Tabs/RootTab/Home';
-import HumanResourceMain from '../../Screens/Stacks/HumanResource/HumanResourceMain';
-import Approval from '../../Screens/Stacks/HumanResource/HumanResourceMain/components/Approval';
-import Payroll from '../../Screens/Stacks/HumanResource/Payroll';
+import {screenName} from 'constants';
+import Notification from 'Screens/Stacks/Notification';
+import Home from 'Screens/Tabs/RootTab/Home';
+import HumanResourceMain from 'Screens/Stacks/HumanResource/HumanResourceMain';
+import Payroll from 'Screens/Stacks/HumanResource/Payroll';
 const Stack = createNativeStackNavigator();
 const HomeStack = () => {
   return (

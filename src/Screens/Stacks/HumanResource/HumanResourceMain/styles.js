@@ -1,9 +1,9 @@
 import {Platform} from 'react-native';
-import {pxScale} from '../../../../Helpers';
+import {pxScale} from 'Helpers';
 import {StyleSheet} from 'react-native';
 import {isIphoneX} from 'react-native-iphone-x-helper';
 import {StatusBar} from 'react-native';
-import {colors, fontFamily} from '../../../../constants';
+import {colors, fontFamily} from 'constants';
 export default StyleSheet.create({
   container: {
     backgroundColor: colors.primary.white,

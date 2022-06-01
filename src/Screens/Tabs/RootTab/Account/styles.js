@@ -1,7 +1,7 @@
 import {StyleSheet} from 'react-native';
-import {pxScale} from '../../../../Helpers';
-import {colors} from '../../../../constants';
-import {fontFamily} from '../../../../constants';
+import {pxScale} from 'Helpers';
+import {colors} from 'constants';
+import {fontFamily} from 'constants';
 export default StyleSheet.create({
   container: {backgroundColor: colors.primary.white},
   imageBackground: {

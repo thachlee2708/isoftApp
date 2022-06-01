@@ -1,8 +1,8 @@
 import React, {memo} from 'react';
 import {View, Text, Modal, Pressable} from 'react-native';
-import {AppIcon} from '../../../../../assets/icons';
-import AppImageSvg from '../../../../../components/AppImageSvg';
-import {pxScale} from '../../../../../Helpers';
+import {AppIcon} from 'assets/icons';
+import AppImageSvg from 'components/AppImageSvg';
+import {pxScale} from 'Helpers';
 import NotificationList from './components/NotificationList';
 import styles from './styles';
 const BatchNotificationsAction = ({

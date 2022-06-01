@@ -1,8 +1,7 @@
 import {ScrollView, View, Image, Text, TouchableOpacity} from 'react-native';
-import {AppIcon} from '../../../../../../assets/icons';
-import {AppImage} from '../../../../../../assets/images';
-import {pxScale} from '../../../../../../Helpers';
-import {colors} from '../../../../../../constants';
+import {AppImage} from 'assets/images';
+import {pxScale} from 'Helpers';
+import {colors} from 'constants';
 import React from 'react';
 import styles from './styles';
 const PayrollTabs = ({pickedTab, onPressItem}) => {

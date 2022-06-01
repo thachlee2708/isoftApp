@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {pxScale} from '../../../../../../../Helpers';
+import {pxScale} from 'Helpers';
 export default StyleSheet.create({
   container: {alignItems: 'center', justifyContent: 'center'},
   noCheck: {

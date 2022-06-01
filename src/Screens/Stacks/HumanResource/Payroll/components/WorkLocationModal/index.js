@@ -8,11 +8,10 @@ import {
   TextInput,
   TouchableOpacity,
 } from 'react-native';
-import {colors, fontFamily} from '../../../../../../constants';
-import {pxScale} from '../../../../../../Helpers';
+import {colors, fontFamily} from 'constants';
+import {pxScale} from 'Helpers';
 import React from 'react';
-import {AppIcon} from '../../../../../../assets/icons';
-import AppImageSvg from '../../../../../../components/AppImageSvg';
+import {AppIcon} from 'assets/icons';
 import dataTest from './dataTest';
 const WorkLocationModal = ({
   isVisible,

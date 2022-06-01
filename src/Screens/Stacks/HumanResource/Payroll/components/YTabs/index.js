@@ -1,8 +1,7 @@
 import {ScrollView, View, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
 import styles from './styles';
-import {it} from 'jest-circus';
-import {colors} from '../../../../../../constants';
+import {colors} from 'constants';
 const YTabs = ({pickedYear, onPressItem}) => {
   const currentYear = new Date().getFullYear();
   let yearArr = [];

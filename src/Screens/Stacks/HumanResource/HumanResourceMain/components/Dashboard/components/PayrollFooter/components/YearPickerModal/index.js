@@ -7,10 +7,10 @@ import {
   TouchableWithoutFeedback,
   Platform,
 } from 'react-native';
-import {AppIcon} from '../../../../../../../../../../assets/icons';
-import AppImageSvg from '../../../../../../../../../../components/AppImageSvg';
-import {colors, fontFamily} from '../../../../../../../../../../constants';
-import {pxScale} from '../../../../../../../../../../Helpers';
+import {AppIcon} from 'assets/icons';
+import AppImageSvg from 'components/AppImageSvg';
+import {colors, fontFamily} from 'constants';
+import {pxScale} from 'Helpers';
 import React from 'react';
 import styles from './styles';
 const YearPicker = ({

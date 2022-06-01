@@ -1,10 +1,9 @@
 import {FlatList, View, TouchableOpacity, Text} from 'react-native';
 import React from 'react';
-import {pxScale} from '../../../../../../../../../../Helpers';
+import {pxScale} from 'Helpers';
 import styles from './styles';
-import AppImageSvg from '../../../../../../../../../../components/AppImageSvg';
-import {AppIcon} from '../../../../../../../../../../assets/icons';
-import ItemPayslip from './ItemPayslip';
+import AppImageSvg from 'components/AppImageSvg';
+import {AppIcon} from 'assets/icons';
 const ListPayslip = () => {
   const listPayslip = [
     {

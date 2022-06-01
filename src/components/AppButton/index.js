@@ -6,7 +6,6 @@ import {
   ActivityIndicator,
   TouchableOpacity,
 } from 'react-native';
-import {pxScale} from '../../Helpers';
 import styles from './styles';
 import PropTypes from 'prop-types';
 const AppButton = ({buttonText, onPress, disabled, styleContainer}) => {

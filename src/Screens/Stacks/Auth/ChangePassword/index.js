@@ -1,23 +1,13 @@
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
-import {
-  View,
-  ImageBackground,
-  Image,
-  SafeAreaView,
-  Text,
-  TextInput,
-  TouchableOpacity,
-} from 'react-native';
-import AppHeader from '../../../../components/AppHeader';
-import {AppImage} from '../../../../assets/images';
-import {pxScale} from '../../../../Helpers';
-import AppImageSvg from '../../../../components/AppImageSvg';
-import {AppIcon} from '../../../../assets/icons';
-import AppButton from '../../../../components/AppButton';
+import {View, Image, SafeAreaView} from 'react-native';
+import AppHeader from 'components/AppHeader';
+import {AppImage} from 'assets/images';
+import {pxScale} from 'Helpers';
+import {AppIcon} from 'assets/icons';
+import AppButton from 'components/AppButton';
 import styles from './styles';
-import AppTextInput from '../../../../components/AppTextInput';
-import {colors, screenName} from '../../../../constants';
+import AppTextInput from 'components/AppTextInput';
 const ChangePassword = () => {
   const [curentPassword, setRurentPassword] = React.useState('');
   const [newPassword, setNewPassword] = React.useState('');

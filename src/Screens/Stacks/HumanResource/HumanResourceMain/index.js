@@ -1,13 +1,13 @@
 import {Animated, Platform, SafeAreaView, Text, View} from 'react-native';
 import React from 'react';
 import HeaderHumanResource from './components/HeaderHumanResource';
-import {pxScale} from '../../../../Helpers';
+import {pxScale} from 'Helpers';
 import {isIphoneX} from 'react-native-iphone-x-helper';
 import {useNavigation} from '@react-navigation/native';
 import styles from './styles';
-import {colors, fontFamily, screenName} from '../../../../constants';
+import {screenName} from 'constants';
 import Dashboard from './components/Dashboard';
-import AppHeader from '../../../../components/AppHeader';
+import AppHeader from 'components/AppHeader';
 import Approval from './components/Approval';
 import Announcement from './components/Announcement';
 const HumanResourceMain = () => {

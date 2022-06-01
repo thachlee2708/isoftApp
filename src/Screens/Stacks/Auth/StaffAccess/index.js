@@ -1,25 +1,16 @@
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
-import {
-  View,
-  ImageBackground,
-  Image,
-  SafeAreaView,
-  Text,
-  TextInput,
-  TouchableOpacity,
-} from 'react-native';
-import AppHeader from '../../../../components/AppHeader';
-import {AppImage} from '../../../../assets/images';
-import {pxScale} from '../../../../Helpers';
-import AppImageSvg from '../../../../components/AppImageSvg';
-import {AppIcon} from '../../../../assets/icons';
-import AppButton from '../../../../components/AppButton';
+import {View, Image, SafeAreaView, Text, TouchableOpacity} from 'react-native';
+import AppHeader from 'components/AppHeader';
+import {AppImage} from 'assets/images';
+import {pxScale} from 'Helpers';
+import {AppIcon} from 'assets/icons';
+import AppButton from 'components/AppButton';
 import styles from './styles';
-import AppTextInput from '../../../../components/AppTextInput';
-import {colors, screenName} from '../../../../constants';
+import AppTextInput from 'components/AppTextInput';
+import {colors, screenName} from 'constants';
 import {useDispatch, useSelector} from 'react-redux';
-import {UPDATE_TOKEN} from '../../../../Redux/Auth/actions';
+import {UPDATE_TOKEN} from 'Redux/Auth/actions';
 import {StackActions} from '@react-navigation/native';
 const StaffAccess = ({route}) => {
   const dispatch = useDispatch();

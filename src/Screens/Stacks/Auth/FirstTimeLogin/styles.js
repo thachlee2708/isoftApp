@@ -1,11 +1,6 @@
 import {StyleSheet} from 'react-native';
-import {
-  SCREEN_WIDTH,
-  SCREEN_HEIGHT,
-  fontFamily,
-  colors,
-} from '../../../../constants';
-import {pxScale} from '../../../../Helpers';
+import {SCREEN_WIDTH, SCREEN_HEIGHT, fontFamily, colors} from 'constants';
+import {pxScale} from 'Helpers';
 export default StyleSheet.create({
   container: {
     // flex: 1,

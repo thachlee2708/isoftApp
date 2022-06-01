@@ -1,25 +1,16 @@
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
-import {
-  View,
-  ImageBackground,
-  Image,
-  SafeAreaView,
-  Text,
-  TouchableOpacity,
-  StatusBar,
-} from 'react-native';
+import {View, ImageBackground, SafeAreaView, Text} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
-import {AppImage} from '../../../../assets/images';
-import AppImageSvg from '../../../../components/AppImageSvg';
+import {AppImage} from 'assets/images';
+import AppImageSvg from 'components/AppImageSvg';
 import styles from './styles';
-import {AppIcon} from '../../../../assets/icons';
-import {pxScale} from '../../../../Helpers';
-import {colors, fontFamily, screenName} from '../../../../constants';
-import AppButton from '../../../../components/AppButton';
-import AppHeader from '../../../../components/AppHeader';
+import {AppIcon} from 'assets/icons';
+import {pxScale} from 'Helpers';
+import {colors, fontFamily, screenName} from 'constants';
+import AppButton from 'components/AppButton';
 import {StackActions} from '@react-navigation/native';
-import {UPDATE_FIRST_LOGIN} from '../../../../Redux/Auth/actions';
+import {UPDATE_FIRST_LOGIN} from 'Redux/Auth/actions';
 const FirstTimeLogin = () => {
   const navigation = useNavigation();
   const dispatch = useDispatch();

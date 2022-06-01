@@ -1,9 +1,9 @@
 import {View, TouchableOpacity} from 'react-native';
 import React, {memo} from 'react';
 import styles from './styles';
-import AppImageSvg from '../../../../../../../components/AppImageSvg';
-import {pxScale} from '../../../../../../../Helpers';
-import {AppIcon} from '../../../../../../../assets/icons';
+import AppImageSvg from 'components/AppImageSvg';
+import {pxScale} from 'Helpers';
+import {AppIcon} from 'assets/icons';
 const CheckBox = ({onValueChange}) => {
   const [value, setValue] = React.useState(false);
   const onPress = React.useCallback(() => {

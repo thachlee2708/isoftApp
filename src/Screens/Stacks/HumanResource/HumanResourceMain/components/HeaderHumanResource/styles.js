@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {pxScale} from '../../../../../../Helpers';
+import {pxScale} from 'Helpers';
 export default StyleSheet.create({
   blurContainer: {
     top: Platform.OS === 'android' ? pxScale.hp(40) : pxScale.hp(70),

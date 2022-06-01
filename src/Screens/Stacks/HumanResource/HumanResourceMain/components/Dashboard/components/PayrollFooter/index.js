@@ -1,16 +1,14 @@
 import {View, Text, Image, TouchableOpacity, TextInput} from 'react-native';
 import React from 'react';
-import {formatMoney, pxScale} from '../../../../../../../../Helpers';
-import AppImageSvg from '../../../../../../../../components/AppImageSvg';
-import {AppIcon} from '../../../../../../../../assets/icons';
-import {fontFamily, screenName} from '../../../../../../../../constants';
-import {colors} from '../../../../../../../../constants';
-import {AppImage} from '../../../../../../../../assets/images';
+import {formatMoney, pxScale} from 'Helpers';
+import AppImageSvg from 'components/AppImageSvg';
+import {AppIcon} from 'assets/icons';
+import {fontFamily, screenName} from 'constants';
+import {colors} from 'constants';
 import YearPickerModal from './components/YearPickerModal';
 import SalaryDetails from './components/SalaryDetails';
 import ListPaySlip from './components/ListPaySlip';
 import {useNavigation} from '@react-navigation/native';
-import NoRecordFound from './components/NoRecordFound';
 const PayrollFooter = () => {
   const navigation = useNavigation();
   const [randomNum, setRandomNum] = React.useState(0);

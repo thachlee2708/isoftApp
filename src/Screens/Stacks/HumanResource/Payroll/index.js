@@ -1,6 +1,6 @@
 import React from 'react';
 import {SafeAreaView, View, Text, TouchableOpacity} from 'react-native';
-import AppHeader from '../../../../components/AppHeader';
+import AppHeader from 'components/AppHeader';
 import {useNavigation} from '@react-navigation/native';
 import PayrollTabs from './components/PayrollTabs';
 import styles from './styles';

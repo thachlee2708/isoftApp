@@ -1,19 +1,10 @@
-import {
-  Text,
-  View,
-  FlatList,
-  TouchableOpacity,
-  Platform,
-  Pressable,
-  SafeAreaView,
-  Animated,
-} from 'react-native';
+import {Text, View, FlatList, SafeAreaView} from 'react-native';
 import React, {memo, useRef} from 'react';
-import {pxScale} from '../../../../../Helpers';
+import {pxScale} from 'Helpers';
 import styles from './styles';
-import AppImageSvg from '../../../../../components/AppImageSvg';
-import {formatDay} from '../../../../../Helpers';
-import {colors, fontFamily} from '../../../../../constants';
+import AppImageSvg from 'components/AppImageSvg';
+import {formatDay} from 'Helpers';
+import {colors, fontFamily} from 'constants';
 const NotificationList = ({data}) => {
   const flatListRef = React.useRef();
   const onpressItem = React.useCallback(item => {}, []);

@@ -1,10 +1,9 @@
 import {View, Text, Image, TouchableOpacity, TextInput} from 'react-native';
 import React from 'react';
-import {formatMoney, pxScale} from '../../../../../../../../../../Helpers';
-import AppImageSvg from '../../../../../../../../../../components/AppImageSvg';
-import {AppIcon} from '../../../../../../../../../../assets/icons';
-import {fontFamily} from '../../../../../../../../../../constants';
-import {colors} from '../../../../../../../../../../constants';
+import {formatMoney, pxScale} from 'Helpers';
+import AppImageSvg from 'components/AppImageSvg';
+import {AppIcon} from 'assets/icons';
+import {fontFamily, colors} from 'constants';
 const SalaryDetails = ({isShowSalary}) => {
   return (
     <View style={{}}>

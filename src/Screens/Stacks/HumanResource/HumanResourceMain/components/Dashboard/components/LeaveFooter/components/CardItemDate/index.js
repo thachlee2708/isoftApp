@@ -1,10 +1,9 @@
 import {SafeAreaView, Text, View, TouchableOpacity, Image} from 'react-native';
 import React, {memo} from 'react';
-import AppImageSvg from '../../../../../../../../../../components/AppImageSvg';
-import {AppIcon} from '../../../../../../../../../../assets/icons';
-import {formatDay2, pxScale} from '../../../../../../../../../../Helpers';
+import AppImageSvg from 'components/AppImageSvg';
+import {AppIcon} from 'assets/icons';
+import {formatDay2, pxScale} from 'Helpers';
 import styles from './styles';
-import {formatDay} from '../../../../../../../../../../Helpers';
 const CardItemDate = ({date, dateType, onPress}) => {
   return (
     <SafeAreaView

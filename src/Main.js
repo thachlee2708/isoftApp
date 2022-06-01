@@ -2,7 +2,7 @@ import RootStack from './StackNavigator';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {LogBox} from 'react-native';
-import {screenName} from './constants';
+import {screenName} from 'constants';
 import {useSelector} from 'react-redux';
 LogBox.ignoreAllLogs();
 const Main = () => {
@@ -25,7 +25,7 @@ const Main = () => {
   if (loggedIn == true) {
     return (
       <NavigationContainer>
-        <RootStack initialRouteName={screenName.RootTab} />
+        <RootStack initialRouteName={null} />
       </NavigationContainer>
     );
   } else if (firstLoggedIn == true) {

@@ -1,11 +1,10 @@
 import {StyleSheet} from 'react-native';
-import {colors, fontFamily} from '../../../../../../constants';
-import {pxScale} from '../../../../../../Helpers';
+import {colors} from 'constants';
+import {pxScale} from 'Helpers';
 export default StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
-    // justifyContent: 'flex-end',
     marginTop: pxScale.hp(30),
   },
   textNewContainer: {

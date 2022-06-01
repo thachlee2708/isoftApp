@@ -1,16 +1,15 @@
 import {Text, View, FlatList, Platform, Pressable} from 'react-native';
 import React, {memo, useRef, useState} from 'react';
 import styles from './styles';
-import AppImageSvg from '../../../../../../../components/AppImageSvg';
-import {formatDay} from '../../../../../../../Helpers';
-import {pxScale} from '../../../../../../../Helpers';
-import {colors, fontFamily} from '../../../../../../../constants';
+import AppImageSvg from 'components/AppImageSvg';
+import {formatDay, pxScale} from 'Helpers';
+import {colors, fontFamily} from 'constants';
 import CheckBox from '../CheckBox';
 import {useDispatch, useSelector} from 'react-redux';
 import {
   UPDATE_CHECKED_AMOUNT,
   UPDATE_NOTIFICATION_LIST,
-} from '../../../../../../../Redux/Notification/actions';
+} from 'Redux/Notification/actions';
 const NotificationList = ({data, onDoneMark, readOrUnread}) => {
   const dispatch = useDispatch();
   const [arrList, setArrList] = useState(JSON.parse(JSON.stringify(data)));

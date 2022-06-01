@@ -1,16 +1,14 @@
 import {Text, View, ImageBackground, TouchableOpacity} from 'react-native';
 import React, {memo} from 'react';
-import {AppImage} from '../../../../../../assets/images';
-import {BlurView} from '@react-native-community/blur';
 import styles from './styles';
-import AppImageSvg from '../../../../../../components/AppImageSvg';
-import {AppIcon} from '../../../../../../assets/icons';
-import {pxScale} from '../../../../../../Helpers';
+import AppImageSvg from 'components/AppImageSvg';
+import {AppIcon} from 'assets/icons';
+import {pxScale} from 'Helpers';
 import {useDispatch, useSelector} from 'react-redux';
 import {
   UPDATE_NOTIFICATION_LIST,
   UPDATE_PREVIOUS_NOTIFICATION_LIST,
-} from '../../../../../../Redux/Notification/actions';
+} from 'Redux/Notification/actions';
 import dataNotificationTest from '../../dataTest/dataNotificationTest';
 const notificationRow = ({onPress, newNumber, viewAll, markAsRead}) => {
   const dispatch = useDispatch();

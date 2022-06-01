@@ -416,4 +416,12 @@ export const AppIcon = {
 <rect id="Boundary" width="24" height="24" fill="none"/>
 <path id="_Color" data-name=" ↳Color" d="M0,0,5,5l5-5Z" transform="translate(6.994 10)"/>
 </svg>`,
+  iconGreyCalendar: `<svg xmlns="http://www.w3.org/2000/svg" width="11" height="12" viewBox="0 0 11 12">
+<g id="calendar" transform="translate(0.5 0.5)">
+  <rect id="Rectangle_354" data-name="Rectangle 354" width="10" height="10" rx="2" transform="translate(0 1)" fill="none" stroke="#78909c" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+  <line id="Line_108" data-name="Line 108" y2="2" transform="translate(7)" fill="none" stroke="#78909c" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+  <line id="Line_109" data-name="Line 109" y2="2" transform="translate(3)" fill="none" stroke="#78909c" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+  <line id="Line_110" data-name="Line 110" x2="10" transform="translate(0 4)" fill="none" stroke="#78909c" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+</g>
+</svg>`,
 };

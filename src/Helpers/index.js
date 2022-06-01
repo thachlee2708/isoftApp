@@ -39,6 +39,9 @@ export const formatDay = day => {
 export const formatDay2 = day => {
   return moment(day).format('ddd, DD MMM YYYY');
 };
+export const formatDay3 = day => {
+  return moment(day).format('DD MMM YYYY');
+};
 export const formatMoney = money => {
   return money.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
 };

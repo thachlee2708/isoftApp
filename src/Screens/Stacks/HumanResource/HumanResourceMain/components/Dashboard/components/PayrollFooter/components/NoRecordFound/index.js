@@ -1,8 +1,8 @@
-import {View, Text, Image, TouchableOpacity, TextInput} from 'react-native';
+import {View, Text, Image} from 'react-native';
 import React from 'react';
-import {pxScale} from '../../../../../../../../../../Helpers';
-import {colors} from '../../../../../../../../../../constants';
-import {AppImage} from '../../../../../../../../../../assets/images';
+import {pxScale} from 'Helpers';
+import {colors} from 'constants';
+import {AppImage} from 'assets/images';
 const NoRecordFound = () => {
   return (
     <View style={{}}>

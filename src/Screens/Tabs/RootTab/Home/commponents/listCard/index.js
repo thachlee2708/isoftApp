@@ -1,8 +1,8 @@
 import {Text, View, FlatList, TouchableOpacity, Platform} from 'react-native';
 import React, {memo, useRef} from 'react';
-import {pxScale} from '../../../../../../Helpers';
+import {pxScale} from 'Helpers';
 import styles from './styles';
-import AppImageSvg from '../../../../../../components/AppImageSvg';
+import AppImageSvg from 'components/AppImageSvg';
 const listCard = ({data}) => {
   const flatListRef = React.useRef();
   const [dots, setDots] = React.useState([]);

@@ -1,9 +1,9 @@
 import {View, Text, TouchableOpacity} from 'react-native';
-import {AppIcon} from '../../../../../../assets/icons';
-import AppImageSvg from '../../../../../../components/AppImageSvg';
-import {pxScale} from '../../../../../../Helpers';
+import {AppIcon} from 'assets/icons';
+import AppImageSvg from 'components/AppImageSvg';
+import {pxScale} from 'Helpers';
 import React from 'react';
-import {colors} from '../../../../../../constants';
+import {colors} from 'constants';
 import styles from './styles';
 const MyPayslipTabs = ({pickedPayslipTab, onPressItem}) => {
   const onPress = React.useCallback(

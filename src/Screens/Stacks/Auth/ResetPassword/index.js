@@ -1,23 +1,14 @@
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
-import {
-  View,
-  ImageBackground,
-  Image,
-  SafeAreaView,
-  Text,
-  TextInput,
-  TouchableOpacity,
-} from 'react-native';
-import AppHeader from '../../../../components/AppHeader';
-import {AppImage} from '../../../../assets/images';
-import {pxScale} from '../../../../Helpers';
-import AppImageSvg from '../../../../components/AppImageSvg';
-import {AppIcon} from '../../../../assets/icons';
-import AppButton from '../../../../components/AppButton';
+import {View, SafeAreaView, Text} from 'react-native';
+import AppHeader from 'components/AppHeader';
+import {pxScale} from 'Helpers';
+import AppImageSvg from 'components/AppImageSvg';
+import {AppIcon} from 'assets/icons';
+import AppButton from 'components/AppButton';
 import styles from './styles';
-import AppTextInput from '../../../../components/AppTextInput';
-import {screenName} from '../../../../constants';
+import AppTextInput from 'components/AppTextInput';
+import {screenName} from 'constants';
 const ResetPassword = () => {
   const [companyCode, setCompanyCode] = React.useState('');
   const [email, setEmail] = React.useState('');

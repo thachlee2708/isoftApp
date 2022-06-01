@@ -1,17 +1,8 @@
 import React from 'react';
-import {
-  Modal,
-  Pressable,
-  TouchableOpacity,
-  View,
-  Text,
-  SafeAreaView,
-  Platform,
-} from 'react-native';
-import {AppIcon} from '../../../../../assets/icons';
-import AppImageSvg from '../../../../../components/AppImageSvg';
-import {pxScale} from '../../../../../Helpers';
-import {colors} from '../../../../../constants';
+import {Modal, Pressable, View, Text, Platform} from 'react-native';
+import {AppIcon} from 'assets/icons';
+import AppImageSvg from 'components/AppImageSvg';
+import {pxScale} from 'Helpers';
 import styles from './styles';
 
 const markAsReadButton = ({

@@ -1,9 +1,9 @@
 import {TouchableOpacity, View, Text} from 'react-native';
 import React from 'react';
-import {pxScale} from '../../../../../../Helpers';
-import {colors} from '../../../../../../constants';
-import AppImageSvg from '../../../../../../components/AppImageSvg';
-import {AppIcon} from '../../../../../../assets/icons';
+import {pxScale} from 'Helpers';
+import {colors} from 'constants';
+import AppImageSvg from 'components/AppImageSvg';
+import {AppIcon} from 'assets/icons';
 const WorkLocationPicker = ({
   pickedWorkLocation,
   onPressToogleModal,

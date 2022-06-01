@@ -1,6 +1,6 @@
 import React from 'react';
-import {AppIcon} from '../../../../../../assets/icons';
-import {AppImage} from '../../../../../../assets/images';
+import {AppIcon} from 'assets/icons';
+import {AppImage} from 'assets/images';
 import CardItems from './components/CardItems';
 import {View, Text} from 'react-native';
 const Announcement = () => {

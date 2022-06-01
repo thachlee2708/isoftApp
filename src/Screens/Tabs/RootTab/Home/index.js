@@ -1,14 +1,6 @@
-import {
-  SafeAreaView,
-  Text,
-  View,
-  BackHandler,
-  ScrollView,
-  Platform,
-} from 'react-native';
+import {Text, View, BackHandler, ScrollView, Platform} from 'react-native';
 import React, {memo} from 'react';
-import {AppImage} from '../../../../assets/images';
-import {pxScale} from '../../../../Helpers';
+import {pxScale} from 'Helpers';
 import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
 import HeaderHome from './commponents/headerHome';
@@ -16,9 +8,7 @@ import NotificationRow from './commponents/NotificationRow';
 import CardApplications from './commponents/cardApplications';
 import CardQR from './commponents/cardQR';
 import ListCard from './commponents/listCard';
-import dataListTest from './dataTest/dataListTest.js';
-import dataNotificationTest from './dataTest/dataNotificationTest';
-import {screenName} from '../../../../constants';
+import {screenName} from 'constants';
 const Home = ({route}) => {
   const isReload = route.params;
   const navigation = useNavigation();

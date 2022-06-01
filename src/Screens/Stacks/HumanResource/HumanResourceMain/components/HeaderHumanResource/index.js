@@ -4,24 +4,18 @@ import {
   Text,
   TouchableOpacity,
   View,
-  StatusBar,
   Platform,
 } from 'react-native';
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
-import {BlurView} from '@react-native-community/blur';
-import {isIphoneX} from 'react-native-iphone-x-helper';
-import {colors, fontFamily, screenName} from '../../../../../../constants';
-import {AppIcon} from '../../../../../../assets/icons';
-import AppImageSvg from '../../../../../../components/AppImageSvg';
-import {pxScale} from '../../../../../../Helpers';
-import {AppImage} from '../../../../../../assets/images';
+import {colors, fontFamily, screenName} from 'constants';
+import {AppIcon} from 'assets/icons';
+import AppImageSvg from 'components/AppImageSvg';
+import {pxScale} from 'Helpers';
+import {AppImage} from 'assets/images';
 import styles from './styles';
 const HeaderHumanResource = ({scrollY}) => {
   const navigation = useNavigation();
-  const [shouldRenderBlur, setshouldRenderBlur] = React.useState(
-    Platform.OS === 'ios' ? true : false,
-  );
   const iconList = () => [
     {
       name: screenName.Payroll,

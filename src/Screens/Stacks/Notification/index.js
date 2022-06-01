@@ -2,9 +2,9 @@ import React, {memo} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {View, SafeAreaView, BackHandler, Text, Modal} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
-import AppHeader from '../../../components/AppHeader';
-import {colors, screenName} from '../../../constants';
-import {pxScale} from '../../../Helpers';
+import AppHeader from 'components/AppHeader';
+import {colors, screenName} from 'constants';
+import {pxScale} from 'Helpers';
 import NotificationRow from '../../Tabs/RootTab/Home/commponents/NotificationRow';
 import MarkAsReadButton from './components/MarkAsReadButton';
 import NotificationList from './components/NotificationList';
@@ -12,7 +12,7 @@ import {
   UPDATE_CHECKED_AMOUNT,
   UPDATE_NOTIFICATION_LIST,
   UPDATE_PREVIOUS_NOTIFICATION_LIST,
-} from '../../../Redux/Notification/actions';
+} from 'Redux/Notification/actions';
 import ModalMarkAsRead from './components/ModalMarkAsRead';
 import BatchNotificationsAction from './components/BatchNotificationsAction';
 import styles from './styles';

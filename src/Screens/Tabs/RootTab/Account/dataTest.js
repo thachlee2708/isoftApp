@@ -1,4 +1,4 @@
-import {AppImage} from '../../../../assets/images';
+import {AppImage} from 'assets/images';
 
 export const dataTest = {
   avataImg: AppImage.starkTony,

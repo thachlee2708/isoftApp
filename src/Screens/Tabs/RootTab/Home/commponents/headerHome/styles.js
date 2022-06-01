@@ -1,6 +1,6 @@
 import {Platform, StyleSheet} from 'react-native';
-import {fontFamily} from '../../../../../../constants';
-import {pxScale} from '../../../../../../Helpers';
+import {fontFamily} from 'constants';
+import {pxScale} from 'Helpers';
 export default StyleSheet.create({
   imageHeader: {
     height: pxScale.hp(280),

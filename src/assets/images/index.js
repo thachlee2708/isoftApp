@@ -25,4 +25,7 @@ export const AppImage = {
   wallet: require('./wallet.png'),
   report: require('./report.png'),
   fullWallet: require('./fullWallet.png'),
+  balloon: require('./hot-air-balloon.png'),
+  baby: require('./baby_care.png'),
+  pharmacy: require('./pharmacy.png'),
 };

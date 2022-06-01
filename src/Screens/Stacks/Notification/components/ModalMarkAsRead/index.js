@@ -1,16 +1,8 @@
 import React, {memo} from 'react';
-import {
-  View,
-  SafeAreaView,
-  Platform,
-  Text,
-  Modal,
-  Pressable,
-} from 'react-native';
-import {AppIcon} from '../../../../../assets/icons';
-import AppImageSvg from '../../../../../components/AppImageSvg';
-import {colors} from '../../../../../constants';
-import {pxScale} from '../../../../../Helpers';
+import {Text, Modal, Pressable} from 'react-native';
+import {AppIcon} from 'assets/icons';
+import AppImageSvg from 'components/AppImageSvg';
+import {pxScale} from 'Helpers';
 import styles from './styles';
 const ModalMarkAsRead = ({isVisible, amountNumer, onPress, readOrUnread}) => {
   return (

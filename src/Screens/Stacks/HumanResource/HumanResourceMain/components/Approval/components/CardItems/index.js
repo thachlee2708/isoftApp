@@ -1,10 +1,8 @@
 import {SafeAreaView, Text, View, TouchableOpacity, Image} from 'react-native';
 import React, {memo} from 'react';
-import AppImageSvg from '../../../../../../../../components/AppImageSvg';
-import {AppIcon} from '../../../../../../../../assets/icons';
-import {pxScale} from '../../../../../../../../Helpers';
+import AppImageSvg from 'components/AppImageSvg';
+import {pxScale} from 'Helpers';
 import styles from './styles';
-import {colors} from '../../../../../../../../constants';
 const CardItem = ({
   sourceLine,
   sourceIcon,

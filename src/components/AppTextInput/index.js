@@ -1,19 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import {
-  View,
-  ImageBackground,
-  Image,
-  SafeAreaView,
-  Text,
-  TextInput,
-  TouchableOpacity,
-} from 'react-native';
+import {View, Text, TextInput, TouchableOpacity} from 'react-native';
 import AppImageSvg from '../AppImageSvg';
-import {AppIcon} from '../../assets/icons';
-import {pxScale} from '../../Helpers';
+import {AppIcon} from 'assets/icons';
+import {pxScale} from 'Helpers';
 import styles from './styles';
-import {colors} from '../../constants';
 const AppInput = ({
   textInputProps,
   label,
