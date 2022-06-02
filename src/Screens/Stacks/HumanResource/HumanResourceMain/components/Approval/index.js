@@ -1,5 +1,6 @@
 import React from 'react';
-import {AppIcon, AppImage} from 'assets/icons';
+import {AppIcon} from 'assets/icons';
+import {AppImage} from 'assets/images';
 import CardItems from './components/CardItems';
 import {View, Text} from 'react-native';
 const Approval = () => {
