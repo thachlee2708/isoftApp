@@ -1,7 +1,8 @@
 import React from 'react';
-import {AppIcon, AppImage} from 'assets/icons';
+import {AppIcon} from 'assets/icons';
+import {AppImage} from 'assets/images';
 import CardItems from './components/CardItems';
-import {View} from 'react-native';
+import {View, Text, TouchableOpacity, Image} from 'react-native';
 import PayrollFooter from './components/PayrollFooter';
 import LeaveFooter from './components/LeaveFooter';
 const Dashboard = () => {

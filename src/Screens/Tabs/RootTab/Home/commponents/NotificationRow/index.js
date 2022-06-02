@@ -1,4 +1,4 @@
-import {Text, View, ImageBackground, TouchableOpacity} from 'react-native';
+import {Text, View, TouchableOpacity} from 'react-native';
 import React, {memo} from 'react';
 import styles from './styles';
 import AppImageSvg from 'components/AppImageSvg';
@@ -10,7 +10,7 @@ import {
   UPDATE_PREVIOUS_NOTIFICATION_LIST,
 } from 'Redux/Notification/actions';
 import dataNotificationTest from '../../dataTest/dataNotificationTest';
-const notificationRow = ({onPress, newNumber, viewAll, markAsRead}) => {
+const notificationRow = ({onPress, viewAll, markAsRead}) => {
   const dispatch = useDispatch();
   const notificationList = useSelector(
     rootState => rootState.notificationReducer?.notificationList,

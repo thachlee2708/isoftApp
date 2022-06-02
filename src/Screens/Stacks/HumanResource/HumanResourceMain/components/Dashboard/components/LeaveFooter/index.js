@@ -22,7 +22,7 @@ const LeaveFooter = () => {
       balNum: 11,
       fromDate: '2021-12-01',
       toDate: '2022-07-30',
-      percent: 0,
+      percent: 80,
     },
     {
       leaveTitle: 'Sick Leave',
@@ -33,7 +33,7 @@ const LeaveFooter = () => {
       balText: 'Bal.',
       fromDate: '2021-07-21',
       toDate: '2022-12-31',
-      percent: 75,
+      percent: 35,
     },
     {
       leaveTitle: 'Child Care Leave',
@@ -44,7 +44,7 @@ const LeaveFooter = () => {
       balText: 'Bal.',
       fromDate: '2021-07-21',
       toDate: '2022-12-31',
-      percent: 25,
+      percent: 65,
     },
   ];
   return (
