@@ -9,10 +9,10 @@ import {
   TextInput,
   TouchableOpacity,
 } from 'react-native';
-import AppHeader from '../../../../components/AppHeader';
-import {fontFamily, screenName} from '../../../../constants';
-import {pxScale} from '../../../../Helpers';
-import AppButton from '../../../../components/AppButton';
+import AppHeader from 'components/AppHeader';
+import {fontFamily, screenName} from 'constants';
+import {pxScale} from 'Helpers';
+import AppButton from 'components/AppButton';
 import {StackActions} from '@react-navigation/native';
 const PDPAAgree = () => {
   const navigation = useNavigation();
