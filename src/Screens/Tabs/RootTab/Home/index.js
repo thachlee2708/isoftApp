@@ -8,7 +8,8 @@ import NotificationRow from './commponents/NotificationRow';
 import CardApplications from './commponents/cardApplications';
 import CardQR from './commponents/cardQR';
 import ListCard from './commponents/listCard';
-import {screenName} from 'constants';
+import dataListTest from './dataTest/dataListTest.js';
+import {screenName} from '../../../../constants';
 const Home = ({route}) => {
   const isReload = route.params;
   const navigation = useNavigation();
@@ -44,7 +45,7 @@ const Home = ({route}) => {
         }}>
         <CardQR />
         <NotificationRow viewAll={true} onPress={navigateToNotifications} />
-        <ListCard data={dataTest} />
+        <ListCard data={dataListTest} />
         <Text style={styles.ApplicationText}>Applications</Text>
         <CardApplications
           setShouldRenderBlur={() => setShouldRenderBlur(false)}
