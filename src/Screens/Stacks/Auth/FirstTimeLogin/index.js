@@ -11,7 +11,7 @@ import {colors, fontFamily, screenName} from 'constants';
 import AppButton from 'components/AppButton';
 import {StackActions} from '@react-navigation/native';
 import {updateToken} from 'Redux/Auth/reducers/authReducer';
-import {updateFirstLogin} from '../../../../Redux/Auth/reducers/authReducer';
+import {updateFirstLogin} from 'Redux/Auth/reducers/authReducer';
 const FirstTimeLogin = () => {
   const navigation = useNavigation();
   const dispatch = useDispatch();

@@ -12,7 +12,7 @@ import {
   updateCheckedAmount,
   updateNotificationList,
   updatePreviousNotificationList,
-} from '../../../Redux/Notification/reducers/notificationReducer';
+} from 'Redux/Notification/reducers/notificationReducer';
 import ModalMarkAsRead from './components/ModalMarkAsRead';
 import BatchNotificationsAction from './components/BatchNotificationsAction';
 import styles from './styles';
