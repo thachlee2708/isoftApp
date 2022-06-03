@@ -7,9 +7,9 @@ import {colors, fontFamily} from 'constants';
 import CheckBox from '../CheckBox';
 import {useDispatch, useSelector} from 'react-redux';
 import {
-  UPDATE_CHECKED_AMOUNT,
-  UPDATE_NOTIFICATION_LIST,
-} from 'Redux/Notification/actions';
+  updateCheckedAmount,
+  updateNotificationList,
+} from 'Redux/Notification/reducers/notificationReducer';
 const NotificationList = ({data, onDoneMark, readOrUnread}) => {
   const dispatch = useDispatch();
   const [arrList, setArrList] = useState(JSON.parse(JSON.stringify(data)));
@@ -18,10 +18,7 @@ const NotificationList = ({data, onDoneMark, readOrUnread}) => {
     rootState => rootState.notificationReducer?.checkedAmount,
   );
   const onPressDoneMark = React.useCallback(() => {
-    dispatch({
-      type: UPDATE_NOTIFICATION_LIST,
-      payload: [...arrList],
-    });
+    dispatch(updateNotificationList(arrList));
     onDoneMark();
   }, [dispatch, arrList, onDoneMark]);
   const renderItems = React.useCallback(
@@ -29,14 +26,8 @@ const NotificationList = ({data, onDoneMark, readOrUnread}) => {
       const renderItemline = ({item}) => {
         const onValueChange = value => {
           value
-            ? dispatch({
-                type: UPDATE_CHECKED_AMOUNT,
-                payload: checkedAmount + 1,
-              })
-            : dispatch({
-                type: UPDATE_CHECKED_AMOUNT,
-                payload: checkedAmount - 1,
-              });
+            ? dispatch(updateCheckedAmount(checkedAmount + 1))
+            : dispatch(updateCheckedAmount(checkedAmount - 1));
           if (readOrUnread === 'read' && value == true) {
             item.read = true;
           }

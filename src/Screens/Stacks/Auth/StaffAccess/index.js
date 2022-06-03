@@ -10,7 +10,7 @@ import styles from './styles';
 import AppTextInput from 'components/AppTextInput';
 import {colors, screenName} from 'constants';
 import {useDispatch, useSelector} from 'react-redux';
-import {UPDATE_TOKEN} from 'Redux/Auth/actions';
+import {updateToken} from 'Redux/Auth/reducers/authReducer';
 import {StackActions} from '@react-navigation/native';
 const StaffAccess = ({route}) => {
   const dispatch = useDispatch();
@@ -24,10 +24,7 @@ const StaffAccess = ({route}) => {
   }, [navigation]);
   const navigateToPDPAAgree = React.useCallback(() => {
     navigation.dispatch(StackActions.replace(screenName.PDPAAgree));
-    dispatch({
-      type: UPDATE_TOKEN,
-      payload: '123abc',
-    });
+    dispatch(updateToken('123abc'));
   }, [navigation]);
   const navigateToResetPassword = React.useCallback(() => {
     navigation.navigate(screenName.ResetPassword);

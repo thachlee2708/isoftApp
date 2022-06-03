@@ -11,6 +11,11 @@ import {useSelector} from 'react-redux';
 const Stack = createNativeStackNavigator();
 const RootStack = ({initialRouteName, initialParams}) => {
   const token = useSelector(rootState => rootState.authReducer?.token);
+  const notificationList = useSelector(
+    rootState => rootState.notificationReducer?.notificationList,
+  );
+  console.log('token2708', token);
+  console.log('notificationList', notificationList);
   return (
     <Stack.Navigator initialRouteName={initialRouteName}>
       {!token ? (

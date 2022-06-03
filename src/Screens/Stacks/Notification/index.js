@@ -9,10 +9,10 @@ import NotificationRow from '../../Tabs/RootTab/Home/commponents/NotificationRow
 import MarkAsReadButton from './components/MarkAsReadButton';
 import NotificationList from './components/NotificationList';
 import {
-  UPDATE_CHECKED_AMOUNT,
-  UPDATE_NOTIFICATION_LIST,
-  UPDATE_PREVIOUS_NOTIFICATION_LIST,
-} from 'Redux/Notification/actions';
+  updateCheckedAmount,
+  updateNotificationList,
+  updatePreviousNotificationList,
+} from '../../../Redux/Notification/reducers/notificationReducer';
 import ModalMarkAsRead from './components/ModalMarkAsRead';
 import BatchNotificationsAction from './components/BatchNotificationsAction';
 import styles from './styles';
@@ -54,7 +54,7 @@ const Notification = () => {
   const onGoBack = React.useCallback(() => {
     navigation.navigate(screenName.HomeScreen, {isReload: Math.random()});
   }, [navigation]);
-  const arrList = notificationList;
+  const arrList = JSON.parse(JSON.stringify(notificationList));
   const caculateFalseAmount = React.useCallback(() => {
     let newAmount = 0;
     notificationList.forEach((item, index) => {
@@ -76,27 +76,24 @@ const Notification = () => {
     arrList.map(item => {
       item.map(e => {
         e.read = true;
+        console.log(e.read);
       });
     });
     setReadOrUnread('read');
     setStateModal(true);
     setTimeout(() => {
       setStateModal(false);
-      dispatch({
-        type: UPDATE_PREVIOUS_NOTIFICATION_LIST,
-        payload: [...JSON.parse(JSON.stringify(notificationList))],
-      });
+      dispatch(
+        updatePreviousNotificationList(
+          JSON.parse(JSON.stringify(notificationList)),
+        ),
+      );
     }, 1000);
-    dispatch({
-      type: UPDATE_NOTIFICATION_LIST,
-      payload: [...arrList],
-    });
+    // console.log('arrList', arrList);
+    dispatch(updateNotificationList(arrList));
   }, [dispatch, arrList]);
   const onPressCloseModal = React.useCallback(() => {
-    dispatch({
-      type: UPDATE_CHECKED_AMOUNT,
-      payload: 0,
-    });
+    dispatch(updateCheckedAmount(0));
     setStateBatch(false);
     setNotificationAmountToChange(0);
   }, [setStateBatch]);
@@ -106,14 +103,12 @@ const Notification = () => {
     setStateModal(true);
     setTimeout(() => {
       setStateModal(false);
-      dispatch({
-        type: UPDATE_PREVIOUS_NOTIFICATION_LIST,
-        payload: [...JSON.parse(JSON.stringify(notificationList))],
-      });
-      dispatch({
-        type: UPDATE_CHECKED_AMOUNT,
-        payload: 0,
-      });
+      dispatch(
+        updatePreviousNotificationList(
+          JSON.parse(JSON.stringify(notificationList)),
+        ),
+      );
+      dispatch(updateCheckedAmount(0));
     }, 2000);
   }, [setStateBatch, setStateModal]);
   return (

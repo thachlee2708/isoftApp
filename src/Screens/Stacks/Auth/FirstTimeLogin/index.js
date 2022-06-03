@@ -10,15 +10,13 @@ import {pxScale} from 'Helpers';
 import {colors, fontFamily, screenName} from 'constants';
 import AppButton from 'components/AppButton';
 import {StackActions} from '@react-navigation/native';
-import {UPDATE_FIRST_LOGIN} from 'Redux/Auth/actions';
+import {updateToken} from 'Redux/Auth/reducers/authReducer';
+import {updateFirstLogin} from '../../../../Redux/Auth/reducers/authReducer';
 const FirstTimeLogin = () => {
   const navigation = useNavigation();
   const dispatch = useDispatch();
   const navigateToStaffAccess = React.useCallback(() => {
-    dispatch({
-      type: UPDATE_FIRST_LOGIN,
-      payload: false,
-    });
+    dispatch(updateFirstLogin(false));
     navigation.dispatch(
       StackActions.replace(screenName.StaffAccess, {isReload: Math.random()}),
     );

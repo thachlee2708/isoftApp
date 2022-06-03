@@ -1,2 +1,0 @@
-export const UPDATE_TOKEN = 'UPDATE_TOKEN';
-export const UPDATE_FIRST_LOGIN = 'UPDATE_FIRST_LOGIN';

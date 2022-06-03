@@ -1,17 +1,18 @@
-import {UPDATE_TOKEN, UPDATE_FIRST_LOGIN} from '../actions';
-const defaultState = {
-  token: null,
-  firstLogin: true,
-};
-export default (state = defaultState, action) => {
-  switch (action.type) {
-    case UPDATE_TOKEN: {
-      return {...state, token: action.payload};
-    }
-    case UPDATE_FIRST_LOGIN: {
-      return {...state, firstLogin: action.payload};
-    }
-    default:
-      return state;
-  }
-};
+import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
+
+const defaultState = {token: null, firstLogin: true};
+
+export const authReducer = createSlice({
+  name: 'authReducer',
+  initialState: defaultState,
+  reducers: {
+    updateToken: (state, action) => {
+      state.token = action.payload;
+    },
+    updateFirstLogin: (state, action) => {
+      state.firstLogin = action.payload;
+    },
+  },
+});
+export const {updateToken, updateFirstLogin} = authReducer.actions;
+export default authReducer.reducer;

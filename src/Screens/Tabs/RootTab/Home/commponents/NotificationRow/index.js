@@ -5,11 +5,11 @@ import AppImageSvg from 'components/AppImageSvg';
 import {AppIcon} from 'assets/icons';
 import {pxScale} from 'Helpers';
 import {useDispatch, useSelector} from 'react-redux';
-import {
-  UPDATE_NOTIFICATION_LIST,
-  UPDATE_PREVIOUS_NOTIFICATION_LIST,
-} from 'Redux/Notification/actions';
 import dataNotificationTest from '../../dataTest/dataNotificationTest';
+import {
+  updateNotificationList,
+  updatePreviousNotificationList,
+} from 'Redux/Notification/reducers/notificationReducer';
 const notificationRow = ({onPress, viewAll, markAsRead}) => {
   const dispatch = useDispatch();
   const notificationList = useSelector(
@@ -28,14 +28,14 @@ const notificationRow = ({onPress, viewAll, markAsRead}) => {
     });
     setNewNotificationAmount(newAmount);
     if (notificationList.length === 0) {
-      dispatch({
-        type: UPDATE_NOTIFICATION_LIST,
-        payload: [...arrNotificationList],
-      });
-      dispatch({
-        type: UPDATE_PREVIOUS_NOTIFICATION_LIST,
-        payload: [...JSON.parse(JSON.stringify(arrNotificationList))],
-      });
+      dispatch(
+        updateNotificationList(JSON.parse(JSON.stringify(arrNotificationList))),
+      );
+      dispatch(
+        updatePreviousNotificationList(
+          JSON.parse(JSON.stringify(arrNotificationList)),
+        ),
+      );
     }
   });
   return (
