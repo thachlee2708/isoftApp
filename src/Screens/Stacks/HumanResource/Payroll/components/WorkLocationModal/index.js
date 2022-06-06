@@ -7,6 +7,7 @@ import {
   Animated,
   TextInput,
   TouchableOpacity,
+  Platform,
 } from 'react-native';
 import {colors, fontFamily} from 'constants';
 import {pxScale} from 'Helpers';
@@ -22,7 +23,15 @@ const WorkLocationModal = ({
   pickedItem,
 }) => {
   const flatlistRef = React.useRef();
-
+  const [textSearch, setTextSearch] = React.useState('');
+  const [workLocationArr, setWorkLocationArr] = React.useState(dataTest);
+  React.useEffect(() => {
+    setWorkLocationArr(
+      dataTest.filter(item =>
+        item.worklocation.toLowerCase().includes(textSearch.toLowerCase()),
+      ),
+    );
+  }, [textSearch]);
   return (
     <Modal
       statusBarTranslucent
@@ -45,7 +54,7 @@ const WorkLocationModal = ({
             paddingHorizontal: pxScale.wp(16),
             borderRadius: pxScale.wp(10),
             alignSelf: 'center',
-            height: pxScale.hp(800),
+            height: Platform.OS === 'ios' ? pxScale.hp(800) : pxScale.hp(900),
             backgroundColor: colors.primary.white,
             width: pxScale.wp(428),
           }}>
@@ -66,8 +75,10 @@ const WorkLocationModal = ({
           </Text>
           <View
             style={{
+              alignItems: 'center',
               flexDirection: 'row',
-              padding: pxScale.wp(10),
+              height: pxScale.hp(50),
+              paddingLeft: pxScale.wp(10),
               borderWidth: 1,
               borderRadius: pxScale.wp(10),
               marginBottom: pxScale.hp(10),
@@ -78,11 +89,14 @@ const WorkLocationModal = ({
               height={pxScale.hp(20)}
               width={pxScale.wp(20)}
             />
-            <TextInput placeholder="Search Work Location" />
+            <TextInput
+              onChangeText={setTextSearch}
+              placeholder="Search Work Location"
+            />
           </View>
           <View>
             <ScrollView nestedScrollEnabled={true} style={{zIndex: 1}}>
-              {dataTest.map(item => {
+              {workLocationArr.map(item => {
                 return (
                   <TouchableOpacity
                     onPress={() => onPressItem(item.worklocation)}>
