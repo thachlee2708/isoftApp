@@ -20,11 +20,6 @@ const SalaryDetails = ({isShowSalary}) => {
           }}>
           CMM - Salary
         </Text>
-        <AppImageSvg
-          source={AppIcon.iconDollar}
-          height={pxScale.hp(13)}
-          width={pxScale.wp(13)}
-        />
         <TextInput
           secureTextEntry={isShowSalary}
           style={{
@@ -48,11 +43,6 @@ const SalaryDetails = ({isShowSalary}) => {
           }}>
           CMM - Salary
         </Text>
-        <AppImageSvg
-          source={AppIcon.iconDollar}
-          height={pxScale.hp(13)}
-          width={pxScale.wp(13)}
-        />
         <TextInput
           secureTextEntry={isShowSalary}
           style={{

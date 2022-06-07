@@ -4,7 +4,7 @@ import styles from './styles';
 import AppImageSvg from 'components/AppImageSvg';
 import {formatDay, pxScale} from 'Helpers';
 import {colors, fontFamily} from 'constants';
-import CheckBox from '../CheckBox';
+import CheckBox from 'components/CheckBox';
 import {useDispatch, useSelector} from 'react-redux';
 import {
   updateCheckedAmount,

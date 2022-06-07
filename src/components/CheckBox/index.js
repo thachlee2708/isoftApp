@@ -17,8 +17,8 @@ const CheckBox = ({onValueChange}) => {
         {value && (
           <AppImageSvg
             source={AppIcon.iconCheckBox}
-            width={pxScale.wp(25)}
-            height={pxScale.wp(25)}
+            width={pxScale.wp(18)}
+            height={pxScale.wp(18)}
           />
         )}
       </View>

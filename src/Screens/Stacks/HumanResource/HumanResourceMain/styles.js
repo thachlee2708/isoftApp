@@ -15,7 +15,7 @@ export default StyleSheet.create({
         : pxScale.hp(0),
   },
   scrollContainer: {
-    marginBottom: Platform.OS === 'ios' ? pxScale.hp(520) : pxScale.hp(530),
+    marginBottom: pxScale.hp(410),
   },
   titleText: {
     marginTop: pxScale.hp(20),

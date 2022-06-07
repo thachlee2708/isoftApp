@@ -6,7 +6,7 @@ export default StyleSheet.create({
     borderColor: '#979797',
     borderWidth: pxScale.wp(2),
     borderRadius: pxScale.wp(3),
-    width: pxScale.wp(25),
-    height: pxScale.wp(25),
+    width: pxScale.wp(18),
+    height: pxScale.wp(18),
   },
 });

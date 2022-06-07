@@ -223,7 +223,7 @@ const HeaderHumanResource = ({scrollY}) => {
   return (
     <View>
       {renderBigHeader()}
-      {renderSmallHeader()}
+      {/* {renderSmallHeader()} */}
     </View>
   );
 };

@@ -43,7 +43,7 @@ export const formatDay3 = day => {
   return moment(day).format('DD MMM YYYY');
 };
 export const formatMoney = money => {
-  return money.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+  return '$ ' + money.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
 };
 export const navigationRef = React.createRef();
 export const navigateFunction = (name, params) => {

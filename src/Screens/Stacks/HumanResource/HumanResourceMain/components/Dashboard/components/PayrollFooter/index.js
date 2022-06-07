@@ -9,7 +9,28 @@ import YearPickerModal from './components/YearPickerModal';
 import SalaryDetails from './components/SalaryDetails';
 import ListPaySlip from './components/ListPaySlip';
 import {useNavigation} from '@react-navigation/native';
+import NoRecordFound from './components/NoRecordFound';
 const PayrollFooter = () => {
+  const listPayslip = [
+    {
+      textDetails: 'CMM - Dec 31',
+    },
+    {
+      textDetails: 'CMM - Nov 30',
+    },
+    {
+      textDetails: 'CMM - Oct 31',
+    },
+    {
+      textDetails: 'CMM - Sep 30',
+    },
+    {
+      textDetails: 'CMM - Aug 31',
+    },
+    {
+      textDetails: 'CMM - Jul 31',
+    },
+  ];
   const navigation = useNavigation();
   const [randomNum, setRandomNum] = React.useState(0);
   const [stateModal, setStateModal] = React.useState(false);
@@ -120,11 +141,6 @@ const PayrollFooter = () => {
           alignItems: 'center',
           justifyContent: 'center',
         }}>
-        <AppImageSvg
-          source={AppIcon.iconDollar}
-          height={pxScale.hp(16)}
-          width={pxScale.wp(16)}
-        />
         <TextInput
           editable={false}
           secureTextEntry={isShowSalary}
@@ -132,7 +148,6 @@ const PayrollFooter = () => {
             flex: 1,
             fontFamily: fontFamily.InterBold,
             color: colors.primary.green,
-            marginHorizontal: pxScale.wp(10),
           }}>
           {formatMoney(43332.9)}
         </TextInput>
@@ -143,8 +158,8 @@ const PayrollFooter = () => {
       <Text style={{color: colors.primary.black}}>
         Payslip in past 6 months
       </Text>
-      {<ListPaySlip />}
-      {/* <NoRecordFound /> */}
+      {listPayslip?.length > 0 && <ListPaySlip data={listPayslip} />}
+      {!listPayslip?.length && <NoRecordFound />}
       {stateModal && (
         <YearPickerModal
           isVisible={stateModal}

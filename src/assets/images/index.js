@@ -28,4 +28,5 @@ export const AppImage = {
   balloon: require('./hot-air-balloon.png'),
   baby: require('./baby_care.png'),
   pharmacy: require('./pharmacy.png'),
+  calendarEmpty: require('./calendar-empty.png'),
 };

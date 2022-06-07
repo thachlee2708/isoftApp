@@ -14,8 +14,6 @@ const RootStack = ({initialRouteName, initialParams}) => {
   const notificationList = useSelector(
     rootState => rootState.notificationReducer?.notificationList,
   );
-  console.log('token2708', token);
-  console.log('notificationList', notificationList);
   return (
     <Stack.Navigator initialRouteName={initialRouteName}>
       {!token ? (

@@ -4,28 +4,7 @@ import {pxScale} from 'Helpers';
 import styles from './styles';
 import AppImageSvg from 'components/AppImageSvg';
 import {AppIcon} from 'assets/icons';
-const ListPayslip = () => {
-  const listPayslip = [
-    {
-      textDetails: 'CMM - Dec 31',
-    },
-    {
-      textDetails: 'CMM - Nov 30',
-    },
-    {
-      textDetails: 'CMM - Oct 31',
-    },
-    {
-      textDetails: 'CMM - Sep 30',
-    },
-    {
-      textDetails: 'CMM - Aug 31',
-    },
-    {
-      textDetails: 'CMM - Jul 31',
-    },
-  ];
-
+const ListPayslip = ({data}) => {
   const renderItem = ({item}) => {
     return (
       <View
@@ -74,7 +53,7 @@ const ListPayslip = () => {
       scrollEnabled={false}
       columnWrapperStyle={{justifyContent: 'space-between'}}
       contentContainerStyle={{paddingBottom: pxScale.hp(10)}}
-      data={listPayslip}
+      data={data}
       renderItem={renderItem}
       numColumns={2}
       keyExtractor={(_, index) => index.toString()}

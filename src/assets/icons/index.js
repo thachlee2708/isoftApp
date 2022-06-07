@@ -424,4 +424,12 @@ export const AppIcon = {
   <line id="Line_110" data-name="Line 110" x2="10" transform="translate(0 4)" fill="none" stroke="#78909c" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
 </g>
 </svg>`,
+  iconGreenCalendar: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="22" viewBox="0 0 20 22">
+<g id="calendar" transform="translate(1 1)">
+  <rect id="Rectangle_268" data-name="Rectangle 268" width="18" height="18" rx="2" transform="translate(0 2)" fill="none" stroke="#00ab9d" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+  <line id="Line_35" data-name="Line 35" y2="4" transform="translate(13)" fill="none" stroke="#00ab9d" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+  <line id="Line_36" data-name="Line 36" y2="4" transform="translate(5)" fill="none" stroke="#00ab9d" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+  <line id="Line_37" data-name="Line 37" x2="18" transform="translate(0 8)" fill="none" stroke="#00ab9d" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+</g>
+</svg>`,
 };

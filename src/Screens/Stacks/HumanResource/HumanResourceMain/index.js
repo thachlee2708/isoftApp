@@ -2,7 +2,6 @@ import {Animated, Platform, SafeAreaView, Text, View} from 'react-native';
 import React from 'react';
 import HeaderHumanResource from './components/HeaderHumanResource';
 import {pxScale} from 'Helpers';
-import {isIphoneX} from 'react-native-iphone-x-helper';
 import {useNavigation} from '@react-navigation/native';
 import styles from './styles';
 import {screenName} from 'constants';
@@ -18,11 +17,7 @@ const HumanResourceMain = () => {
   const scrollY = React.useRef(new Animated.Value(0)).current;
   const translateY = scrollY.interpolate({
     inputRange: [0, pxScale.hp(50), pxScale.hp(100)],
-    outputRange: [
-      0,
-      pxScale.hp(isIphoneX() ? -65 : -65),
-      pxScale.hp(isIphoneX() ? -130 : -130),
-    ],
+    outputRange: [-0, pxScale.hp(-125), pxScale.hp(-250)],
     extrapolate: 'clamp',
   });
   const scrollViewRef = React.useRef();
@@ -61,7 +56,7 @@ const HumanResourceMain = () => {
                 },
               },
             ],
-            {useNativeDriver: true},
+            {useNativeDriver: false},
           )}
           style={[
             styles.scrollContainer,

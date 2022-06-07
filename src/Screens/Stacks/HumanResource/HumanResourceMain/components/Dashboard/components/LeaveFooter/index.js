@@ -5,8 +5,20 @@ import {colors} from 'constants';
 import {pxScale} from 'Helpers';
 import CardItemDate from './components/CardItemDate';
 import CardItemLeave from './components/CardItemLeave';
-
+import AppImageSvg from 'components/AppImageSvg';
+import CheckBox from 'components/CheckBox';
+import {AppIcon} from '../../../../../../../../assets/icons';
+import PickerBox from './components/PickerBox';
+import {fontFamily} from '../../../../../../../../constants';
+import WeekPicker from './components/WeekPicker';
+import {current} from 'immer';
+import LeavesTaken from './components/LeavesTaken';
+import {leavesTakenData} from './dataTest';
 const LeaveFooter = () => {
+  const [checkViewAllEmployee, setCheckViewAllEmployee] = React.useState(false);
+  const onCheckViewAllEmployee = React.useCallback(value => {
+    setCheckViewAllEmployee(value);
+  });
   const upcomingLeave = [
     {date: '2021-12-13', type: 'Annual Leave'},
     {date: '2021-12-14', type: 'Annual Leave'},
@@ -47,6 +59,42 @@ const LeaveFooter = () => {
       percent: 65,
     },
   ];
+  const [currentDate, setCurrentDate] = React.useState(
+    new Date().toDateString(),
+  );
+  const BackToPreviousWeek = React.useCallback(() => {
+    var previous7day = new Date(currentDate);
+    previous7day.setDate(previous7day.getDate() - 8);
+    setCurrentDate(previous7day);
+  }, [setCurrentDate, currentDate]);
+  const MoveToNextWeek = React.useCallback(() => {
+    var next7d = new Date(currentDate);
+    next7d.setDate(next7d.getDate() + 8);
+    setCurrentDate(next7d);
+  }, [setCurrentDate, currentDate]);
+
+  const [listLeaveTaken, setListLeaveTaken] = React.useState(leavesTakenData);
+  React.useEffect(() => {
+    var d = new Date(currentDate);
+    d.setDate(d.getDate() + 1);
+    const previous7day = new Date(d);
+    previous7day.setDate(previous7day.getDate() - 7);
+    console.log(d, previous7day);
+    const arr = leavesTakenData.filter(item => {
+      console.log(
+        d.toISOString().split('T')[0],
+        new Date(item.date).toISOString().split('T')[0],
+        previous7day.toISOString().split('T')[0],
+      );
+      return (
+        new Date(item.date).toISOString().split('T')[0] >=
+          previous7day.toISOString().split('T')[0] &&
+        new Date(item.date).toISOString().split('T')[0] <=
+          d.toISOString().split('T')[0]
+      );
+    });
+    setListLeaveTaken(arr);
+  }, [currentDate]);
   return (
     <View
       style={{
@@ -84,6 +132,49 @@ const LeaveFooter = () => {
           />
         );
       })}
+
+      <View style={{flexDirection: 'row', alignItems: 'center'}}>
+        <AppImageSvg
+          source={AppIcon.iconGreenCalendar}
+          height={pxScale.hp(20)}
+          width={pxScale.wp(20)}
+        />
+        <Text
+          style={{
+            color: colors.primary.green,
+            marginLeft: pxScale.wp(10),
+            fontFamily: fontFamily.InterBold,
+          }}>
+          Leave Calendar
+        </Text>
+      </View>
+
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          marginTop: pxScale.hp(20),
+        }}>
+        <PickerBox titleText={'CMM'} />
+        <PickerBox titleText={'Marketing'} />
+      </View>
+      <View
+        style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          marginTop: pxScale.hp(10),
+        }}>
+        <CheckBox onValueChange={onCheckViewAllEmployee} />
+        <Text style={{marginLeft: pxScale.wp(8)}}>View All Employee</Text>
+      </View>
+      {
+        <WeekPicker
+          time={currentDate}
+          onPressLeft={BackToPreviousWeek}
+          onPressRight={MoveToNextWeek}
+        />
+      }
+      {<LeavesTaken listLeaveTaken={listLeaveTaken} />}
     </View>
   );
 };

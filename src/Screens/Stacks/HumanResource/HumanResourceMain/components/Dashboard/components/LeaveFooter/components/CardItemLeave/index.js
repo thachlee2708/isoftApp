@@ -68,7 +68,7 @@ const CardItemLeave = ({
             <View style={{marginLeft: pxScale.wp(10)}}>
               <Text
                 style={{
-                  fontSize: pxScale.fontSize(20),
+                  fontSize: pxScale.fontSize(18),
                   color: colors.primary.black,
                 }}>
                 {leaveTitle}
