@@ -40,7 +40,7 @@ const CardItems = ({
               source={sourceIcon}
               style={{
                 height: pxScale.hp(40),
-                width: pxScale.wp(40),
+                width: pxScale.hp(40),
                 marginHorizontal: pxScale.wp(10),
               }}
             />
