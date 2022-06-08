@@ -69,8 +69,7 @@ const CardItemLeave = ({
                   position: 'absolute',
                   top:
                     Platform.OS === 'android' ? pxScale.hp(20) : pxScale.hp(15),
-                  left:
-                    Platform.OS === 'android' ? pxScale.wp(20) : pxScale.wp(18),
+                  left: pxScale.wp(18),
                 }}
               />
             </View>
