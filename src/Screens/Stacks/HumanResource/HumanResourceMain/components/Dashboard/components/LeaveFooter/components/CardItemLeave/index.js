@@ -47,7 +47,7 @@ const CardItemLeave = ({
                 strokeWidth={pxScale.wp(5)}
                 radius={pxScale.wp(28)}
                 containerWidth={pxScale.wp(70)}
-                containerHeight={pxScale.hp(70)}
+                containerHeight={pxScale.wp(70)}
                 type="butt"
                 startAngle={0}
                 endAngle={360}
@@ -58,9 +58,9 @@ const CardItemLeave = ({
                 source={sourceIcon}
                 style={{
                   width: pxScale.wp(35),
-                  height: pxScale.hp(35),
+                  height: pxScale.wp(35),
                   position: 'absolute',
-                  top: pxScale.hp(17.5),
+                  top: pxScale.hp(22),
                   left: pxScale.wp(17.5),
                 }}
               />

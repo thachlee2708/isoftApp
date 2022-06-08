@@ -4,7 +4,7 @@ import AppImageSvg from 'components/AppImageSvg';
 import {AppIcon} from 'assets/icons';
 import {pxScale} from 'Helpers';
 import styles from './styles';
-const CardItem = ({
+const CardItems = ({
   sourceLine,
   sourceIcon,
   textTitle,
@@ -64,4 +64,4 @@ const CardItem = ({
     </SafeAreaView>
   );
 };
-export default memo(CardItem);
+export default memo(CardItems);
