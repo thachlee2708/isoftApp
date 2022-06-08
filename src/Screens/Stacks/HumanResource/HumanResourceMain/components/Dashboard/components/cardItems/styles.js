@@ -5,7 +5,7 @@ export default StyleSheet.create({
   wrap: {
     backgroundColor: colors.primary.white,
     borderRadius: pxScale.wp(8),
-    marginTop: pxScale.hp(15),
+    marginTop: pxScale.hp(10),
     paddingBotttom: pxScale.hp(15),
     shadowColor: '#000',
     shadowOffset: {

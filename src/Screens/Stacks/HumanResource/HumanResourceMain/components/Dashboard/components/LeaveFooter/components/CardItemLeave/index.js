@@ -1,4 +1,11 @@
-import {SafeAreaView, Text, View, TouchableOpacity, Image} from 'react-native';
+import {
+  SafeAreaView,
+  Text,
+  View,
+  TouchableOpacity,
+  Image,
+  Platform,
+} from 'react-native';
 import React, {memo} from 'react';
 import {DonutChart} from 'react-native-circular-chart';
 import AppImageSvg from 'components/AppImageSvg';
@@ -60,8 +67,10 @@ const CardItemLeave = ({
                   width: pxScale.wp(35),
                   height: pxScale.wp(35),
                   position: 'absolute',
-                  top: pxScale.hp(22),
-                  left: pxScale.wp(17.5),
+                  top:
+                    Platform.OS === 'android' ? pxScale.hp(20) : pxScale.hp(15),
+                  left:
+                    Platform.OS === 'android' ? pxScale.wp(20) : pxScale.wp(18),
                 }}
               />
             </View>
