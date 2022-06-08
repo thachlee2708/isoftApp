@@ -7,15 +7,20 @@ import CardItemDate from './components/CardItemDate';
 import CardItemLeave from './components/CardItemLeave';
 import AppImageSvg from 'components/AppImageSvg';
 import CheckBox from 'components/CheckBox';
-import {AppIcon} from '../../../../../../../../assets/icons';
+import {AppIcon} from 'assets/icons';
 import PickerBox from './components/PickerBox';
-import {fontFamily} from '../../../../../../../../constants';
+import {fontFamily} from 'constants';
 import WeekPicker from './components/WeekPicker';
-import {current} from 'immer';
 import LeavesTaken from './components/LeavesTaken';
 import {leavesTakenData} from './dataTest';
+import MultiWorkLocationModal from './components/MultiWorkLocationModal';
 const LeaveFooter = () => {
   const [checkViewAllEmployee, setCheckViewAllEmployee] = React.useState(false);
+  const [stateModalWorkLocation, setStateModalWorkLocation] =
+    React.useState(false);
+  const [selectedWorkLocation, setSelectedWorkLocation] = React.useState([]);
+  const [checkedWorkLocation, setCheckedWorkLocation] = React.useState([]);
+
   const onCheckViewAllEmployee = React.useCallback(value => {
     setCheckViewAllEmployee(value);
   });
@@ -79,13 +84,7 @@ const LeaveFooter = () => {
     d.setDate(d.getDate() + 1);
     const previous7day = new Date(d);
     previous7day.setDate(previous7day.getDate() - 7);
-    console.log(d, previous7day);
     const arr = leavesTakenData.filter(item => {
-      console.log(
-        d.toISOString().split('T')[0],
-        new Date(item.date).toISOString().split('T')[0],
-        previous7day.toISOString().split('T')[0],
-      );
       return (
         new Date(item.date).toISOString().split('T')[0] >=
           previous7day.toISOString().split('T')[0] &&
@@ -117,6 +116,16 @@ const LeaveFooter = () => {
       {upcomingPublicHoliday.map(item => {
         return <CardItemDate date={item.date} dateType={item.type} />;
       })}
+
+      <View style={{flexDirection: 'row'}}>
+        <View>
+          <Text>Highlights</Text>
+        </View>
+        <View>
+          <Text>Full Details</Text>
+        </View>
+      </View>
+
       {leaveHighlight.map(item => {
         return (
           <CardItemLeave
@@ -155,8 +164,11 @@ const LeaveFooter = () => {
           justifyContent: 'space-between',
           marginTop: pxScale.hp(20),
         }}>
-        <PickerBox titleText={'CMM'} />
-        <PickerBox titleText={'Marketing'} />
+        <PickerBox
+          arr={selectedWorkLocation}
+          onPress={() => setStateModalWorkLocation(true)}
+        />
+        <PickerBox arr={selectedWorkLocation} titleText={'Marketing'} />
       </View>
       <View
         style={{
@@ -175,6 +187,15 @@ const LeaveFooter = () => {
         />
       }
       {<LeavesTaken listLeaveTaken={listLeaveTaken} />}
+
+      {stateModalWorkLocation && (
+        <MultiWorkLocationModal
+          isVisible={stateModalWorkLocation}
+          onPressClose={() => setStateModalWorkLocation(false)}
+          setPickedItems={setSelectedWorkLocation}
+          checkedWorkLocation={checkedWorkLocation}
+        />
+      )}
     </View>
   );
 };

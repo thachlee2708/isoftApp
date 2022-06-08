@@ -1,9 +1,9 @@
 import React from 'react';
 import {TouchableOpacity, View, Text} from 'react-native';
 import AppImageSvg from 'components/AppImageSvg';
-import {AppIcon} from '../../../../../../../../../../assets/icons';
-import {pxScale} from '../../../../../../../../../../Helpers';
-const PickerBox = ({titleText, onPress}) => {
+import {AppIcon} from 'assets/icons';
+import {pxScale} from 'Helpers';
+const PickerBox = ({arr, onPress}) => {
   return (
     <TouchableOpacity onPress={onPress}>
       <View
@@ -15,7 +15,14 @@ const PickerBox = ({titleText, onPress}) => {
           height: pxScale.hp(50),
           width: pxScale.wp(170),
         }}>
-        <Text style={{marginLeft: pxScale.wp(10), flex: 1}}> {titleText}</Text>
+        {
+          <Text numberOfLines={2} style={{width: pxScale.wp(150)}}>
+            {arr.map(item => {
+              return item.worklocation + 'x ';
+            })}
+          </Text>
+        }
+        <View style={{flex: 1}} />
         <AppImageSvg
           style={{marginRight: pxScale.wp(10)}}
           source={AppIcon.arrowToBottom}

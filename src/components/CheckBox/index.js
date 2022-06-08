@@ -4,8 +4,8 @@ import styles from './styles';
 import AppImageSvg from 'components/AppImageSvg';
 import {pxScale} from 'Helpers';
 import {AppIcon} from 'assets/icons';
-const CheckBox = ({onValueChange}) => {
-  const [value, setValue] = React.useState(false);
+const CheckBox = ({onValueChange, initialValue}) => {
+  const [value, setValue] = React.useState(initialValue);
   const onPress = React.useCallback(() => {
     setValue(!value);
     return onValueChange(!value);

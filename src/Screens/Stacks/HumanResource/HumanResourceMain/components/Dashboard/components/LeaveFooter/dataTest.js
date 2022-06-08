@@ -114,4 +114,19 @@ export const leavesTakenData = [
     date: '2022-06-07',
     type: 'CCL',
   },
+  {
+    name: 'Lin Jun Jie',
+    date: '2022-06-08',
+    type: 'BFL',
+  },
+  {
+    name: 'Robert Downey Jr',
+    date: '2022-06-08',
+    type: '2nd - AL',
+  },
+  {
+    name: 'Chai Yee Fung',
+    date: '2022-06-09',
+    type: 'WTH',
+  },
 ];

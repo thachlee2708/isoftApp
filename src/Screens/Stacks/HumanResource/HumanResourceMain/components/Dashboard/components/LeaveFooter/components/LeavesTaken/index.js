@@ -29,13 +29,23 @@ const LeavesTaken = ({listLeaveTaken}) => {
                   : colors.label['text-EF6C00'],
               }}>
               <Text style={[styles.text, {flex: 1}]}>{item.name}</Text>
-              <View>
+              <View
+                style={{
+                  backgroundColor: ['BFL', '2nd - AL', 'AL'].includes(item.type)
+                    ? '#D9ECDA'
+                    : '#FCDCDC',
+                  height: pxScale.hp(30),
+                  maxWidth: pxScale.wp(100),
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  borderRadius: pxScale.wp(40),
+                }}>
                 <Text
                   style={[
                     styles.text,
                     {
                       color: ['BFL', '2nd - AL', 'AL'].includes(item.type)
-                        ? colors.primary.green
+                        ? '#43A047'
                         : colors.label['text-EF6C00'],
                     },
                   ]}>
