@@ -8,8 +8,6 @@ const headerHome = ({lastLoggedInTime, shouldRenderBlur}) => {
   return (
     <View
       style={{
-        margin: 0,
-        padding: 0,
         height: pxScale.hp(230),
         alignItems: 'center',
       }}>

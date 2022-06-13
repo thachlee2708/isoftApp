@@ -11,5 +11,5 @@ export default StyleSheet.create({
     paddingHorizontal: pxScale.wp(15),
   },
   icon: {},
-  text: {flex: 1, color: colors.primary.black},
+  text: {flex: 1, color: colors.primary.black, fontSize: pxScale.fontSize(15)},
 });
