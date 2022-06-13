@@ -26,7 +26,7 @@ export default StyleSheet.create({
   },
   text: {
     padding: 0,
-    marginRight: pxScale.wp(10),
+    marginHorizontal: pxScale.wp(10),
     color: colors.primary.black,
     fontSize: pxScale.fontSize(15),
   },
