@@ -19,7 +19,7 @@ const AppHeader = ({textTitle, onpressBackIcon, isShowBackIcon}) => {
     <View style={{backgroundColor: colors.primary.white}}>
       <ImageBackground
         source={AppImage.headerBackground}
-        resizeMode="contain"
+        resizeMode="stretch"
         style={styles.imageBackground}></ImageBackground>
       <View style={styles.contentContainer}>
         {isShowBackIcon && (

@@ -13,7 +13,7 @@ export default StyleSheet.create({
     backgroundColor: colors.primary.white,
     borderRadius: pxScale.wp(8),
     marginTop: Platform.OS === 'android' ? pxScale.hp(65) : pxScale.hp(25),
-    marginHorizontal: pxScale.wp(10),
+    marginRight: pxScale.wp(20),
     padding: pxScale.hp(15),
     shadowColor: '#000',
     shadowOffset: {
@@ -26,7 +26,8 @@ export default StyleSheet.create({
   },
   text: {
     padding: 0,
-    marginLeft: pxScale.wp(10),
+    marginRight: pxScale.wp(10),
     color: colors.primary.black,
+    fontSize: pxScale.fontSize(15),
   },
 });

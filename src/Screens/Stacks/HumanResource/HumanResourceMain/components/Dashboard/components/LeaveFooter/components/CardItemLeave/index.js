@@ -68,7 +68,7 @@ const CardItemLeave = ({
                   height: pxScale.wp(35),
                   position: 'absolute',
                   top:
-                    Platform.OS === 'android' ? pxScale.hp(20) : pxScale.hp(15),
+                    Platform.OS === 'android' ? pxScale.wp(16) : pxScale.wp(15),
                   left: pxScale.wp(18),
                 }}
               />

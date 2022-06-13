@@ -4,9 +4,9 @@ import {pxScale} from 'Helpers';
 export default StyleSheet.create({
   imageBackground: {
     position: 'absolute',
-    width: pxScale.wp(820),
-    height: pxScale.hp(246),
-    left: pxScale.wp(-210),
+    width: pxScale.wp(856),
+    height: pxScale.hp(240),
+    left: pxScale.wp(-240),
     top: pxScale.hp(-150),
   },
   contentContainer: {
