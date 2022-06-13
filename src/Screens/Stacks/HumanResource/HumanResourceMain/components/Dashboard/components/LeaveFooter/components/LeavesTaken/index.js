@@ -1,14 +1,14 @@
 import React from 'react';
-import {Image, View, Text, TouchableOpacity} from 'react-native';
+import {Image, View, Text, TouchableOpacity, Platform} from 'react-native';
 import {AppImage} from 'assets/images';
 import {pxScale} from 'Helpers';
 import {AppIcon} from '../../../../../../../../../../assets/icons';
 import AppImageSvg from 'components/AppImageSvg';
 import styles from './styles';
 import {colors} from '../../../../../../../../../../constants';
-
 const LeavesTaken = ({listLeaveTaken}) => {
-  const renderItem = React.useCallback(item => {
+  const RenderItem = ({item}) => {
+    const [showToolTip, setShowToolTip] = React.useState(false);
     return (
       <View
         style={{
@@ -16,7 +16,9 @@ const LeavesTaken = ({listLeaveTaken}) => {
           paddingHorizontal: pxScale.hp(5),
         }}>
         <View style={styles.wrap}>
-          <TouchableOpacity activeOpacity={1}>
+          <TouchableOpacity
+            activeOpacity={1}
+            onPress={() => setShowToolTip(!showToolTip)}>
             <View
               style={{
                 paddingVertical: pxScale.wp(8),
@@ -55,9 +57,46 @@ const LeavesTaken = ({listLeaveTaken}) => {
             </View>
           </TouchableOpacity>
         </View>
+        {showToolTip && (
+          <View
+            style={{
+              top: Platform.OS === 'ios' ? pxScale.hp(-125) : pxScale.hp(-155),
+              position: 'absolute',
+              alignSelf: 'center',
+              alignItems: 'center',
+              height: pxScale.hp(190),
+              width: pxScale.wp(210),
+            }}>
+            <View
+              style={{
+                padding: pxScale.wp(10),
+                paddingRight: pxScale.wp(20),
+                borderRadius: pxScale.wp(8),
+                backgroundColor: colors.primary.green,
+              }}>
+              <Text style={styles.textToolTip}>
+                {item.name}
+                {'\n'}[(1st Half) Unpaid Leave]
+              </Text>
+              <View
+                style={{
+                  borderColor: colors.primary.white,
+                  borderWidth: pxScale.hp(0.5),
+                  width: pxScale.wp(215),
+                  height: 0,
+                }}></View>
+              <Text style={styles.textToolTip}>
+                Half Day: (1st Half){'\n'}
+                Status: Approved{'\n'}
+                Remark: Personal
+              </Text>
+            </View>
+            <View style={styles.triangle}></View>
+          </View>
+        )}
       </View>
     );
-  });
+  };
   return (
     <View style={{marginTop: pxScale.hp(20)}}>
       {listLeaveTaken?.length === 0 && (
@@ -71,7 +110,10 @@ const LeavesTaken = ({listLeaveTaken}) => {
           </Text>
         </View>
       )}
-      {listLeaveTaken?.length > 0 && listLeaveTaken.map(renderItem)}
+      {listLeaveTaken?.length > 0 &&
+        listLeaveTaken.map(item => {
+          return <RenderItem item={item} />;
+        })}
     </View>
   );
 };
