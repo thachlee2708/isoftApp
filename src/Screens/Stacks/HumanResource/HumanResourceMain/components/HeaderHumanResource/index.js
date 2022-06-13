@@ -134,7 +134,12 @@ const HeaderHumanResource = ({scrollY}) => {
                 fontSize: pxScale.fontSize(16),
                 color: colors.primary.black,
               }}>
-              Hello,
+              {new Date().getHours() < 12
+                ? 'Good Morning'
+                : new Date().getHours() < 17
+                ? 'Good Afternoon'
+                : 'Good Evening'}
+              ,
             </Text>
             <Text
               style={{

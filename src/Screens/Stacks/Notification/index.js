@@ -76,7 +76,6 @@ const Notification = () => {
     arrList.map(item => {
       item.map(e => {
         e.read = true;
-        console.log(e.read);
       });
     });
     setReadOrUnread('read');
@@ -89,7 +88,6 @@ const Notification = () => {
         ),
       );
     }, 1000);
-    // console.log('arrList', arrList);
     dispatch(updateNotificationList(arrList));
   }, [dispatch, arrList]);
   const onPressCloseModal = React.useCallback(() => {

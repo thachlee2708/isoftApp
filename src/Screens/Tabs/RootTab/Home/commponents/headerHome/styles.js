@@ -3,8 +3,8 @@ import {fontFamily} from 'constants';
 import {pxScale} from 'Helpers';
 export default StyleSheet.create({
   imageHeader: {
-    height: pxScale.hp(290),
-    width: pxScale.wp(450),
+    height: pxScale.hp(280),
+    width: pxScale.wp(440),
   },
   blurContainer: {
     top: Platform.OS === 'android' ? pxScale.hp(40) : pxScale.hp(70),
