@@ -15,20 +15,20 @@ import React from 'react';
 import {AppIcon} from 'assets/icons';
 import AppImageSvg from 'components/AppImageSvg';
 import AppButton from 'components/AppButton';
-import dataTest from './dataTest';
 import CheckBox from 'components/CheckBox';
 const MultiWorkLocationModal = ({
   isVisible,
   onPressClose,
   setPickedItems,
   checkedWorkLocation,
+  data,
 }) => {
   const [textSearch, setTextSearch] = React.useState('');
-  const [workLocationArr, setWorkLocationArr] = React.useState(dataTest);
+  const [workLocationArr, setWorkLocationArr] = React.useState(data);
   const [checkedItems, setCheckedItems] = React.useState(checkedWorkLocation);
   React.useEffect(() => {
     setWorkLocationArr(
-      dataTest.filter(item =>
+      data.filter(item =>
         item.worklocation.toLowerCase().includes(textSearch.toLowerCase()),
       ),
     );
@@ -36,13 +36,10 @@ const MultiWorkLocationModal = ({
 
   const renderItem = React.useCallback(item => {
     const onCheckItem = value => {
-      console.log(checkedItems);
       if (value) {
-        console.log('1', checkedItems.includes(item));
         if (!checkedItems.includes(item)) {
           checkedItems.push(item);
         }
-        console.log('2', checkedItems.includes(item));
       }
       if (!value) {
         var i = checkedItems.indexOf(item);

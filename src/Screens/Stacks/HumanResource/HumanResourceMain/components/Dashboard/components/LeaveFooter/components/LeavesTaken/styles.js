@@ -1,7 +1,7 @@
 import {StyleSheet} from 'react-native';
 import {pxScale} from 'Helpers';
 import {colors} from 'constants';
-import {fontFamily} from '../../../../../../../../../../constants';
+import {fontFamily} from 'constants';
 export default StyleSheet.create({
   wrap: {
     backgroundColor: colors.primary.white,

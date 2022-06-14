@@ -12,7 +12,7 @@ import PickerBox from './components/PickerBox';
 import {fontFamily} from 'constants';
 import WeekPicker from './components/WeekPicker';
 import LeavesTaken from './components/LeavesTaken';
-import {leavesTakenData} from './dataTest';
+import {leavesTakenData, listWorkLocation, listMajor} from './dataTest';
 import MultiWorkLocationModal from './components/MultiWorkLocationModal';
 const LeaveFooter = () => {
   const [checkViewAllEmployee, setCheckViewAllEmployee] = React.useState(false);
@@ -20,6 +20,10 @@ const LeaveFooter = () => {
     React.useState(false);
   const [selectedWorkLocation, setSelectedWorkLocation] = React.useState([]);
   const [checkedWorkLocation, setCheckedWorkLocation] = React.useState([]);
+
+  const [stateModalMajor, setStateModalMajor] = React.useState(false);
+  const [selectedMajor, setSelectedMajor] = React.useState([]);
+  const [checkedMajor, setCheckedMajor] = React.useState([]);
 
   const onCheckViewAllEmployee = React.useCallback(value => {
     setCheckViewAllEmployee(value);
@@ -168,7 +172,10 @@ const LeaveFooter = () => {
           arr={selectedWorkLocation}
           onPress={() => setStateModalWorkLocation(true)}
         />
-        <PickerBox arr={selectedWorkLocation} titleText={'Marketing'} />
+        <PickerBox
+          arr={selectedMajor}
+          onPress={() => setStateModalMajor(true)}
+        />
       </View>
       <View
         style={{
@@ -190,10 +197,20 @@ const LeaveFooter = () => {
 
       {stateModalWorkLocation && (
         <MultiWorkLocationModal
+          data={listWorkLocation}
           isVisible={stateModalWorkLocation}
           onPressClose={() => setStateModalWorkLocation(false)}
           setPickedItems={setSelectedWorkLocation}
           checkedWorkLocation={checkedWorkLocation}
+        />
+      )}
+      {stateModalMajor && (
+        <MultiWorkLocationModal
+          data={listMajor}
+          isVisible={stateModalMajor}
+          onPressClose={() => setStateModalMajor(false)}
+          setPickedItems={setSelectedMajor}
+          checkedWorkLocation={checkedMajor}
         />
       )}
     </View>

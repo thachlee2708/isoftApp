@@ -2,10 +2,8 @@ import React from 'react';
 import {Image, View, Text, TouchableOpacity, Platform} from 'react-native';
 import {AppImage} from 'assets/images';
 import {pxScale} from 'Helpers';
-import {AppIcon} from '../../../../../../../../../../assets/icons';
-import AppImageSvg from 'components/AppImageSvg';
 import styles from './styles';
-import {colors} from '../../../../../../../../../../constants';
+import {colors} from 'constants';
 const LeavesTaken = ({listLeaveTaken}) => {
   const RenderItem = ({item}) => {
     const [showToolTip, setShowToolTip] = React.useState(false);

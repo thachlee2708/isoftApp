@@ -130,3 +130,31 @@ export const leavesTakenData = [
     type: 'WTH',
   },
 ];
+export const listWorkLocation = [
+  {worklocation: 'CMM'},
+  {worklocation: 'Outlet 01'},
+  {worklocation: 'Outlet 02'},
+  {worklocation: 'Outlet 03'},
+  {worklocation: 'Outlet 04'},
+  {worklocation: 'Outlet 05'},
+  {worklocation: 'Outlet 06'},
+  {worklocation: 'Outlet 07'},
+  {worklocation: 'Outlet 08'},
+  {worklocation: 'Outlet 09'},
+  {worklocation: 'Outlet 10'},
+  {worklocation: 'Outlet 11'},
+  {worklocation: 'Outlet 12'},
+  {worklocation: 'Outlet 13'},
+  {worklocation: 'Outlet 14'},
+  {worklocation: 'Outlet 15'},
+  {worklocation: 'Outlet 16'},
+];
+export const listMajor = [
+  {worklocation: 'IT'},
+  {worklocation: 'Marketing'},
+  {worklocation: 'Design'},
+  {worklocation: 'Business Analyst'},
+  {worklocation: 'Data Science'},
+  {worklocation: 'HR'},
+  {worklocation: 'PM'},
+];

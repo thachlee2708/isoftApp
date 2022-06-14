@@ -1,4 +1,4 @@
-import {Text, View, ImageBackground} from 'react-native';
+import {Text, View, ImageBackground, Platform} from 'react-native';
 import React, {memo} from 'react';
 import {AppImage} from 'assets/images';
 import {BlurView} from '@react-native-community/blur';
@@ -8,7 +8,7 @@ const headerHome = ({lastLoggedInTime, shouldRenderBlur}) => {
   return (
     <View
       style={{
-        height: pxScale.hp(230),
+        height: Platform.OS === 'ios' ? pxScale.hp(240) : pxScale.hp(220),
         alignItems: 'center',
       }}>
       <ImageBackground
