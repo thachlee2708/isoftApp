@@ -14,6 +14,7 @@ import WeekPicker from './components/WeekPicker';
 import LeavesTaken from './components/LeavesTaken';
 import {leavesTakenData, listWorkLocation, listMajor} from './dataTest';
 import MultiWorkLocationModal from './components/MultiWorkLocationModal';
+import styles from './styles';
 const LeaveFooter = () => {
   const [checkViewAllEmployee, setCheckViewAllEmployee] = React.useState(false);
   const [stateModalWorkLocation, setStateModalWorkLocation] =
@@ -71,6 +72,14 @@ const LeaveFooter = () => {
   const [currentDate, setCurrentDate] = React.useState(
     new Date().toDateString(),
   );
+  const [tabPicked, setTabPicked] = React.useState('highlights');
+
+  const switchTab = React.useCallback(() => {
+    tabPicked === 'highlights'
+      ? setTabPicked('details')
+      : setTabPicked('highlights');
+  }, [setTabPicked, tabPicked]);
+
   const BackToPreviousWeek = React.useCallback(() => {
     var previous7day = new Date(currentDate);
     previous7day.setDate(previous7day.getDate() - 8);
@@ -120,13 +129,38 @@ const LeaveFooter = () => {
       {upcomingPublicHoliday.map(item => {
         return <CardItemDate date={item.date} dateType={item.type} />;
       })}
-
-      <View style={{flexDirection: 'row'}}>
-        <View>
-          <Text>Highlights</Text>
-        </View>
-        <View>
-          <Text>Full Details</Text>
+      <View
+        style={{
+          marginBottom: pxScale.wp(20),
+          marginHorizontal: pxScale.hp(5),
+        }}>
+        <View style={styles.shawdowHighlights}>
+          <View style={styles.tabHighlightsContainer}>
+            <TouchableOpacity onPress={switchTab}>
+              <View
+                style={
+                  tabPicked === 'highlights' ? styles.tabPicked : styles.tab
+                }>
+                <Text
+                  style={
+                    tabPicked === 'highlights' ? styles.textPicked : styles.text
+                  }>
+                  Highlights
+                </Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={switchTab}>
+              <View
+                style={tabPicked === 'details' ? styles.tabPicked : styles.tab}>
+                <Text
+                  style={
+                    tabPicked === 'details' ? styles.textPicked : styles.text
+                  }>
+                  Full Details
+                </Text>
+              </View>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
 
