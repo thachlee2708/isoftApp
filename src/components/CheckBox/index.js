@@ -4,12 +4,15 @@ import styles from './styles';
 import AppImageSvg from 'components/AppImageSvg';
 import {pxScale} from 'Helpers';
 import {AppIcon} from 'assets/icons';
-const CheckBox = ({onValueChange, initialValue}) => {
+const CheckBox = ({onValueChange, initialValue, changeValue}) => {
   const [value, setValue] = React.useState(initialValue);
   const onPress = React.useCallback(() => {
     setValue(!value);
     return onValueChange(!value);
   }, [value, setValue, onValueChange]);
+  React.useEffect(() => {
+    setValue(changeValue);
+  }, [changeValue]);
   return (
     <TouchableOpacity onPress={onPress}>
       <View style={styles.container}>

@@ -68,7 +68,7 @@ const CardItemLeave = ({
                   height: pxScale.wp(35),
                   position: 'absolute',
                   top:
-                    Platform.OS === 'android' ? pxScale.wp(16) : pxScale.wp(15),
+                    Platform.OS === 'android' ? pxScale.wp(16) : pxScale.wp(18),
                   left: pxScale.wp(18),
                 }}
               />
@@ -117,7 +117,7 @@ const CardItemLeave = ({
                 <Text
                   style={{
                     marginLeft: pxScale.wp(5),
-                    fontSize: pxScale.fontSize(17),
+                    fontSize: pxScale.fontSize(15),
                   }}>
                   {formatDay3(fromDate)} to {formatDay3(toDate)}
                 </Text>

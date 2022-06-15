@@ -432,4 +432,10 @@ export const AppIcon = {
   <line id="Line_37" data-name="Line 37" x2="18" transform="translate(0 8)" fill="none" stroke="#00ab9d" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
 </g>
 </svg>`,
+  iconXClose: `<svg xmlns="http://www.w3.org/2000/svg" width="8.828" height="8.828" viewBox="0 0 8.828 8.828">
+<g id="x" transform="translate(-4.586 1.414)">
+  <line id="Line_130" data-name="Line 130" x1="6" y2="6" transform="translate(6)" fill="none" stroke="#2f2f2f" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+  <line id="Line_131" data-name="Line 131" x2="6" y2="6" transform="translate(6)" fill="none" stroke="#2f2f2f" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+</g>
+</svg>`,
 };

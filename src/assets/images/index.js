@@ -29,4 +29,5 @@ export const AppImage = {
   baby: require('./baby_care.png'),
   pharmacy: require('./pharmacy.png'),
   calendarEmpty: require('./calendar-empty.png'),
+  paperPlane: require('./paperPlane.png'),
 };

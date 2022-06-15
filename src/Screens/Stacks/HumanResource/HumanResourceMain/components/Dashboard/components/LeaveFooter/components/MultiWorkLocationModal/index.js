@@ -21,6 +21,7 @@ const MultiWorkLocationModal = ({
   onPressClose,
   setPickedItems,
   checkedWorkLocation,
+  setCheckedWorkLocation,
   data,
 }) => {
   const [textSearch, setTextSearch] = React.useState('');
@@ -33,18 +34,30 @@ const MultiWorkLocationModal = ({
       ),
     );
   }, [textSearch]);
-
+  const onCheckAllItem = React.useCallback(
+    value => {
+      if (value) {
+        setCheckedItems(workLocationArr);
+      } else {
+        setCheckedItems([]);
+      }
+    },
+    [setCheckedWorkLocation, workLocationArr, setCheckedItems],
+  );
   const renderItem = React.useCallback(item => {
     const onCheckItem = value => {
       if (value) {
         if (!checkedItems.includes(item)) {
-          checkedItems.push(item);
+          setCheckedItems([...checkedItems, item]);
         }
       }
       if (!value) {
         var i = checkedItems.indexOf(item);
         if (i !== -1) {
-          checkedItems.splice(i, 1);
+          setCheckedItems([
+            ...checkedItems.slice(0, i),
+            ...checkedItems.slice(i + 1),
+          ]);
         }
       }
     };
@@ -55,6 +68,7 @@ const MultiWorkLocationModal = ({
           flexDirection: 'row',
         }}>
         <CheckBox
+          changeValue={checkedItems.includes(item)}
           onValueChange={onCheckItem}
           initialValue={checkedItems.includes(item)}
         />
@@ -74,6 +88,7 @@ const MultiWorkLocationModal = ({
   });
   const onConfirm = React.useCallback(() => {
     setPickedItems(JSON.parse(JSON.stringify(checkedItems)));
+    setCheckedWorkLocation(checkedItems);
     onPressClose();
   }, [checkedItems, setPickedItems]);
   return (
@@ -118,24 +133,31 @@ const MultiWorkLocationModal = ({
             Select Work Location
           </Text>
           <View style={{flexDirection: 'row'}}>
-            {checkedItems.map(e => {
-              return (
-                <Text style={{marginRight: pxScale.wp(10)}}>
-                  {e.worklocation}
-                </Text>
-              );
-            })}
+            <Text numberOfLines={1} style={{marginRight: pxScale.wp(10)}}>
+              {checkedItems.map(e => {
+                return e.worklocation + ' ';
+              })}
+            </Text>
           </View>
           <View style={{flexDirection: 'row', marginVertical: pxScale.hp(20)}}>
-            <CheckBox />
+            <CheckBox
+              changeValue={
+                workLocationArr.length === checkedWorkLocation.length
+              }
+              initialValue={
+                workLocationArr.length === checkedWorkLocation.length
+              }
+              onValueChange={onCheckAllItem}
+            />
             <Text
               style={{
                 marginLeft: pxScale.wp(10),
                 fontSize: pxScale.fontSize(18),
                 color: colors.primary.black,
-                // fontFamily: checkedItems.includes(item)
-                //   ? fontFamily.InterBold
-                //   : fontFamily.InterRegular,
+                fontFamily:
+                  workLocationArr.length === checkedItems.length
+                    ? fontFamily.InterBold
+                    : fontFamily.InterRegular,
               }}>
               All Work Location
             </Text>

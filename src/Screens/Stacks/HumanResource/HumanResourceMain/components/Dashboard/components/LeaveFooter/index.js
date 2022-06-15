@@ -15,6 +15,8 @@ import LeavesTaken from './components/LeavesTaken';
 import {leavesTakenData, listWorkLocation, listMajor} from './dataTest';
 import MultiWorkLocationModal from './components/MultiWorkLocationModal';
 import styles from './styles';
+import TabHighlights from './components/TabHighlights';
+import TabEntitlement from './components/TabEntitlement';
 const LeaveFooter = () => {
   const [checkViewAllEmployee, setCheckViewAllEmployee] = React.useState(false);
   const [stateModalWorkLocation, setStateModalWorkLocation] =
@@ -73,12 +75,21 @@ const LeaveFooter = () => {
     new Date().toDateString(),
   );
   const [tabPicked, setTabPicked] = React.useState('highlights');
+  const switchTab = React.useCallback(
+    tabPicked => {
+      setTabPicked(tabPicked);
+    },
+    [setTabPicked],
+  );
 
-  const switchTab = React.useCallback(() => {
-    tabPicked === 'highlights'
-      ? setTabPicked('details')
-      : setTabPicked('highlights');
-  }, [setTabPicked, tabPicked]);
+  const [tabPickedEntitlement, setTabPickedEntitlement] =
+    React.useState('LeaveEntitlement');
+  const switchTabEntitlement = React.useCallback(
+    tabPicked => {
+      setTabPickedEntitlement(tabPicked);
+    },
+    [setTabPickedEntitlement],
+  );
 
   const BackToPreviousWeek = React.useCallback(() => {
     var previous7day = new Date(currentDate);
@@ -129,105 +140,101 @@ const LeaveFooter = () => {
       {upcomingPublicHoliday.map(item => {
         return <CardItemDate date={item.date} dateType={item.type} />;
       })}
-      <View
-        style={{
-          marginBottom: pxScale.wp(20),
-          marginHorizontal: pxScale.hp(5),
-        }}>
-        <View style={styles.shawdowHighlights}>
-          <View style={styles.tabHighlightsContainer}>
-            <TouchableOpacity onPress={switchTab}>
-              <View
-                style={
-                  tabPicked === 'highlights' ? styles.tabPicked : styles.tab
-                }>
-                <Text
-                  style={
-                    tabPicked === 'highlights' ? styles.textPicked : styles.text
-                  }>
-                  Highlights
-                </Text>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={switchTab}>
-              <View
-                style={tabPicked === 'details' ? styles.tabPicked : styles.tab}>
-                <Text
-                  style={
-                    tabPicked === 'details' ? styles.textPicked : styles.text
-                  }>
-                  Full Details
-                </Text>
-              </View>
-            </TouchableOpacity>
-          </View>
-        </View>
-      </View>
 
-      {leaveHighlight.map(item => {
-        return (
-          <CardItemLeave
-            leaveTitle={item.leaveTitle}
-            sourceIcon={item.sourceIcon}
-            colorBorder={item.colorBorder}
-            takenNum={item.takenNum}
-            balNum={item.balNum}
-            balText={item.balText}
-            fromDate={item.fromDate}
-            toDate={item.toDate}
-            percent={item.percent}
+      <TabHighlights tabPicked={tabPicked} switchTab={switchTab} />
+
+      {tabPicked === 'details' && (
+        <>
+          <TabEntitlement
+            tabPicked={tabPickedEntitlement}
+            switchTab={switchTabEntitlement}
           />
-        );
-      })}
+          {tabPickedEntitlement === 'LeaveEntitlement' &&
+            leaveHighlight.map(item => {
+              return (
+                <CardItemLeave
+                  leaveTitle={item.leaveTitle}
+                  sourceIcon={AppImage.paperPlane}
+                  colorBorder={colors.primary.green}
+                  takenNum={item.takenNum}
+                  balNum={item.balNum}
+                  balText={item.balText}
+                  fromDate={item.fromDate}
+                  toDate={item.toDate}
+                  percent={item.percent}
+                />
+              );
+            })}
+        </>
+      )}
 
-      <View style={{flexDirection: 'row', alignItems: 'center'}}>
-        <AppImageSvg
-          source={AppIcon.iconGreenCalendar}
-          height={pxScale.hp(20)}
-          width={pxScale.wp(20)}
-        />
-        <Text
-          style={{
-            color: colors.primary.green,
-            marginLeft: pxScale.wp(10),
-            fontFamily: fontFamily.InterBold,
-          }}>
-          Leave Calendar
-        </Text>
-      </View>
+      {tabPicked === 'highlights' &&
+        leaveHighlight.map(item => {
+          return (
+            <CardItemLeave
+              leaveTitle={item.leaveTitle}
+              sourceIcon={item.sourceIcon}
+              colorBorder={item.colorBorder}
+              takenNum={item.takenNum}
+              balNum={item.balNum}
+              balText={item.balText}
+              fromDate={item.fromDate}
+              toDate={item.toDate}
+              percent={item.percent}
+            />
+          );
+        })}
+      {(tabPicked === 'highlights' || tabPickedEntitlement === 'Calendar') && (
+        <>
+          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+            <AppImageSvg
+              source={AppIcon.iconGreenCalendar}
+              height={pxScale.hp(20)}
+              width={pxScale.wp(20)}
+            />
+            <Text
+              style={{
+                color: colors.primary.green,
+                marginLeft: pxScale.wp(10),
+                fontFamily: fontFamily.InterBold,
+              }}>
+              Leave Calendar
+            </Text>
+          </View>
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              marginTop: pxScale.hp(20),
+            }}>
+            <PickerBox
+              arr={selectedWorkLocation}
+              onPress={() => setStateModalWorkLocation(true)}
+            />
+            <PickerBox
+              arr={selectedMajor}
+              onPress={() => setStateModalMajor(true)}
+            />
+          </View>
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              marginTop: pxScale.hp(10),
+            }}>
+            <CheckBox onValueChange={onCheckViewAllEmployee} />
+            <Text style={{marginLeft: pxScale.wp(8)}}>View All Employee</Text>
+          </View>
 
-      <View
-        style={{
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          marginTop: pxScale.hp(20),
-        }}>
-        <PickerBox
-          arr={selectedWorkLocation}
-          onPress={() => setStateModalWorkLocation(true)}
-        />
-        <PickerBox
-          arr={selectedMajor}
-          onPress={() => setStateModalMajor(true)}
-        />
-      </View>
-      <View
-        style={{
-          flexDirection: 'row',
-          alignItems: 'center',
-          marginTop: pxScale.hp(10),
-        }}>
-        <CheckBox onValueChange={onCheckViewAllEmployee} />
-        <Text style={{marginLeft: pxScale.wp(8)}}>View All Employee</Text>
-      </View>
-      {
-        <WeekPicker
-          time={currentDate}
-          onPressLeft={BackToPreviousWeek}
-          onPressRight={MoveToNextWeek}
-        />
-      }
-      {<LeavesTaken listLeaveTaken={listLeaveTaken} />}
+          <WeekPicker
+            time={currentDate}
+            onPressLeft={BackToPreviousWeek}
+            onPressRight={MoveToNextWeek}
+          />
+
+          <LeavesTaken listLeaveTaken={listLeaveTaken} />
+        </>
+      )}
 
       {stateModalWorkLocation && (
         <MultiWorkLocationModal
@@ -236,6 +243,7 @@ const LeaveFooter = () => {
           onPressClose={() => setStateModalWorkLocation(false)}
           setPickedItems={setSelectedWorkLocation}
           checkedWorkLocation={checkedWorkLocation}
+          setCheckedWorkLocation={setCheckedWorkLocation}
         />
       )}
       {stateModalMajor && (
@@ -245,6 +253,7 @@ const LeaveFooter = () => {
           onPressClose={() => setStateModalMajor(false)}
           setPickedItems={setSelectedMajor}
           checkedWorkLocation={checkedMajor}
+          setCheckedWorkLocation={setCheckedMajor}
         />
       )}
     </View>
