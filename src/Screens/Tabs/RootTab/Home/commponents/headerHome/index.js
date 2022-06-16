@@ -8,7 +8,7 @@ const headerHome = ({lastLoggedInTime, shouldRenderBlur}) => {
   return (
     <View
       style={{
-        height: Platform.OS === 'ios' ? pxScale.hp(240) : pxScale.hp(220),
+        height: Platform.OS === 'ios' ? pxScale.hp(240) : pxScale.hp(210),
         alignItems: 'center',
       }}>
       <ImageBackground

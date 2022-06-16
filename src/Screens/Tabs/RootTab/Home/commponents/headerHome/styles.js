@@ -3,7 +3,7 @@ import {fontFamily} from 'constants';
 import {pxScale} from 'Helpers';
 export default StyleSheet.create({
   imageHeader: {
-    marginTop: pxScale.hp(40),
+    marginTop: pxScale.hp(30),
     height: pxScale.hp(220),
     width: pxScale.wp(440),
   },
