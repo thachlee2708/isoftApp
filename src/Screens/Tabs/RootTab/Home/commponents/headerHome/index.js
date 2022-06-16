@@ -12,7 +12,7 @@ const headerHome = ({lastLoggedInTime, shouldRenderBlur}) => {
         alignItems: 'center',
       }}>
       <ImageBackground
-        resizeMode="contain"
+        resizeMode="stretch"
         source={AppImage.headerHome}
         style={styles.imageHeader}></ImageBackground>
       <View style={styles.blurContainer}>
