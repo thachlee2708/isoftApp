@@ -43,7 +43,7 @@ const Home = ({route}) => {
         style={{
           marginHorizontal: pxScale.wp(16),
         }}>
-        <CardQR />
+        <CardQR setShouldRenderBlur={setShouldRenderBlur} />
         <NotificationRow viewAll={true} onPress={navigateToNotifications} />
         <ListCard data={dataListTest} />
         <Text style={styles.ApplicationText}>Applications</Text>

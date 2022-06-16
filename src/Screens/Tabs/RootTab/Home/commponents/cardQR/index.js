@@ -5,32 +5,34 @@ import AppImageSvg from 'components/AppImageSvg';
 import {AppIcon} from 'assets/icons';
 import {pxScale} from 'Helpers';
 import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
-const cardQR = () => {
-  const [img, setImg] = React.useState({
-    uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/1200px-QR_code_for_mobile_English_Wikipedia.svg.png',
-  });
-  const [data, setData] = React.useState(null);
+import RNQRGenerator from 'rn-qr-generator';
+
+const cardQR = ({setShouldRenderBlur}) => {
+  const [valueOfQrCode, setValueOfQrCode] = React.useState(null);
   const onChoiceImage = React.useCallback(
     res => {
       if (res?.assets?.length) {
-        setImg({uri: res.assets[0].uri});
+        setShouldRenderBlur(true);
         RNQRGenerator.detect({
           uri: res.assets[0].uri,
         })
           .then(response => {
-            const {values} = response; // Array of detected QR code values. Empty if nothing found.
-            console.log(values);
+            const {values} = response;
+            console.log('ValueOf QRCode', values);
+            setValueOfQrCode(values);
           })
           .catch(error => console.log('Cannot detect QR code in image', error));
       } else {
+        console.log('resLength=0', res);
         return;
       }
     },
-    [setImg],
+    [setValueOfQrCode],
   );
   const onPressScanQr = React.useCallback(
     async option => {
       try {
+        setShouldRenderBlur(false);
         launchImageLibrary(option, onChoiceImage);
       } catch (e) {
         console.log('error requestOpenCam', e);
