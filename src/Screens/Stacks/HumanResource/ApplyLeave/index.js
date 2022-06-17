@@ -4,10 +4,15 @@ import AppHeader from 'components/AppHeader';
 import {pxScale} from 'Helpers';
 import {colors, fontFamily} from 'constants';
 import LeaveDisclaimer from './components/LeaveDisclaimer';
+import {useNavigation} from '@react-navigation/native';
 const ApplyLeave = () => {
+  const navigation = useNavigation();
   return (
     <>
-      <AppHeader textTitle={'Leave'} />
+      <AppHeader
+        textTitle={'Leave'}
+        onpressBackIcon={() => navigation.goBack()}
+      />
       <View
         style={{
           height: pxScale.hp(745),
