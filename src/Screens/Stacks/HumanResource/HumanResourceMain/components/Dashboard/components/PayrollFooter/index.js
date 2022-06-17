@@ -73,6 +73,7 @@ const PayrollFooter = () => {
             fontFamily: fontFamily.InterBold,
             color: colors.primary.green,
             marginHorizontal: pxScale.wp(10),
+            fontSize: pxScale.fontSize(18),
           }}>
           Payroll Summary
         </Text>
@@ -85,6 +86,7 @@ const PayrollFooter = () => {
             }}>
             <Text
               style={{
+                fontSize: pxScale.fontSize(18),
                 color: colors.primary.green,
                 marginHorizontal: pxScale.wp(10),
               }}>
@@ -99,7 +101,10 @@ const PayrollFooter = () => {
           </View>
         </TouchableOpacity>
       </View>
-      <Text style={{color: colors.primary.black}}>Year to Date Summary</Text>
+      <Text
+        style={{color: colors.primary.black, fontSize: pxScale.fontSize(18)}}>
+        Year to Date Summary
+      </Text>
       <TouchableOpacity onPress={openModal}>
         <View
           style={{
@@ -112,7 +117,14 @@ const PayrollFooter = () => {
             borderRadius: pxScale.wp(5),
             color: colors.primary.black,
           }}>
-          <Text style={{flex: 1, color: colors.primary.black}}>{year}</Text>
+          <Text
+            style={{
+              flex: 1,
+              color: colors.primary.black,
+              fontSize: pxScale.fontSize(18),
+            }}>
+            {year}
+          </Text>
           <AppImageSvg
             source={AppIcon.iconCalendar}
             height={pxScale.hp(16)}
@@ -125,7 +137,14 @@ const PayrollFooter = () => {
           flexDirection: 'row',
           marginTop: pxScale.hp(20),
         }}>
-        <Text style={{flex: 1, color: colors.primary.black}}>Total Salary</Text>
+        <Text
+          style={{
+            flex: 1,
+            color: colors.primary.black,
+            fontSize: pxScale.fontSize(18),
+          }}>
+          Total Salary
+        </Text>
         <TouchableOpacity onPress={() => setIsShowSalary(!isShowSalary)}>
           <AppImageSvg
             source={!isShowSalary ? AppIcon.greenEye : AppIcon.greenEyeClose}
@@ -148,6 +167,7 @@ const PayrollFooter = () => {
             flex: 1,
             fontFamily: fontFamily.InterBold,
             color: colors.primary.green,
+            fontSize: pxScale.fontSize(18),
           }}>
           {formatMoney(43332.9)}
         </TextInput>
@@ -155,7 +175,8 @@ const PayrollFooter = () => {
 
       <SalaryDetails isShowSalary={isShowSalary} />
 
-      <Text style={{color: colors.primary.black}}>
+      <Text
+        style={{color: colors.primary.black, fontSize: pxScale.fontSize(18)}}>
         Payslip in past 6 months
       </Text>
       {listPayslip?.length > 0 && <ListPaySlip data={listPayslip} />}

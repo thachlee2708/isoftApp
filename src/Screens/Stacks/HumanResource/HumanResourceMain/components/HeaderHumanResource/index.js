@@ -46,7 +46,7 @@ const HeaderHumanResource = ({scrollY}) => {
           navigation.navigate(screenName.Payroll);
           break;
         case screenName.Leave:
-          navigation.navigate(screenName.Leave);
+          navigation.navigate(screenName.ApplyLeave);
           break;
         case screenName.Claim:
           navigation.navigate(screenName.Claim);
@@ -87,7 +87,12 @@ const HeaderHumanResource = ({scrollY}) => {
                 height={pxScale.hp(40)}
                 width={pxScale.hp(40)}
               />
-              <Text style={{alignSelf: 'center', color: colors.primary.black}}>
+              <Text
+                style={{
+                  alignSelf: 'center',
+                  color: colors.primary.black,
+                  fontSize: pxScale.fontSize(18),
+                }}>
                 {item.name}
               </Text>
             </ImageBackground>

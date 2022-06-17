@@ -1,12 +1,10 @@
 import {StyleSheet} from 'react-native';
 import {pxScale} from 'Helpers';
-import {colors, fontFamily} from 'constants';
+import {colors} from 'constants';
 export default StyleSheet.create({
   wrap: {
     backgroundColor: colors.primary.white,
     borderRadius: pxScale.wp(8),
-    marginTop: pxScale.hp(15),
-    paddingBotttom: pxScale.hp(15),
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -15,11 +13,5 @@ export default StyleSheet.create({
     shadowRadius: 1,
     shadowOpacity: 0.05,
     elevation: 5,
-  },
-  textTitle: {color: colors.primary.black, fontSize: pxScale.fontSize(19)},
-  textDetails: {color: '#78909C', fontSize: pxScale.fontSize(16)},
-  numberDetails: {
-    color: colors.primary.black,
-    fontFamily: fontFamily.InterBold,
   },
 });

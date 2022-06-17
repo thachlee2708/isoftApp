@@ -438,4 +438,12 @@ export const AppIcon = {
   <line id="Line_131" data-name="Line 131" x2="6" y2="6" transform="translate(6)" fill="none" stroke="#2f2f2f" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
 </g>
 </svg>`,
+  iconExclamationMark: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
+<g id="alert-circle" transform="translate(1 1)">
+  <circle id="Ellipse_273" data-name="Ellipse 273" cx="10" cy="10" r="10" fill="none" stroke="#2f2f2f" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+  <line id="Line_27" data-name="Line 27" y2="4" transform="translate(10 6)" fill="none" stroke="#2f2f2f" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+  <line id="Line_28" data-name="Line 28" transform="translate(10 14)" fill="none" stroke="#2f2f2f" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+</g>
+</svg>
+`,
 };

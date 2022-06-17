@@ -5,6 +5,7 @@ import Notification from 'Screens/Stacks/Notification';
 import Home from 'Screens/Tabs/RootTab/Home';
 import HumanResourceMain from 'Screens/Stacks/HumanResource/HumanResourceMain';
 import Payroll from 'Screens/Stacks/HumanResource/Payroll';
+import ApplyLeave from 'Screens/Stacks/HumanResource/ApplyLeave';
 const Stack = createNativeStackNavigator();
 const HomeStack = () => {
   return (
@@ -27,6 +28,11 @@ const HomeStack = () => {
       <Stack.Screen
         component={Payroll}
         name={screenName.Payroll}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        component={ApplyLeave}
+        name={screenName.ApplyLeave}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

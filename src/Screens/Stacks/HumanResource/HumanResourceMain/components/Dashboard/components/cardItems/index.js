@@ -33,8 +33,8 @@ const CardItems = ({
             <AppImageSvg
               style={{position: 'absolute'}}
               source={sourceLine}
-              height={pxScale.hp(50)}
-              width={pxScale.wp(4)}
+              height={pxScale.hp(55)}
+              width={pxScale.wp(3)}
             />
             <Image
               source={sourceIcon}
@@ -45,8 +45,8 @@ const CardItems = ({
               }}
             />
             <View style={{flex: 1}}>
-              <Text style={styles.text}>{textTitle}</Text>
-              <Text style={styles.text}>{textDetails}</Text>
+              <Text style={styles.textTitle}>{textTitle}</Text>
+              <Text style={styles.textDetails}>{textDetails}</Text>
             </View>
 
             <AppImageSvg

@@ -53,6 +53,7 @@ export const screenName = {
   Leave: 'Leave',
   Claim: 'Claim',
   Approval: 'Approval',
+  ApplyLeave: 'ApplyLeave',
 };
 export const fontFamily = {
   InterRegular: 'Inter-Regular',

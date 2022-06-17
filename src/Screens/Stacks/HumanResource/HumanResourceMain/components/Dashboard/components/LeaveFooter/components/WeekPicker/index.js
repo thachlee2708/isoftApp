@@ -1,8 +1,8 @@
 import React from 'react';
 import {TouchableOpacity, View, Text} from 'react-native';
 import AppImageSvg from 'components/AppImageSvg';
-import {AppIcon} from '../../../../../../../../../../assets/icons';
-import {formatDay3, pxScale} from '../../../../../../../../../../Helpers';
+import {AppIcon} from 'assets/icons';
+import {formatDay3, pxScale} from 'Helpers';
 import styles from './styles';
 const WeekPicker = ({time, onPressLeft, onPressRight}) => {
   var d = new Date(time);
@@ -35,7 +35,8 @@ const WeekPicker = ({time, onPressLeft, onPressRight}) => {
           justifyContent: 'center',
           borderRadius: pxScale.wp(5),
         }}>
-        <Text style={{marginRight: pxScale.wp(10)}}>
+        <Text
+          style={{marginRight: pxScale.wp(10), fontSize: pxScale.fontSize(18)}}>
           {formatDay3(d)} to {formatDay3(time)}
         </Text>
         <AppImageSvg

@@ -8,6 +8,7 @@ const NoRecordFound = () => {
     <View style={{}}>
       {
         <Image
+          resizeMode="contain"
           source={AppImage.wallet}
           style={{
             height: pxScale.hp(200),
@@ -21,6 +22,7 @@ const NoRecordFound = () => {
         style={{
           alignSelf: 'center',
           color: colors.primary.black,
+          fontSize: pxScale.fontSize(18),
         }}>
         No rerords found
       </Text>

@@ -11,7 +11,7 @@ const WorkLocationPicker = ({
 }) => {
   return (
     <View style={{marginVertical: pxScale.hp(10)}}>
-      <Text>Work Location</Text>
+      <Text style={{fontSize: pxScale.fontSize(18)}}>Work Location</Text>
       <View style={{flexDirection: 'row'}}>
         <TouchableOpacity onPress={onPressToogleModal}>
           <View
@@ -35,7 +35,11 @@ const WorkLocationPicker = ({
         <View style={{flex: 1}}></View>
         <TouchableOpacity>
           <View style={{flexDirection: 'row', alignItems: 'center'}}>
-            <Text style={{color: colors.primary.green}}>
+            <Text
+              style={{
+                color: colors.primary.green,
+                fontSize: pxScale.fontSize(18),
+              }}>
               View {'Y' + pickedYear.toString().substr(-2)}
             </Text>
             <AppImageSvg

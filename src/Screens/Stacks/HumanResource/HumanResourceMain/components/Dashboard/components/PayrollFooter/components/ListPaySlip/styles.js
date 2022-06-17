@@ -16,5 +16,5 @@ export default StyleSheet.create({
     shadowOpacity: 0.08,
     elevation: 5,
   },
-  text: {color: colors.primary.black, flex: 1},
+  text: {color: colors.primary.black, flex: 1, fontSize: pxScale.fontSize(18)},
 });
