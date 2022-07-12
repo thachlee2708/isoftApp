@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "956782282866",
+    "project_id": "isoftapp-dd9d4",
+    "storage_bucket": "isoftapp-dd9d4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:956782282866:android:11575582a57970aea79aeb",
+        "android_client_info": {
+          "package_name": "com.isoftapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "956782282866-8mep67vhh0cb9l1h9n7ai4qdf34a7p1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBiVRzToDdQBZTnDx7TVNam4JZW01kexxY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "956782282866-8mep67vhh0cb9l1h9n7ai4qdf34a7p1o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

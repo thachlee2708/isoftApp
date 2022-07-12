@@ -1,4 +1,10 @@
-import {Text, View, ImageBackground, TouchableOpacity} from 'react-native';
+import {
+  Text,
+  View,
+  ImageBackground,
+  TouchableOpacity,
+  Platform,
+} from 'react-native';
 import React, {memo} from 'react';
 import styles from './styles';
 import AppImageSvg from 'components/AppImageSvg';
@@ -12,7 +18,7 @@ const cardQR = ({setShouldRenderBlur}) => {
   const onChoiceImage = React.useCallback(
     res => {
       if (res?.assets?.length) {
-        setShouldRenderBlur(true);
+        Platform.OS === 'android' && setShouldRenderBlur(true);
         RNQRGenerator.detect({
           uri: res.assets[0].uri,
         })
@@ -32,7 +38,7 @@ const cardQR = ({setShouldRenderBlur}) => {
   const onPressScanQr = React.useCallback(
     async option => {
       try {
-        setShouldRenderBlur(false);
+        Platform.OS === 'android' && setShouldRenderBlur(false);
         launchImageLibrary(option, onChoiceImage);
       } catch (e) {
         console.log('error requestOpenCam', e);

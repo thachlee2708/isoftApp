@@ -4,7 +4,7 @@ import {pxScale} from 'Helpers';
 export default StyleSheet.create({
   imageHeader: {
     marginTop: pxScale.hp(30),
-    height: pxScale.hp(220),
+    height: Platform.OS === 'android' ? pxScale.hp(220) : pxScale.hp(210),
     width: pxScale.wp(440),
   },
   blurContainer: {
