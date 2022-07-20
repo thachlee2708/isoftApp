@@ -35,7 +35,9 @@ const cardQR = ({sourceIcon, sourceQR, textTitle}) => {
               height={pxScale.hp(40)}
               width={pxScale.wp(40)}
             />
-            <Text style={{flex: 1}}>{textTitle}</Text>
+            <Text style={{flex: 1, fontSize: pxScale.fontSize(18)}}>
+              {textTitle}
+            </Text>
             <AppImageSvg
               source={AppIcon.arrowToRight}
               height={pxScale.hp(20)}

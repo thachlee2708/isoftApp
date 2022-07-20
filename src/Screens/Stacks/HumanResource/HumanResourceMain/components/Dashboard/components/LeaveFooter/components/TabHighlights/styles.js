@@ -30,7 +30,7 @@ export default StyleSheet.create({
     alignItems: 'center',
     borderRadius: pxScale.wp(10),
   },
-  textPicked: {color: colors.primary.white},
+  textPicked: {color: colors.primary.white, fontSize: pxScale.fontSize(18)},
   tab: {
     backgroundColor: colors.primary.white,
     width: pxScale.wp(150),
@@ -39,5 +39,5 @@ export default StyleSheet.create({
     alignItems: 'center',
     borderRadius: pxScale.wp(10),
   },
-  text: {color: colors.primary.green},
+  text: {color: colors.primary.green, fontSize: pxScale.fontSize(18)},
 });

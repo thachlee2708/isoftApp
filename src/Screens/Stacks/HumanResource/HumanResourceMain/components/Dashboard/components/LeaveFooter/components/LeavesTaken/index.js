@@ -103,7 +103,7 @@ const LeavesTaken = ({listLeaveTaken}) => {
             source={AppImage.calendarEmpty}
             style={{height: pxScale.hp(100), width: pxScale.hp(100)}}
           />
-          <Text style={{marginTop: pxScale.hp(10)}}>
+          <Text style={[styles.text, {marginTop: pxScale.hp(10)}]}>
             No leaves taken for this week
           </Text>
         </View>

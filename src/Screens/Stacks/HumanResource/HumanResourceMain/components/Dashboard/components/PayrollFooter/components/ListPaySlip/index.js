@@ -24,7 +24,7 @@ const ListPayslip = ({data}) => {
               <AppImageSvg
                 style={{position: 'absolute'}}
                 source={AppIcon.line.primary}
-                height={pxScale.hp(35)}
+                height={pxScale.hp(40)}
                 width={pxScale.wp(3)}
               />
               <View style={{flex: 1}}>

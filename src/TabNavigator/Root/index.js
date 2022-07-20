@@ -21,11 +21,15 @@ const RootTabNavigator = () => {
         tabBarIndicatorStyle: {
           backgroundColor: 'transparent',
         },
-        tabBarIconStyle: {alignItems: 'center', justifyContent: 'center'},
+        tabBarIconStyle: {
+          alignItems: 'center',
+          justifyContent: 'center',
+          marginTop: pxScale.hp(15),
+        },
         tabBarLabelStyle: {
           textTransform: 'none',
           fontSize: pxScale.fontSize(16),
-          marginBottom: pxScale.hp(20),
+          marginBottom: pxScale.hp(10),
         },
         tabBarActiveTintColor: colors.primary.green,
         tabBarInactiveTintColor: '#979797',

@@ -28,6 +28,6 @@ export default StyleSheet.create({
     padding: 0,
     marginHorizontal: pxScale.wp(10),
     color: colors.primary.black,
-    fontSize: pxScale.fontSize(15),
+    fontSize: pxScale.fontSize(16),
   },
 });

@@ -17,6 +17,7 @@ const SalaryDetails = ({isShowSalary}) => {
           style={{
             flex: 1,
             fontFamily: fontFamily.InterRegular,
+            fontSize: pxScale.fontSize(18),
           }}>
           CMM - Salary
         </Text>
@@ -26,6 +27,7 @@ const SalaryDetails = ({isShowSalary}) => {
             fontFamily: fontFamily.InterRegular,
             color: colors.primary.green,
             marginLeft: pxScale.wp(2),
+            fontSize: pxScale.fontSize(18),
           }}>
           {formatMoney(33332.9)}
         </TextInput>
@@ -40,12 +42,14 @@ const SalaryDetails = ({isShowSalary}) => {
           style={{
             flex: 1,
             fontFamily: fontFamily.InterRegular,
+            fontSize: pxScale.fontSize(18),
           }}>
-          CMM - Salary
+          Outlet - Salary
         </Text>
         <TextInput
           secureTextEntry={isShowSalary}
           style={{
+            fontSize: pxScale.fontSize(18),
             fontFamily: fontFamily.InterRegular,
             color: colors.primary.green,
             marginLeft: pxScale.wp(2),

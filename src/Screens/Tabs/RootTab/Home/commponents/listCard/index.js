@@ -50,7 +50,7 @@ const listCard = ({data}) => {
               />
               <Text style={styles.titleText}>{item.title}</Text>
             </View>
-            <Text>{item.time}</Text>
+            <Text style={{fontSize: pxScale.fontSize(16)}}>{item.time}</Text>
             <Text numberOfLines={2} style={styles.detailsText}>
               {item.details}
             </Text>

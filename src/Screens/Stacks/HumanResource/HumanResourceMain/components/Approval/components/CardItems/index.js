@@ -33,8 +33,8 @@ const CardItem = ({
             <AppImageSvg
               style={{position: 'absolute'}}
               source={sourceLine}
-              height={pxScale.hp(50)}
-              width={pxScale.wp(4)}
+              height={pxScale.hp(55)}
+              width={pxScale.wp(3)}
             />
             <Image
               source={sourceIcon}
@@ -45,8 +45,8 @@ const CardItem = ({
               }}
             />
             <View style={{flex: 1}}>
-              <Text style={styles.text}>{textTitle}</Text>
-              <Text style={styles.text}>
+              <Text style={styles.textTitle}>{textTitle}</Text>
+              <Text style={styles.textDetails}>
                 Pending Approval:{' '}
                 <Text style={styles.numberDetails}>{textDetails}</Text>
               </Text>

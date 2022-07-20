@@ -70,6 +70,7 @@ const WorkLocationModal = ({
               fontFamily: fontFamily.InterBold,
               fontSize: pxScale.fontSize(20),
               marginBottom: pxScale.hp(20),
+              fontSize: pxScale.fontSize(18),
             }}>
             Select Work Location
           </Text>
@@ -90,6 +91,7 @@ const WorkLocationModal = ({
               width={pxScale.wp(20)}
             />
             <TextInput
+              style={{fontSize: pxScale.fontSize(18)}}
               onChangeText={setTextSearch}
               placeholder="Search Work Location"
             />

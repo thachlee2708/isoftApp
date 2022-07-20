@@ -87,17 +87,27 @@ const CardItemLeave = ({
                   width: pxScale.wp(200),
                   marginVertical: pxScale.hp(3),
                 }}>
-                <Text style={{flex: 1, color: colors.primary.black}}>
+                <Text
+                  style={{
+                    flex: 1,
+                    color: colors.primary.black,
+                    fontSize: pxScale.fontSize(18),
+                  }}>
                   <Text
                     style={{
                       fontFamily: fontFamily.InterBold,
                       color: colors.primary.black,
+                      fontSize: pxScale.fontSize(18),
                     }}>
                     {takenNum}
                   </Text>{' '}
                   Taken
                 </Text>
-                <Text style={{color: colors.primary.black}}>
+                <Text
+                  style={{
+                    color: colors.primary.black,
+                    fontSize: pxScale.fontSize(18),
+                  }}>
                   <Text
                     style={{
                       fontFamily: fontFamily.InterBold,
@@ -117,7 +127,7 @@ const CardItemLeave = ({
                 <Text
                   style={{
                     marginLeft: pxScale.wp(5),
-                    fontSize: pxScale.fontSize(15),
+                    fontSize: pxScale.fontSize(16),
                   }}>
                   {formatDay3(fromDate)} to {formatDay3(toDate)}
                 </Text>

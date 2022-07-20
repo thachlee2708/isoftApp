@@ -17,7 +17,10 @@ import MultiWorkLocationModal from './components/MultiWorkLocationModal';
 import styles from './styles';
 import TabHighlights from './components/TabHighlights';
 import TabEntitlement from './components/TabEntitlement';
+import {useNavigation} from '@react-navigation/native';
+import {screenName} from '../../../../../../../../constants';
 const LeaveFooter = () => {
+  const navigation = useNavigation();
   const [checkViewAllEmployee, setCheckViewAllEmployee] = React.useState(false);
   const [stateModalWorkLocation, setStateModalWorkLocation] =
     React.useState(false);
@@ -124,17 +127,32 @@ const LeaveFooter = () => {
         marginHorizontal: pxScale.wp(16),
         paddingVertical: pxScale.hp(20),
       }}>
-      <TouchableOpacity style={{alignSelf: 'flex-end'}}>
-        <Text style={{color: colors.primary.green}}>+Apply Leave</Text>
+      <TouchableOpacity
+        style={{alignSelf: 'flex-end'}}
+        onPress={() => navigation.navigate(screenName.ApplyLeave)}>
+        <Text
+          style={{color: colors.primary.green, fontSize: pxScale.fontSize(18)}}>
+          +Apply Leave
+        </Text>
       </TouchableOpacity>
 
-      <Text style={{marginTop: pxScale.hp(10), marginBottom: pxScale.hp(5)}}>
+      <Text
+        style={{
+          marginTop: pxScale.hp(10),
+          marginBottom: pxScale.hp(5),
+          fontSize: pxScale.fontSize(18),
+        }}>
         Upcoming Leave
       </Text>
       {upcomingLeave.map(item => {
         return <CardItemDate date={item.date} dateType={item.type} />;
       })}
-      <Text style={{marginTop: pxScale.hp(10), marginBottom: pxScale.hp(5)}}>
+      <Text
+        style={{
+          marginTop: pxScale.hp(10),
+          marginBottom: pxScale.hp(5),
+          fontSize: pxScale.fontSize(18),
+        }}>
         Upcoming Public Holiday
       </Text>
       {upcomingPublicHoliday.map(item => {
@@ -197,6 +215,7 @@ const LeaveFooter = () => {
                 color: colors.primary.green,
                 marginLeft: pxScale.wp(10),
                 fontFamily: fontFamily.InterBold,
+                fontSize: pxScale.fontSize(18),
               }}>
               Leave Calendar
             </Text>
@@ -223,7 +242,13 @@ const LeaveFooter = () => {
               marginTop: pxScale.hp(10),
             }}>
             <CheckBox onValueChange={onCheckViewAllEmployee} />
-            <Text style={{marginLeft: pxScale.wp(8)}}>View All Employee</Text>
+            <Text
+              style={{
+                marginLeft: pxScale.wp(8),
+                fontSize: pxScale.fontSize(18),
+              }}>
+              View All Employee
+            </Text>
           </View>
 
           <WeekPicker
